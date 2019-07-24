@@ -42,11 +42,11 @@ def createDirectories(directory, data):
       if data[name][0] == folderNames[name]:
         # Add issue directory
         issueFolder = '\\issue' + data[name][1]
-        os.makedirs(os.path.join(newDirectory, issueFolder)) # issue directories
+        os.makedirs(os.path.join(newDirectory, newDirectory + issueFolder)) # issue directories
         
         # Add image directory
         imgFolder = newDirectory + issueFolder
-        os.makedirs(os.path.join(imgFolder, 'img')) # img directory
+        os.makedirs(os.path.join(imgFolder, imgFolder + '\\img')) # img directory
 
 #-----------------------------------------------------------------------
 # Num: 2
