@@ -9,7 +9,7 @@
 # 2. readHTML()
 # 3. replaceHTML()
 # 4. main()
-#    - Contains month variable which must be amended each month
+#    - Contains month & year variable which must be amended
 #-----------------------------------------------------------------------
 import os, csv
 from shutil import copyfile
@@ -83,8 +83,8 @@ def replaceHTML(htmlFile, destination, issueNum, link, headOne, paraOne,
 # Parameters: (0) None.
 #---------------------------------------------------------------------
 def main():
-  # Month variable (changes each month) - must be 3 characters
-  month = 'jun'
+  # Month & year variable (changes each month/year) - month must be 3 characters
+  year, month = '2019', 'aug'
 
   # Get filepath locations
   dirpath = os.getcwd()
@@ -117,7 +117,7 @@ def main():
             copyfile(src, dst)
 
             # create monthFormat variable
-            monthFormat = '/2019/' + month + '/' + data[index][0] + '/issue' + data[index][1] + '/'
+            monthFormat = '/' + year + '/' + month + '/' + data[index][0] + '/issue' + data[index][1] + '/'
             
             # Read HTML files
             newHtmlList = os.listdir(newdir)
