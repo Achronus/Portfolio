@@ -29,13 +29,20 @@ def createDirectories(directory, data):
   # If the directory doesn't exist, create it
   if not os.path.exists(directory):
     os.makedirs(directory) # month directory
+
+    # Output title for directories to console
+    print('---------------------------------------------')
+    print(f"The following directories have been made:")
+    print('---------------------------------------------')
+
+    # Create each named directory
     for folder in fromDirList:
       os.makedirs(os.path.join(directory, folder)) # name directories
 
     # Sort folder names list in order
     folderNames.sort()
 
-    # Loop through each directory
+    # Go one step deeper and create each issue directory
     for name in range(len(data)):
       newDirectory = directory + '\\' + data[name][0]
       # Check directory names match
@@ -44,7 +51,11 @@ def createDirectories(directory, data):
         issueFolder = '\\issue' + data[name][1]
         os.makedirs(os.path.join(newDirectory, newDirectory + issueFolder)) # issue directories
         
-        # Add image directory
+        # Return output to console
+        print('  ' + folderNames[name]) # Print folder name
+        print('     => ' + issueFolder.replace('\\', '')) # Print issue name
+
+        # Go another step deeper and create the img directory
         imgFolder = newDirectory + issueFolder
         os.makedirs(os.path.join(imgFolder, imgFolder + '\\img')) # img directory
 
@@ -58,7 +69,7 @@ def createDirectories(directory, data):
 #-----------------------------------------------------------------------
 def readCSV(currentDir):
   # Get csv file
-  csvFile = currentDir + '\\scripts\\text.csv'
+  csvFile = currentDir + '\\text.csv'
 
   # Put csv data into list of lists
   with open(csvFile, 'r') as f:
@@ -77,15 +88,21 @@ def readCSV(currentDir):
 #---------------------------------------------------------------------
 def main():
   # Month & year variable (changes each month/year) - month must be 3 characters
-  year, month = '2019', 'aug'
+  # year, month = '2019', 'aug'
+  year, month = input('Enter the year (4 digits) & month (3 characters), separated by a space: ').split()
 
   # Set file path variables
   currentDir = os.getcwd()
-  fromDir = currentDir + '\\[company_name]\\' + year + '\\' + month
+  fromDir = f'[file_path]\\email-creatives\\[company_name]\\{year}\\{month}'
   
   # Create directories within from directory
   data = readCSV(currentDir)
   createDirectories(fromDir, data)
+
+  # Confirm script has finished running
+  print('---------------------------------------------------------------------------------------------------------------------------')
+  print(f"All directories have been made, please check the 'email-creatives\\[company_name]\\{year}\\{month}' folder.")
+  print('---------------------------------------------------------------------------------------------------------------------------')
 
 # Run main function
 if __name__ == "__main__": main()

@@ -84,11 +84,13 @@ def replaceHTML(htmlFile, destination, issueNum, link, headOne, paraOne,
 #---------------------------------------------------------------------
 def main():
   # Month & year variable (changes each month/year) - month must be 3 characters
-  year, month = '2019', 'aug'
+  # year, month = '2019', 'aug'
+  year, month = input('Enter the year (4 digits) & month (3 characters), separated by a space: ').split()
+  print('-----------------------------------------------------------------------------------')
 
   # Get filepath locations
   dirpath = os.getcwd()
-  currentdir = dirpath + '\\scripts\\'
+  currentdir = dirpath
   htmldir = currentdir + '\\templates\\'
   newdir = currentdir + '\\updated\\'
 
@@ -127,10 +129,15 @@ def main():
             replaceHTML(fileContents, dst, data[index][1], data[index][2], 
                         data[index][3], data[index][4], data[index][5], 
                         data[index][6], data[index][0], monthFormat)
+            
+            # Return file name to console
+            print(f'File {fileName} created and updated.')
         
         # Error handle to say completed
         except IndexError:
-          print('Files finished copying and updating, please check updated folder.')
+          print('----------------------------------------------------------------------')
+          print("Files finished copying and updating, please check 'updated' folder.")
+          print('----------------------------------------------------------------------')
 
 # Run main function
 if __name__ == '__main__': main()
