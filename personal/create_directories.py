@@ -1,13 +1,12 @@
 #-----------------------------------------------------------------------
-# File Title: Create Start Directories Script
+# File Title: Create Directories Script
 # File Description: This script is used to automate the creation ...
-# ... of the starting directories before adding images to them.
+# ... of the starting directories and adding images to them.
 #-----------------------------------------------------------------------
 # CONTENTS:
 # 1. createDirectories()
 # 2. readCSV()
 # 3. main()
-#    - Contains month & year variable which must be amended
 #-----------------------------------------------------------------------
 import os, csv
 
@@ -16,9 +15,9 @@ import os, csv
 # Function Title: createDirectories()
 # Description: Used to create empty directories for the images by ...
 # ... reading the data from the CSV file.
-# Parameters: (2) Directory, data.
+# Parameters: (4) Directory, data & additional folder.
 #---------------------------------------------------------------------
-def createDirectories(directory, data):
+def createDirectories(directory, data, addFolder):
   # Get directory names & issue names from CSV file
   temp, fromDirList, folderNames = set(), [], []
   for item in range(len(data)):
@@ -56,8 +55,9 @@ def createDirectories(directory, data):
         print('     => ' + issueFolder.replace('\\', '')) # Print issue name
 
         # Go another step deeper and create the img directory
-        imgFolder = newDirectory + issueFolder
-        os.makedirs(os.path.join(imgFolder, imgFolder + '\\img')) # img directory
+        if addFolder != 'none':
+          imgFolder = newDirectory + issueFolder
+          os.makedirs(os.path.join(imgFolder, imgFolder + '\\' + addFolder)) # img directory
 
 #-----------------------------------------------------------------------
 # Num: 2
@@ -88,16 +88,16 @@ def readCSV(currentDir):
 #---------------------------------------------------------------------
 def main():
   # Month & year variable (changes each month/year) - month must be 3 characters
-  # year, month = '2019', 'aug'
-  year, month = input('Enter the year (4 digits) & month (3 characters), separated by a space: ').split()
+  year, month, location, addFolder = input("Enter the year (4 digits), month (3 characters), folder location ([folder]\\[folder]) & extra folder name (Input 'none' if not applicable) - each separated by a space: ").lower().split()
 
   # Set file path variables
   currentDir = os.getcwd()
-  fromDir = f'[file_path]\\email-creatives\\[company_name]\\{year}\\{month}'
+  folderLocation = f'D:\\[file_location]\\email-creatives\\{location}\\[company_name]'
+  fromDir = f'{folderLocation}\\{year}\\{month}'
   
   # Create directories within from directory
   data = readCSV(currentDir)
-  createDirectories(fromDir, data)
+  createDirectories(fromDir, data, addFolder)
 
   # Confirm script has finished running
   print('---------------------------------------------------------------------------------------------------------------------------')

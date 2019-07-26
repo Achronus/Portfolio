@@ -9,7 +9,6 @@
 # 2. readHTML()
 # 3. replaceHTML()
 # 4. main()
-#    - Contains month & year variable which must be amended
 #-----------------------------------------------------------------------
 import os, csv
 from shutil import copyfile
@@ -83,9 +82,8 @@ def replaceHTML(htmlFile, destination, issueNum, link, headOne, paraOne,
 # Parameters: (0) None.
 #---------------------------------------------------------------------
 def main():
-  # Month & year variable (changes each month/year) - month must be 3 characters
-  # year, month = '2019', 'aug'
-  year, month = input('Enter the year (4 digits) & month (3 characters), separated by a space: ').split()
+  # Get variables from user input
+  year, month = input('Enter the year (4 digits) & month (3 characters), separated by a space: ').lower().split()
   print('-----------------------------------------------------------------------------------')
 
   # Get filepath locations
@@ -101,43 +99,42 @@ def main():
   upHtmlList = []
   for i in range(len(htmlList)):
     upHtmlList.append(htmlList[i].replace('.html', ''))
-  
+  upHtmlList.remove('imgs')
+
   # Read CSV file
   data = readCSV(currentdir)
 
   # Create copies of HTML files, rename them and replace content
   for item in range(len(data)):
-      for index in range(item, len(data)):
-        try:
-          # Check that file names are the same
-          if data[index][0] in upHtmlList[item]:
-            # Update filename
-            fileName = upHtmlList[item] + '-issue' + data[index][1] + '.html'
+    for index in range(item, len(data)):
+      # Check that file names are the same
+      if data[item][0] == upHtmlList[index]:
+        # Update filename
+        fileName = upHtmlList[index] + '-issue' + data[item][1] + '.html'
 
-            # Copy file to new location
-            src, dst = htmldir + upHtmlList[item] + '.html', newdir + fileName
-            copyfile(src, dst)
+        # Copy file to new location
+        src, dst = htmldir + upHtmlList[index] + '.html', newdir + fileName
+        copyfile(src, dst)
 
-            # create monthFormat variable
-            monthFormat = '/' + year + '/' + month + '/' + data[index][0] + '/issue' + data[index][1] + '/'
-            
-            # Read HTML files
-            newHtmlList = os.listdir(newdir)
-            fileContents = readHTML(newdir, newHtmlList, item)
-
-            # Replace HTML content
-            replaceHTML(fileContents, dst, data[index][1], data[index][2], 
-                        data[index][3], data[index][4], data[index][5], 
-                        data[index][6], data[index][0], monthFormat)
-            
-            # Return file name to console
-            print(f'File {fileName} created and updated.')
+        # create monthFormat variable
+        monthFormat = '/' + year + '/' + month + '/' + data[item][0] + '/issue' + data[item][1] + '/'
         
-        # Error handle to say completed
-        except IndexError:
-          print('----------------------------------------------------------------------')
-          print("Files finished copying and updating, please check 'updated' folder.")
-          print('----------------------------------------------------------------------')
+        # Read HTML files
+        newHtmlList = os.listdir(newdir)
+        fileContents = readHTML(newdir, newHtmlList, item)
+
+        # Replace HTML content
+        replaceHTML(fileContents, dst, data[item][1], data[item][2], 
+                    data[item][3], data[item][4], data[item][5], 
+                    data[item][6], data[item][0], monthFormat)
+        
+        # Return file name to console
+        print(f'File {fileName} created and updated.')
+    
+  # Output completion message to console
+  print('----------------------------------------------------------------------')
+  print("Files finished copying and updating, please check 'updated' folder.")
+  print('----------------------------------------------------------------------')
 
 # Run main function
 if __name__ == '__main__': main()
