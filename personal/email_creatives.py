@@ -57,7 +57,7 @@ def replaceHTML(htmlFile, destination, issueNum, link, headOne, paraOne,
                 headTwo, paraTwo, issueName, monthFormat):
   # Variables for replace statements - easier readability
   issueReplace = '<td class="issue issue-number">Issue ' + issueNum + '</td>'
-  linkReplace = '<a class="issue-link" href="' + link + '">'
+  linkReplace = ' class="issue-link" href="' + link + '">'
   headOneReplace = '<h1 class="heading-1">' + headOne
   headTwoReplace = '<h1 class="heading-2">' + headTwo
   paraOneReplace = '<p class="paragraph-1">' + paraOne
@@ -67,7 +67,7 @@ def replaceHTML(htmlFile, destination, issueNum, link, headOne, paraOne,
   # Replace HTML elements
   with open(destination, 'w') as f:
     f.write(htmlFile.replace('<td class="issue issue-number"></td>', issueReplace)
-            .replace('<a class="issue-link" href="">', linkReplace)
+            .replace(' class="issue-link" href="">', linkReplace)
             .replace('<h1 class="heading-1">', headOneReplace)
             .replace('<h1 class="heading-2">', headTwoReplace)
             .replace('<p class="paragraph-1">', paraOneReplace)
