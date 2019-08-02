@@ -14,13 +14,13 @@ import os, csv
 from shutil import copy
 
 #---------------------------------------------------------------------
-# Num: 1
-# Function Title: createDirectories()
-# Description: Used to create empty directories for the images by ...
-# ... reading the data from the CSV file.
-# Parameters: (4) Directory, data & additional folder.
+# Num: 1 | Title: createDirectories()
 #---------------------------------------------------------------------
 def createDirectories(directory, data, addFolder):
+  """
+  Used to create empty directories for the images by reading the data from the CSV file.\n
+  Parameters: (3) From directory, CSV data & additional folder name.
+  """
   # Get directory names & issue names from CSV file
   temp, fromDirList, folderNames, issueNamesList = set(), [], [], []
   for item in range(len(data)):
@@ -65,14 +65,14 @@ def createDirectories(directory, data, addFolder):
   return folderNames, issueNamesList
 
 #-----------------------------------------------------------------------
-# Num: 2
-# Function Title: readCSV()
-# Description: Used to read the csv file 'text.csv' to get the data.
-# Parameters: (1) Current directory.
-# CSV Order: (7) Company, issue, link, heading 1, paragraph 1, ... 
-# ... heading 2, paragraph 2.
+# Num: 2 | Title: readCSV()
 #-----------------------------------------------------------------------
 def readCSV(currentDir):
+  """
+  Used to read the csv file 'text.csv' to get the data.\n
+  Parameters: (1) Current directory.\n
+  CSV Order: (7) Company, issue, link, heading 1, paragraph 1, heading 2 & paragraph 2.
+  """
   # Get csv file
   csvFile = currentDir + '\\text.csv'
 
@@ -86,13 +86,13 @@ def readCSV(currentDir):
   return data
 
 #-----------------------------------------------------------------------
-# Num: 3
-# Function Title: templateImgMove()
-# Description: Used to move the template images from one folder to another.
-# Parameters: (4) Current directory, from directory, folder names ...
-# ... list & issue name list.
+# Num: 3 | Title: templateImgMove()
 #-----------------------------------------------------------------------
 def templateImgMove(currentDir, fromDir, folderNames, issueName):
+  """
+  Used to move the template images from one folder to another.\n
+  Parameters: (4) Current directory, from directory, folder names list & issue name list.
+  """
   # Set directory variable
   startDir = f'{currentDir}\\templates\\imgs'
 
@@ -116,13 +116,13 @@ def templateImgMove(currentDir, fromDir, folderNames, issueName):
   print('---------------------------------------------------------------------------------------------------------------------------------------------------------------------')
 
 #-----------------------------------------------------------------------
-# Num: 4
-# Function Title: updatedImgMove()
-# Description: Used to move the updated images from one folder to another.
-# Parameters: (5) Current directory, from directory, folder file ...
-# path, folder names list & issue name list.
+# Num: 4 | Title: updatedImgMove()
 #-----------------------------------------------------------------------
 def updatedImgMove(currentDir, fromDir, filePath, folderNames, issueName):
+  """
+  Used to move the updated images from one folder to another.\n
+  Parameters: (5) Current directory, from directory, folder file path, folder names list & issue name list.
+  """
   # Set directory variable
   startDir = f'[file_path]\\email-creatives\\[comapany_name]\\{filePath}'
 
@@ -146,12 +146,12 @@ def updatedImgMove(currentDir, fromDir, filePath, folderNames, issueName):
   print('---------------------------------------------------------------------------------------------------------------------------------------------------------------------')
 
 #-----------------------------------------------------------------------
-# Num: 5
-# Function Title: main()
-# Description: Consists of the main functionality of the script.
-# Parameters: (0) None.
+# Num: 5 | Title: main()
 #-----------------------------------------------------------------------
 def main():
+  """
+  Consists of the main functionality of the script.
+  """
   # Month & year variable (changes each month/year) - month must be 3 characters
   year, month, location, addFolder = input("Enter the year (4 digits), month (3 characters), folder location ([folder]\\[folder]) & extra folder name (Input 'none' if not applicable) - each separated by a space: ").lower().split()
 
