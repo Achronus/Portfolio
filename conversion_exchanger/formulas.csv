@@ -1,0 +1,329 @@
+convert,formula
+Celsius to Fahrenheit,(self.num * 9/5) + 32
+Celsius to Kelvin,self.num + 273.15
+Centimetre to Foot,self.num / 30.48
+Centimetre to Inch,self.num / 2.54
+Centimetre to Kilometre,self.num / 100000
+Centimetre to Metre,self.num / 100
+Centimetre to Micrometre,self.num * 10000
+Centimetre to Mile,self.num / 160934.4
+Centimetre to Millimetre,self.num * 10
+Centimetre to Nanometre,self.num * 10**7
+Centimetre to Nautical Mile,self.num / 185200
+Centimetre to Yard,self.num / 91.44
+Cubic Foot to Cubic Inch,self.num * 1728
+Cubic Foot to Cubic Metre,self.num / 35.315
+Cubic Foot to Cup,self.num * 99.661
+Cubic Foot to Fluid Ounce,self.num * 996.614
+Cubic Foot to Gallon,self.num * 6.229
+Cubic Foot to Litre,self.num * 28.317
+Cubic Foot to Millilitre,self.num * 28316.847
+Cubic Foot to Pint,self.num * 49.831
+Cubic Foot to Tablespoon,self.num * 1594.581
+Cubic Foot to Teaspoon,self.num * 4783.744
+Cubic Foot to Quart,self.num * 24.915
+Cubic Inch to Cubic Foot,self.num / 1728
+Cubic Inch to Cubic Metre,self.num / 61023.744
+Cubic Inch to Cup,self.num / 17.339
+Cubic Inch to Fluid Ounce,self.num / 1.734
+Cubic Inch to Gallon,self.num / 277.419
+Cubic Inch to Litre,self.num / 61.024
+Cubic Inch to Millilitre,self.num * 16.387
+Cubic Inch to Pint,self.num / 34.677
+Cubic Inch to Tablespoon,self.num / 1.084
+Cubic Inch to Teaspoon,self.num * 2.768
+Cubic Inch to Quart,self.num / 69.355
+Cubic Metre to Cubic Foot,self.num * 35.315
+Cubic Metre to Cubic Inch,self.num * 61023.744
+Cubic Metre to Cup,self.num * 3519.508
+Cubic Metre to Fluid Ounce,self.num * 35195.08
+Cubic Metre to Gallon,self.num * 219.969
+Cubic Metre to Litre,self.num * 1000
+Cubic Metre to Millilitre,self.num * 10**6
+Cubic Metre to Pint,self.num * 1759.754
+Cubic Metre to Tablespoon,self.num * 56312.104
+Cubic Metre to Teaspoon,self.num * 168936.313
+Cubic Metre to Quart,self.num * 879.877
+Cup to Cubic Foot,self.num / 99.661
+Cup to Cubic Inch,self.num * 17.339
+Cup to Cubic Metre,self.num / 3519.508
+Cup to Fluid Ounce,self.num * 10
+Cup to Gallon,self.num / 16
+Cup to Litre,self.num / 3.52
+Cup to Millilitre,self.num * 284.131
+Cup to Pint,self.num / 2
+Cup to Tablespoon,self.num * 16
+Cup to Teaspoon,self.num * 48
+Cup to Quart,self.num / 4
+Degrees to Gradians,self.num * 200 / 180 
+Degrees to Milligradians,self.num * (1000 * math.pi) / 180
+Degrees to Radians,self.num * math.pi / 180
+Fahrenheit to Celsius,(self.num - 32) * 5/9
+Fahrenheit to Kelvin,(self.num - 32) * 5/9 + 273.15
+Fluid Ounce to Cubic Foot,self.num / 996.614
+Fluid Ounce to Cubic Inch,self.num * 1.734
+Fluid Ounce to Cubic Metre,self.num / 35195.08
+Fluid Ounce to Cup,self.num / 10
+Fluid Ounce to Gallon,self.num / 160
+Fluid Ounce to Litre,self.num / 35.195
+Fluid Ounce to Millilitre,self.num * 28.413
+Fluid Ounce to Pint,self.num / 20
+Fluid Ounce to Tablespoon,self.num * 1.6
+Fluid Ounce to Teaspoon,self.num * 4.8
+Fluid Ounce to Quart,self.num / 40
+Foot to Centimetre,self.num * 30.48
+Foot to Inch,self.num * 12
+Foot to Kilometre,self.num / 3280.84
+Foot to Metre,self.num / 3.281
+Foot to Micrometre,self.num * 304800
+Foot to Mile,self.num / 5280
+Foot to Millimetre,self.num * 304.8
+Foot to Nanometre,self.num * 3.048**8
+Foot to Nautical Mile,self.num / 6076.115
+Foot to Yard,self.num / 3
+Gallon to Cubic Foot,self.num / 6.229
+Gallon to Cubic Inch,self.num * 277.419
+Gallon to Cubic Metre,self.num / 219.969
+Gallon to Cup,self.num * 16
+Gallon to Fluid Ounce,self.num * 160
+Gallon to Litre,self.num * 4.546
+Gallon to Millilitre,self.num * 4546.09
+Gallon to Pint,self.num * 8
+Gallon to Tablespoon,self.num * 256
+Gallon to Teaspoon,self.num * 768
+Gallon to Quart,self.num * 4
+Gigahertz to Hertz,self.num * (10**9)
+Gigahertz to Kilohertz,self.num * (10**6)
+Gigahertz to Megahertz,self.num * 1000
+Gradians to Degrees,self.num * (180 / 200)
+Gradians to Milligradians,self.num * (1000 * math.pi) / 200
+Gradians to Radians,self.num * (math.pi / 200)
+Gram to Kilogram,self.num / 1000
+Gram to Microgram,self.num * 10**6
+Gram to Milligram,self.num * 1000
+Gram to Ounce,self.num / 28.35
+Gram to Pound,self.num / 453.592
+Gram to Stone,self.num / 6350.293
+Gram to Ton,self.num / (10**6)
+Hertz to Gigahertz,self.num / (10**9)
+Hertz to Kilohertz,self.num / 1000
+Hertz to Megahertz,self.num / (10**6)
+Inch to Centimetre,self.num * 2.54
+Inch to Foot,self.num / 12
+Inch to Kilometre,self.num / 39370.079
+Inch to Metre,self.num / 39.37
+Inch to Micrometre,self.num * 25400
+Inch to Mile,self.num / 63360
+Inch to Millimetre,self.num * 25.4
+Inch to Nanometre,self.num * 2.54**7
+Inch to Nautical Mile,self.num / 72913.386
+Inch to Yard,self.num / 36
+Kelvin to Celsius,self.num - 273.15
+Kelvin to Fahrenheit,(self.num - 273.15) * 9/5 + 32
+Kilogram to Gram,self.num * 1000
+Kilogram to Microgram,self.num * 10**9
+Kilogram to Milligram,self.num * 10**6
+Kilogram to Ounce,self.num * 35.274
+Kilogram to Pound,self.num * 2.205
+Kilogram to Stone,self.num / 6.35
+Kilogram to Ton,self.num / 1000
+Kilohertz to Gigahertz,self.num / (10**6)
+Kilohertz to Hertz,self.num * 1000
+Kilohertz to Megahertz,self.num / 1000
+Kilometre to Centimetre,self.num * 100000
+Kilometre to Foot,self.num * 3280.84
+Kilometre to Inch,self.num * 39370.079
+Kilometre to Metre,self.num * 1000
+Kilometre to Micrometre,self.num * 10**9
+Kilometre to Mile,self.num / 1.609
+Kilometre to Millimetre,self.num * 10**6
+Kilometre to Nanometre,self.num * 10**12
+Kilometre to Nautical Mile,self.num / 1.852
+Kilometre to Yard,self.num * 1093.613
+Litre to Cubic Foot,self.num / 28.317
+Litre to Cubic Inch,self.num * 61.024
+Litre to Cubic Metre,self.num / 1000
+Litre to Cup,self.num * 3.52
+Litre to Fluid Ounce,self.num * 35.195
+Litre to Gallon,self.num / 4.546
+Litre to Millilitre,self.num * 1000
+Litre to Pint,self.num * 1.76
+Litre to Tablespoon,self.num * 56.312
+Litre to Teaspoon,self.num * 168.936
+Litre to Quart,self.num / 1.137
+Megahertz to Gigahertz,self.num / 1000
+Megahertz to Hertz,self.num * (10**6)
+Megahertz to Kilohertz,self.num * 1000
+Metre to Centimetre,self.num * 100
+Metre to Foot,self.num * 3.281
+Metre to Inch,self.num * 39.37
+Metre to Kilometre,self.num / 1000
+Metre to Micrometre,self.num * 10**6
+Metre to Mile,self.num / 1609.344
+Metre to Millimetre,self.num * 1000
+Metre to Nanometre,self.num * 10**9
+Metre to Nautical Mile,self.num / 1852
+Metre to Yard,self.num * 1.094
+Microgram to Gram,self.num / (10**6)
+Microgram to Kilogram,self.num / (10**9)
+Microgram to Milligram,self.num / 1000
+Microgram to Ounce,self.num / (2.835**7)
+Microgram to Pound,self.num / (4.536**8)
+Microgram to Stone,self.num / (6.35**9)
+Microgram to Ton,self.num / (10**12)
+Micrometre to Centimetre,self.num / 10000
+Micrometre to Foot,self.num / 304800
+Micrometre to Inch,self.num / 25400
+Micrometre to Kilometre,self.num / 10**9
+Micrometre to Metre,self.num / 10**6
+Micrometre to Mile,self.num / 1.609**9
+Micrometre to Millimetre,self.num / 1000
+Micrometre to Nanometre,self.num * 1000
+Micrometre to Nautical Mile,self.num / 1.852**9
+Micrometre to Yard,self.num / 914400
+Mile to Centimetre,self.num * 160934.4
+Mile to Foot,self.num * 5280
+Mile to Inch,self.num * 63360
+Mile to Kilometre,self.num * 1.609
+Mile to Metre,self.num * 1609.344
+Mile to Micrometre,self.num * 1.609**9
+Mile to Millimetre,self.num * 1.609**6
+Mile to Nanometre,self.num * 1.609**12
+Mile to Nautical Mile,self.num / 1.151
+Mile to Yard,self.num * 1760
+Milligradians to Degrees,self.num * 180 / (1000 * math.pi)
+Milligradians to Gradians,self.num * 200 / (1000 * math.pi)
+Milligradians to Radians,self.num / 1000
+Milligram to Gram,self.num / 1000
+Milligram to Kilogram,self.num / (10**6)
+Milligram to Microgram,self.num * 1000
+Milligram to Ounce,self.num / 28349.523
+Milligram to Pound,self.num * 453592.37
+Milligram to Stone,self.num / (6.35**6)
+Milligram to Ton,self.num / (10**9)
+Millilitre to Cubic Foot,self.num / 28316.847
+Millilitre to Cubic Inch,self.num / 16.387
+Millilitre to Cubic Metre,self.num / 10**6
+Millilitre to Cup,self.num / 284.131
+Millilitre to Fluid Ounce,self.num / 28.413
+Millilitre to Gallon,self.num / 4546.09
+Millilitre to Litre,self.num / 1000
+Millilitre to Pint,self.num / 568.261
+Millilitre to Tablespoon,self.num / 17.758
+Millilitre to Teaspoon,self.num / 5.919
+Millilitre to Quart,self.num / 1136.522
+Millimetre to Centimetre,self.num / 10
+Millimetre to Foot,self.num / 304.8
+Millimetre to Inch,self.num / 25.4
+Millimetre to Kilometre,self.num / 10**6
+Millimetre to Metre,self.num / 1000
+Millimetre to Micrometre,self.num * 1000
+Millimetre to Mile,self.num / 1.609**6
+Millimetre to Nanometre,self.num * 10**6
+Millimetre to Nautical Mile,self.num / 1.852**6
+Millimetre to Yard,self.num / 914.4
+Nanometre to Centimetre,self.num / 10**7
+Nanometre to Foot,self.num / 3.048**8
+Nanometre to Inch,self.num / 2.54**7
+Nanometre to Kilometre,self.num / 10**12
+Nanometre to Metre,self.num / 10**9
+Nanometre to Micrometre,self.num / 1000
+Nanometre to Mile,self.num / 1.609**12
+Nanometre to Millimetre,self.num / 10**6
+Nanometre to Nautical Mile,self.num / 1.852**12
+Nanometre to Yard,self.num / 9.144**8
+Nautical Mile to Centimetre,self.num * 185200
+Nautical Mile to Foot,self.num * 6076.115
+Nautical Mile to Inch,self.num * 72913.386
+Nautical Mile to Kilometre,self.num * 1.852
+Nautical Mile to Metre,self.num * 1852
+Nautical Mile to Micrometre,self.num * 1.852**9
+Nautical Mile to Mile,self.num * 1.151
+Nautical Mile to Millimetre,self.num * 1.852**6
+Nautical Mile to Nanometre,self.num * 1.852**12
+Nautical Mile to Yard,self.num * 2025.372
+Ounce to Gram,self.num * 28.35
+Ounce to Kilogram,self.num / 35.274
+Ounce to Microgram,self.num * 2.835**7
+Ounce to Milligram,self.num * 28349.523
+Ounce to Pound,self.num / 16
+Ounce to Stone,self.num / 224
+Ounce to Ton,self.num / 35273.962
+Pint to Cubic Foot,self.num / 49.831
+Pint to Cubic Inch,self.num * 34.677
+Pint to Cubic Metre,self.num / 1759.754
+Pint to Cup,self.num * 2
+Pint to Fluid Ounce,self.num * 20
+Pint to Gallon,self.num / 8
+Pint to Litre,self.num / 1.76
+Pint to Millilitre,self.num * 568.261
+Pint to Tablespoon,self.num * 32
+Pint to Teaspoon,self.num * 96
+Pint to Quart,self.num / 2
+Pound to Gram,self.num * 453.592
+Pound to Kilogram,self.num / 2.205
+Pound to Microgram,self.num * 4.536**8
+Pound to Milligram,self.num * 453592.37
+Pound to Ounce,self.num * 16
+Pound to Stone,self.num / 14
+Pound to Ton,self.num / 2204.623
+Quart to Cubic Foot,self.num / 24.915
+Quart to Cubic Inch,self.num * 69.355
+Quart to Cubic Metre,self.num / 879.877
+Quart to Cup,self.num * 4
+Quart to Fluid Ounce,self.num * 40
+Quart to Gallon,self.num / 4
+Quart to Litre,self.num * 1.137
+Quart to Millilitre,self.num * 1136.522
+Quart to Pint,self.num * 2
+Quart to Tablespoon,self.num * 64
+Quart to Teaspoon,self.num * 192
+Radians to Degrees,self.num * (180 / math.pi)
+Radians to Gradians,self.num * (200 / math.pi)
+Radians to Milligradians,self.num * 1000
+Stone to Gram,self.num * 6350.293
+Stone to Kilogram,self.num * 6.35
+Stone to Microgram,self.num * 6.35**9
+Stone to Milligram,self.num * 6.35**6
+Stone to Ounce,self.num * 224
+Stone to Pound,self.num * 14
+Stone to Ton,self.num / 157.473
+Tablespoon to Cubic Foot,self.num / 1594.581
+Tablespoon to Cubic Inch,self.num * 1.084
+Tablespoon to Cubic Metre,self.num / 56312.104
+Tablespoon to Cup,self.num / 16
+Tablespoon to Fluid Ounce,self.num / 1.6
+Tablespoon to Gallon,self.num / 256
+Tablespoon to Litre,self.num / 56.312
+Tablespoon to Millilitre,self.num * 17.758
+Tablespoon to Pint,self.num / 32
+Tablespoon to Teaspoon,self.num * 3
+Tablespoon to Quart,self.num / 64
+Teaspoon to Cubic Foot,self.num / 4783.744
+Teaspoon to Cubic Inch,self.num / 2.768
+Teaspoon to Cubic Metre,self.num / 168936.313
+Teaspoon to Cup,self.num / 48
+Teaspoon to Fluid Ounce,self.num / 4.8
+Teaspoon to Gallon,self.num / 768
+Teaspoon to Litre,self.num / 168.936
+Teaspoon to Millilitre,self.num * 5.919
+Teaspoon to Pint,self.num / 96
+Teaspoon to Tablespoon,self.num / 3
+Teaspoon to Quart,self.num / 192
+Ton to Gram,self.num * 10**6
+Ton to Kilogram,self.num * 1000
+Ton to Microgram,self.num * 10**12
+Ton to Milligram,self.num * 10**9
+Ton to Ounce,self.num * 35273.962
+Ton to Pound,self.num * 2204.623
+Ton to Stone,self.num * 157.473
+Yard to Centimetre,self.num * 91.44
+Yard to Foot,self.num * 3
+Yard to Inch,self.num * 36
+Yard to Kilometre,self.num / 1093.613
+Yard to Metre,self.num / 1.094
+Yard to Micrometre,self.num * 914400
+Yard to Mile,self.num / 1760
+Yard to Millimetre,self.num * 914.4
+Yard to Nanometre,self.num * 9.144**8
+Yard to Nautical Mile,self.num / 2025.372
