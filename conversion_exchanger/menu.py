@@ -90,7 +90,7 @@ class Menu():
   def convertListOutputFormat(self, optionList, printOutput):
     """
     Utility function for convertList. Takes in a list and returns a dictionary.\n
-    Parameters: (3) conversion type name, options list, print output statement
+    Parameters: (2) options list, print output statement
     """
     # Get list of relevant options and items
     itemDict = {}
