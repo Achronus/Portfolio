@@ -7,8 +7,9 @@
 #    a. getUserInput()
 #    b. getAllLinks()
 #    c. createHTMLFiles()
+#    d. googleLink()
 #-----------------------------------------------------------------------
-import re, os, time
+import re, os, time, urllib.error
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
@@ -52,25 +53,29 @@ class Scrap():
       
       # Check if the website exists
       else:
-        page = urlopen(ui)
-        # Doesn't exist if status code != 200
-        if page.getcode() != 200:
-          print("Website does not exist!") 
+        try:
+          page = urlopen(ui)
+          # Doesn't exist if status code != 200
+          if page.getcode() != 200:
+            print("Website does not exist!")
+          # Website exists
+          else:
+            clear()
+            # Convert page to readable format
+            soup = BeautifulSoup(page, 'html.parser')
 
-        # Website exists
-        else:
-          clear()
-          # Convert page to readable format
-          soup = BeautifulSoup(page, 'html.parser')
+            # Get all links in page
+            linkList = self.getAllLinks(soup, ui)
 
-          # Get all links in page
-          linkList = self.getAllLinks(soup, ui)
-
-          # Scrape links HTML
-          self.createHTMLFiles(linkList, ui)
-          print('Scraping complete. Program will exit in 10 seconds.')
-          time.sleep(10) # 10 seconds
-          break
+            # Scrape links HTML
+            self.createHTMLFiles(linkList, ui)
+            print('Scraping complete. Program will exit in 10 seconds.')
+            time.sleep(10) # 10 seconds
+            break
+        
+        # Output error if there is one
+        except urllib.error.HTTPError as e:
+          print(f"Website unable to scrape. Error: {e}")
 
   #-----------------------------------------------------------------------
   # Num: 1b | Title: getAllLinks()
@@ -83,12 +88,18 @@ class Scrap():
     # set variables
     findAll = root.findAll('a', attrs={'href': re.compile("^https://")})
     linkList = set()
+    limit = 20
 
     # Loop through page content
     for link in findAll:
       if url in str(link):
         linkList.add(link.get('href'))
-    print(f'Total pages found: {len(linkList)}')
+        
+        # If list is larger than limit
+        if len(linkList) == limit:
+          print('Page limit has been reached!')
+          break
+    print(f'Page limit: {limit} | Total pages found: {len(linkList)}')
 
     # Convert set to dict
     linkList = list(linkList)
@@ -136,3 +147,13 @@ class Scrap():
     print('----------------------------------------------------------------------------------------------------------------------------------')
     print("Please check the 'pages' folder.")
     print('----------------------------------------------------------------------------------------------------------------------------------')
+
+  #-----------------------------------------------------------------------
+  # Num: 1d | Title: googleLink()
+  #-----------------------------------------------------------------------
+  def googleLink(self, url):
+    """
+    Utility function for getUserInput() that handles the root links functionality if it's a google link.\n
+    Parameters: () users url link
+    """
+    pass
