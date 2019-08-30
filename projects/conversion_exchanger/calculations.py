@@ -48,7 +48,7 @@ class Calculations():
     # Display the conversion results
     result = eval(formula)
     print(f"{self.num} {convertFrom} -> {result:g} {convertTo}")
-    print('Program will exit in 20 seconds.')
-    time.sleep(20) # 20 seconds
+    print('Program will exit in 10 seconds.')
+    time.sleep(10) # 10 seconds
     
 
