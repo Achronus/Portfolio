@@ -19,7 +19,7 @@ from bs4 import BeautifulSoup
 class Scrap():
   """
   Handles the web scraping functionality.\n
-  Functions: (3) getUserInput(), getAllLinks(), createHTMLFiles()
+  Functions: (4) getUserInput(), getAllLinks(), createHTMLFiles(), googleLink()
   """
   #-----------------------------------------------------------------------
   # Num: 1a | Title: getUserInput()
@@ -30,7 +30,7 @@ class Scrap():
     """
     # Instructions for user
     print('-----------------------------------------------------------------------------------------------------------------')
-    print('Input the url you would like to scrape. Format of the url must contain the following:')
+    print('Input the url you would like to scrape. Format of the url must consist of the following:')
     print('   1. Protocol (http:// or https://)')
     print('   2. Website name')
     print('   3. Domain name (e.g. .com/, .co.uk/, .de/). Domain name MUST end with a /')
@@ -51,27 +51,22 @@ class Scrap():
       if not urlCheck.match(ui):
         print("Url invalid! Please check the formatting.")
       
-      # Check if the website exists
+      # Valid url
       else:
         try:
+          # Set variables
           page = urlopen(ui)
-          # Doesn't exist if status code != 200
-          if page.getcode() != 200:
-            print("Website does not exist!")
-          # Website exists
-          else:
-            clear()
-            # Convert page to readable format
-            soup = BeautifulSoup(page, 'html.parser')
+          soup = BeautifulSoup(page, 'html.parser') # Convert page to readable format
+          clear()
 
-            # Get all links in page
-            linkList = self.getAllLinks(soup, ui)
+          # Get all links in page
+          linkList = self.getAllLinks(soup, ui)
 
-            # Scrape links HTML
-            self.createHTMLFiles(linkList, ui)
-            print('Scraping complete. Program will exit in 10 seconds.')
-            time.sleep(10) # 10 seconds
-            break
+          # Scrape links data to HTML files
+          self.createHTMLFiles(linkList, ui)
+          print('Scraping complete. Program will exit in 10 seconds.')
+          time.sleep(10) # 10 seconds
+          break
         
         # Output error if there is one
         except urllib.error.HTTPError as e:
@@ -85,7 +80,7 @@ class Scrap():
     Utility function for getUserInput() that gets all links within the root page.\n
     Parameters: (2) root page content, users url input
     """
-    # set variables
+    # Set variables
     findAll = root.findAll('a', attrs={'href': re.compile("^https://")})
     linkList = set()
     limit = 20
@@ -99,6 +94,8 @@ class Scrap():
         if len(linkList) == limit:
           print('Page limit has been reached!')
           break
+    
+    # Display page total
     print(f'Page limit: {limit} | Total pages found: {len(linkList)}')
 
     # Convert set to dict
@@ -115,13 +112,13 @@ class Scrap():
     """
     # Set variables
     valuesList, pageDir = [], 'pages'
-    linkList.sort()
+    linkList.sort() # Sort list in order
 
     # Create a list of values
     for link in linkList:
-      # If its the root, append with the name homepage
+      # If its the root, append with unique name
       if link == url:
-        valuesList.append('homepage')
+        valuesList.append('root-page')
       # Otherwise, only get the page name
       else:
         fileName = re.sub(url, '', link) # Removes url at front
@@ -153,7 +150,7 @@ class Scrap():
   #-----------------------------------------------------------------------
   def googleLink(self, url):
     """
-    Utility function for getUserInput() that handles the root links functionality if it's a google link.\n
-    Parameters: () users url link
+    Utility function for getUserInput() that handles the root links functionality if it's a Google link. Uses Google's search API.\n
+    Parameters: (1) users url link
     """
     pass
