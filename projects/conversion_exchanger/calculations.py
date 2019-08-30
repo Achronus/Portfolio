@@ -7,7 +7,7 @@
 #    a. readCSV()
 #    b. runConversion()
 #-----------------------------------------------------------------------
-import csv
+import csv, time, math
 
 #-----------------------------------------------------------------------
 # Num: 1 | Title: Calculations()
@@ -48,6 +48,7 @@ class Calculations():
     # Display the conversion results
     result = eval(formula)
     print(f"{self.num} {convertFrom} -> {result:g} {convertTo}")
-      
+    print('Program will exit in 20 seconds.')
+    time.sleep(20) # 20 seconds
     
 
