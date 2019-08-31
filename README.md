@@ -1,6 +1,9 @@
 # Project Catalog
+=====
 
 ### Description
+
+
 Welcome! This repository is a collective of all the Python projects that I have completed. Whether the file is part of a larger project or a simple one page script, it will be located here! Here people can view and utilize pieces of code from my projects that they may find useful. 
 
 Within this document I will go into detail on the projects that I have created. This includes: what the projects do, why I choose to create them and where you can find the coding files.
