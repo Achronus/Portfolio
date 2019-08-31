@@ -62,8 +62,7 @@ Python is a beautiful language that allows for easy readability of code without 
   =>
   ```
 
-  #### CSV Editor
-  [Check out the code files here ->](https://github.com/Achronus/Portfolio/tree/master/projects/csv_editor)
+  #### CSV Editor | [Check out the code files here ->](https://github.com/Achronus/Portfolio/tree/master/projects/csv_editor)
 
   ##### What It Does
   This project is a console based application that allows you to create new CSV files that you can add data to, remove data from or update existing data inside of it. This program uses the _pandas_ library to allow editing the CSV data as a dataframe that then updates the file name of the users choice.
@@ -84,8 +83,7 @@ Python is a beautiful language that allows for easy readability of code without 
   =>
   ```
 
-  #### File Searcher
-  [Check out the code files here ->](https://github.com/Achronus/Portfolio/tree/master/projects/file_searcher)
+  #### File Searcher | [Check out the code files here ->](https://github.com/Achronus/Portfolio/tree/master/projects/file_searcher)
 
   ##### What It Does
   This project is used to locate a file or directory in minutes. Simply input one of two commands `local [filename/folder name]` or `other [filename/folder name]` and the program will search the disk drive of your choice. This also works with USB sticks and external hard drives connected to your machine.
@@ -114,8 +112,7 @@ Python is a beautiful language that allows for easy readability of code without 
   =>
   ```
 
-  #### Web Scraper
-  [Check out the code files here ->](https://github.com/Achronus/Portfolio/tree/master/projects/web_scraper)
+  #### Web Scraper | [Check out the code files here ->](https://github.com/Achronus/Portfolio/tree/master/projects/web_scraper)
   **PLEASE NOTE:** This project is still being developed. 
 
   ##### What It Does
