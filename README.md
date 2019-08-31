@@ -1,22 +1,19 @@
 # Project Catalog
-=====
 
-### Description
-
-
+## Description
 Welcome! This repository is a collective of all the Python projects that I have completed. Whether the file is part of a larger project or a simple one page script, it will be located here! Here people can view and utilize pieces of code from my projects that they may find useful. 
 
 Within this document I will go into detail on the projects that I have created. This includes: what the projects do, why I choose to create them and where you can find the coding files.
 
-### Why Python?
+## Why Python?
 Python is a beautiful language that allows for easy readability of code without the need for brackets. Also, it has the ability to do anything you need! Ranging from web development, to data science, to data mining or even automating small menial and tedious tasks - overall, it's a great language to have in your toolkit!
 
-### Contents
+## Contents
   * [Projects](#projects)
   * [Mini Scripts](#mini-scripts) - _Coming soon!_
   * [Personal](#personal)
 
-### Projects
+## Projects
   * [Conversion Exchanger](#conversion-exchanger)
   * [CSV Editor](#csv-editor)
   * [File Searcher](#file-searcher)
@@ -24,12 +21,12 @@ Python is a beautiful language that allows for easy readability of code without 
   * [Data Extraction Tool](#data-extraction-tool) - _Coming soon!_
   * [Graph Plotter](#graph-plotter) - _Coming soon!_
 
-  #### Description
+  ### Description
   This area is dedicated to all the large projects I have completed. These projects can be run within the relevant folder using the command `python3 main.py`. You **MUST** have a minimum of Python 3.7 installed to be able to use the programs.
 
-  #### Conversion Exchanger | [Check out the code files here ->](https://github.com/Achronus/Portfolio/tree/master/projects/conversion_exchanger)
+  ### Conversion Exchanger | [Check out the code files here ->](https://github.com/Achronus/Portfolio/tree/master/projects/conversion_exchanger)
   
-  ##### What It Does
+  #### What It Does
   This is designed to convert core metrics from one to another. Inputting the index of your choice allows you to select the conversion type and then go through the metric options relevant to that type. It reads from a CSV of formulas to get the correct conversion, based on the users input. 
   
   In total the program has 6 conversion types that consist of 42 different metrics. That's a total of 328 conversions! These metrics include:
@@ -65,9 +62,9 @@ Python is a beautiful language that allows for easy readability of code without 
   =>
   ```
 
-  #### CSV Editor | [Check out the code files here ->](https://github.com/Achronus/Portfolio/tree/master/projects/csv_editor)
+  ### CSV Editor | [Check out the code files here ->](https://github.com/Achronus/Portfolio/tree/master/projects/csv_editor)
 
-  ##### What It Does
+  #### What It Does
   This project is a console based application that allows you to create new CSV files that you can add data to, remove data from or update existing data inside of it. This program uses the _pandas_ library to allow editing the CSV data as a dataframe that then updates the file name of the users choice.
 
   Below is an example of what the main menu looks like:
@@ -86,9 +83,9 @@ Python is a beautiful language that allows for easy readability of code without 
   =>
   ```
 
-  #### File Searcher | [Check out the code files here ->](https://github.com/Achronus/Portfolio/tree/master/projects/file_searcher)
+  ### File Searcher | [Check out the code files here ->](https://github.com/Achronus/Portfolio/tree/master/projects/file_searcher)
 
-  ##### What It Does
+  #### What It Does
   This project is used to locate a file or directory in minutes. Simply input one of two commands `local [filename/folder name]` or `other [filename/folder name]` and the program will search the disk drive of your choice. This also works with USB sticks and external hard drives connected to your machine.
 
   ```
@@ -115,10 +112,10 @@ Python is a beautiful language that allows for easy readability of code without 
   =>
   ```
 
-  #### Web Scraper | [Check out the code files here ->](https://github.com/Achronus/Portfolio/tree/master/projects/web_scraper)
+  ### Web Scraper | [Check out the code files here ->](https://github.com/Achronus/Portfolio/tree/master/projects/web_scraper)
   **PLEASE NOTE:** This project is still being developed. 
 
-  ##### What It Does
+  #### What It Does
   This uses the _urllib_ and _BeautifulSoup_ libraries to crawl a user provided URL. It scans the provided URL for any links that connect to other pages on the website. Collating those URLs, it opens the URLs and scrapes their HTML contents into separate files into a directory on your local machine. This allows you to view the files and extract specific data from them that you require. 
   
   A tool that compliments this web scraper is the ['Data Extraction Tool'](#data-extraction-tool).
@@ -152,15 +149,15 @@ Python is a beautiful language that allows for easy readability of code without 
   Scraping complete. Program will exit in 10 seconds.
   ```
 
-  #### Data Extraction Tool
+  ### Data Extraction Tool
   _Coming soon!_
 
-  #### Graph Plotter
+  ### Graph Plotter
   _Coming soon!_
 
-### Mini Scripts
+## Mini Scripts
 _Coming soon!_
 Home to one page scripts and custom classes containing a variety of utility functions.
 
-### Personal
+## Personal
 This folder contains personal scripts that I use regularly. Sometimes I will get fed up of repeating menial tasks, what better way then to write up a quick script to help speed things up!
