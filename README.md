@@ -160,4 +160,4 @@ _Coming soon!_
 Home to one page scripts and custom classes containing a variety of utility functions.
 
 ## Personal
-This folder contains personal scripts that I use regularly. Sometimes I will get fed up of repeating menial tasks, what better way then to write up a quick script to help speed things up!
+This folder contains personal scripts that I use regularly.
