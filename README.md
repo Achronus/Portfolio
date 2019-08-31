@@ -25,7 +25,7 @@ Python is a beautiful language that allows for easy readability of code without 
   This area is dedicated to all the large projects I have completed. These projects can be run within the relevant folder using the command `python3 main.py`. You **MUST** have a minimum of Python 3.7 installed to be able to use the programs.
 
   #### Conversion Exchanger
-  [Check out the code files here ->](/tree/master/projects/conversion_exchanger)
+  [Check out the code files here ->](/Portfolio/tree/master/projects/conversion_exchanger)
 
     ##### What It Does
     This is designed to convert core metrics from one to another. Inputting the index of your choice allows you to select the conversion type and then go through the metric options relevant to that type. It reads from a CSV of formulas to get the correct conversion, based on the users input. 
@@ -64,7 +64,7 @@ Python is a beautiful language that allows for easy readability of code without 
     ```
 
   #### CSV Editor
-  [Check out the code files here ->](/tree/master/projects/csv_editor)
+  [Check out the code files here ->](/Portfolio/tree/master/projects/csv_editor)
 
     ##### What It Does
     This project is a console based application that allows you to create new CSV files that you can add data to, remove data from or update existing data inside of it. This program uses the _pandas_ library to allow editing the CSV data as a dataframe that then updates the file name of the users choice.
@@ -86,7 +86,7 @@ Python is a beautiful language that allows for easy readability of code without 
     ```
 
   #### File Searcher
-  [Check out the code files here ->](/tree/master/projects/file_searcher)
+  [Check out the code files here ->](/Portfolio/tree/master/projects/file_searcher)
 
     ##### What It Does
     This project is used to locate a file or directory in minutes. Simply input one of two commands `local [filename/folder name]` or `other [filename/folder name]` and the program will search the disk drive of your choice. This also works with USB sticks and external hard drives connected to your machine.
@@ -116,7 +116,7 @@ Python is a beautiful language that allows for easy readability of code without 
     ```
 
   #### Web Scraper
-  [Check out the code files here ->](/tree/master/projects/web_scraper)
+  [Check out the code files here ->](/Portfolio/tree/master/projects/web_scraper)
   **PLEASE NOTE:** This project is still being developed. 
 
     ##### What It Does
