@@ -24,9 +24,8 @@ Python is a beautiful language that allows for easy readability of code without 
   #### Description
   This area is dedicated to all the large projects I have completed. These projects can be run within the relevant folder using the command `python3 main.py`. You **MUST** have a minimum of Python 3.7 installed to be able to use the programs.
 
-  #### Conversion Exchanger
-  [Check out the code files here ->](https://github.com/Achronus/Portfolio/tree/master/projects/conversion_exchanger)
-
+  #### Conversion Exchanger | [Check out the code files here ->](https://github.com/Achronus/Portfolio/tree/master/projects/conversion_exchanger)
+  
   ##### What It Does
   This is designed to convert core metrics from one to another. Inputting the index of your choice allows you to select the conversion type and then go through the metric options relevant to that type. It reads from a CSV of formulas to get the correct conversion, based on the users input. 
   
