@@ -18,7 +18,7 @@ Python is a beautiful language that allows for easy readability of code without 
   * [CSV Editor](#csv-editor)
   * [File Searcher](#file-searcher)
   * [Web Scraper](#web-scraper)
-  * [Data Extraction Tool](#data-extraction-tool) - _Coming soon!_
+  * [Data Extraction Tool](#data-extraction-tool) - _In development_
   * [Graph Plotter](#graph-plotter) - _Coming soon!_
 
   ### Description
@@ -117,7 +117,7 @@ Python is a beautiful language that allows for easy readability of code without 
   ### What It Does
   This uses the _urllib_ and _BeautifulSoup_ libraries to crawl a user provided URL. It scans the provided URL for any links that connect to other pages on the website. Collating those URLs, it opens the URLs and scrapes their HTML contents into separate files into a directory on your local machine. This allows you to view the files and extract specific data from them that you require. 
   
-  In addition, it uses googles-api-client to allow you to input a Google search query. This outputs the top 10 search results as HTML pages and stores them on your local machine ready for data extraction.
+  In addition, it uses _googles-api-client_ to allow you to input a Google search query. This outputs the top 10 search results as HTML pages and stores them on your local machine ready for data extraction.
 
   A tool that compliments this web scraper is the ['Data Extraction Tool'](#data-extraction-tool).
 
@@ -153,7 +153,7 @@ Python is a beautiful language that allows for easy readability of code without 
   ```
 
   ## Data Extraction Tool
-  _Coming soon!_
+  _Currently in development!_
 
   ## Graph Plotter
   _Coming soon!_
