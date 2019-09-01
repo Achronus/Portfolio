@@ -6,12 +6,12 @@
 # 1. Scrap()
 #    a. getUserInput()
 #    b. getAllLinks()
-#    c. createHTMLFiles()
-#    d. googleLink()
+#    c. sortData()
 #-----------------------------------------------------------------------
-import re, os, time, urllib.error
-from urllib.request import urlopen
+import re, os, time, urllib.error, requests, shutil
 from bs4 import BeautifulSoup
+from gsearch import GSearch
+from files import FileManage
 
 #-----------------------------------------------------------------------
 # Num: 1 | Title: Scrap()
@@ -19,7 +19,7 @@ from bs4 import BeautifulSoup
 class Scrap():
   """
   Handles the web scraping functionality.\n
-  Functions: (4) getUserInput(), getAllLinks(), createHTMLFiles(), googleLink()
+  Functions: (3) getUserInput(), getAllLinks(), sortData()
   """
   #-----------------------------------------------------------------------
   # Num: 1a | Title: getUserInput()
@@ -36,8 +36,11 @@ class Scrap():
     print('   3. Domain name (e.g. .com/, .co.uk/, .de/). Domain name MUST end with a /')
     print(" Format example: 'https://websitename.co.uk/' or 'https://subdomain.websitename.com/'")
     print('-----------------------------------------------------------------------------------------------------------------')
+    print("Alternatively: input a search query to search Google! E.g. 'StackOverflow' or 'I'm not sure what to search'")
+    print('-----------------------------------------------------------------------------------------------------------------')
 
     # Set variables
+    gs = GSearch()
     clear = lambda: os.system('cls')
     urlCheck = re.compile(r"^((?:https)|(?:http)\w*://)" + # protocol - e.g. http://, https://
                           r"(\w*[a-z0-9\-])" + # website name - e.g. website.example, example.
@@ -47,30 +50,52 @@ class Scrap():
     while True:
       ui = input('=> ').lower()
 
-      # Check input is a valid url
-      if not urlCheck.match(ui):
-        print("Url invalid! Please check the formatting.")
-      
-      # Valid url
-      else:
-        try:
-          # Set variables
-          page = urlopen(ui)
-          soup = BeautifulSoup(page, 'html.parser') # Convert page to readable format
-          clear()
-
-          # Get all links in page
-          linkList = self.getAllLinks(soup, ui)
-
-          # Scrape links data to HTML files
-          self.createHTMLFiles(linkList, ui)
-          print('Scraping complete. Program will exit in 10 seconds.')
-          time.sleep(10) # 10 seconds
-          break
+      #---------------------------------------
+      # Check input is a url
+      #---------------------------------------
+      if 'http' in ui:
+        if not urlCheck.match(ui):
+          print("Url invalid! Please check the formatting.")
         
-        # Output error if there is one
-        except urllib.error.HTTPError as e:
-          print(f"Website unable to scrape. Error: {e}")
+        # Valid url
+        else:
+          # Set variables
+          try:
+            page = requests.get(ui)
+            soup = BeautifulSoup(page.text, 'html.parser') # Convert page to readable format
+            clear()
+
+            # Get all links in page
+            linkList = self.getAllLinks(soup, ui)
+
+            # Scrape links data to HTML files
+            pageDir = 'pages'
+            self.sortData(linkList, ui, pageDir)
+            print('Scraping complete. Program will exit in 10 seconds.')
+            time.sleep(10) # 10 seconds
+            break
+
+          # Output error if there is one
+          except requests.exceptions.RequestException as e:
+            print(f"Unable to scrape website. Error: {e}")
+            print("Please try a different URL or Google search query.")
+
+      #---------------------------------------
+      # Otherwise its a google search query
+      #---------------------------------------
+      else:
+        clear()
+
+        # Get all links
+        linkList = gs.googleLink(ui)
+        valueList = gs.getLinkNames(linkList)
+
+        # Scrape links data to HTML files
+        pageDir = 'search-results'
+        gs.gSortData(linkList, valueList, pageDir)
+        print('Scraping complete. Program will exit in 10 seconds.')
+        time.sleep(10) # 10 seconds
+        break
 
   #-----------------------------------------------------------------------
   # Num: 1b | Title: getAllLinks()
@@ -83,7 +108,7 @@ class Scrap():
     # Set variables
     findAll = root.findAll('a', attrs={'href': re.compile("^https://")})
     linkList = set()
-    limit = 20
+    limit = 10
 
     # Loop through page content
     for link in findAll:
@@ -103,15 +128,16 @@ class Scrap():
     return linkList
 
   #-----------------------------------------------------------------------
-  # Num: 1c | Title: createHTMLFiles()
+  # Num: 1c | Title: sortData()
   #-----------------------------------------------------------------------
-  def createHTMLFiles(self, linkList, url):
+  def sortData(self, linkList, url, pageDir):
     """
-    Utility function for getUserInput() that creates HTML files based on the urls found.\n
-    Parameters: (2) list of links, users url input
+    Utility function for getUserInput() that sorts the data and creates HTML files based on the urls found.\n
+    Parameters: (3) list of links, users url input, page directory
     """
     # Set variables
-    valuesList, pageDir = [], 'pages'
+    f = FileManage()
+    valuesList = []
     linkList.sort() # Sort list in order
 
     # Create a list of values
@@ -121,36 +147,28 @@ class Scrap():
         valuesList.append('root-page')
       # Otherwise, only get the page name
       else:
-        fileName = re.sub(url, '', link) # Removes url at front
+        fileName = re.sub(url, '', link) # Removes root url at front
         fileName = fileName[:-1] # Removes / at end
         valuesList.append(fileName.replace('/', '-')) # Replace any additional / with -
 
-    # Create pages directory
+    # If directory exists, remove old one + files and recreate
+    if os.path.exists(pageDir):
+      shutil.rmtree(pageDir)
+      os.mkdir(pageDir)
+    
+    # Create directory if doesn't exists
     if not os.path.exists(pageDir):
       os.mkdir(pageDir)
 
     # Loop through each file
     for link in range(len(linkList)):
-      # Set page variables
-      page = urlopen(linkList[link])
-      htmlPage = BeautifulSoup(page, 'html.parser')
+      # Setup page
+      page, htmlPage = f.pageSetup(linkList, link)
       
       # Output to file
-      with open('pages/' + valuesList[link] + '.html', 'w') as f:
-        f.write(str(htmlPage.prettify()))
-        print(f"New file has been created called '{valuesList[link]}'.")
+      f.createHTML(pageDir, valuesList, page, htmlPage, link)
     
     # Output instruction to user
     print('----------------------------------------------------------------------------------------------------------------------------------')
-    print("Please check the 'pages' folder.")
+    print(f"Results for '{url}' completed. Please check the '{pageDir}' folder.")
     print('----------------------------------------------------------------------------------------------------------------------------------')
-
-  #-----------------------------------------------------------------------
-  # Num: 1d | Title: googleLink()
-  #-----------------------------------------------------------------------
-  def googleLink(self, url):
-    """
-    Utility function for getUserInput() that handles the root links functionality if it's a Google link. Uses Google's search API.\n
-    Parameters: (1) users url link
-    """
-    pass

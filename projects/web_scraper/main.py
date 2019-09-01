@@ -17,7 +17,7 @@ def main():
   # Set variables
   s = Scrap()
 
-  # Get the users input url as a html file
+  # Run the program
   s.getUserInput()
 
 # Run main function
