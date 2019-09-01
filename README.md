@@ -113,11 +113,12 @@ Python is a beautiful language that allows for easy readability of code without 
   ```
 
   ## [Web Scraper](https://github.com/Achronus/Portfolio/tree/master/projects/web_scraper)
-  **PLEASE NOTE:** This project is still being developed. 
 
   ### What It Does
   This uses the _urllib_ and _BeautifulSoup_ libraries to crawl a user provided URL. It scans the provided URL for any links that connect to other pages on the website. Collating those URLs, it opens the URLs and scrapes their HTML contents into separate files into a directory on your local machine. This allows you to view the files and extract specific data from them that you require. 
   
+  In addition, it uses googles-api-client to allow you to input a Google search query. This outputs the top 10 search results as HTML pages and stores them on your local machine ready for data extraction.
+
   A tool that compliments this web scraper is the ['Data Extraction Tool'](#data-extraction-tool).
 
   ```
@@ -127,6 +128,8 @@ Python is a beautiful language that allows for easy readability of code without 
     2. Website name
     3. Domain name (e.g. .com/, .co.uk/, .de/). Domain name MUST end with a /
   Format example: 'https://websitename.co.uk/' or 'https://subdomain.websitename.com/'
+  -----------------------------------------------------------------------------------------------------------------
+  Alternatively: input a search query to search Google! E.g. 'StackOverflow' or 'I'm not sure what to search'
   -----------------------------------------------------------------------------------------------------------------
   => https://acius.co.uk/
   ```
@@ -144,7 +147,7 @@ Python is a beautiful language that allows for easy readability of code without 
   New file has been created called 'projects-graph-plotter'.
   New file has been created called 'projects-web-scraper'.
   -----------------------------------------------------------------------------------------------------------------
-  Please check the 'pages' folder.
+  Results for 'https://acius.co.uk/' completed. Please check the 'pages' folder.
   -----------------------------------------------------------------------------------------------------------------
   Scraping complete. Program will exit in 10 seconds.
   ```
