@@ -41,6 +41,7 @@ class Scrap():
 
     # Set variables
     gs = GSearch()
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'}
     clear = lambda: os.system('cls')
     urlCheck = re.compile(r"^((?:https)|(?:http)\w*://)" + # protocol - e.g. http://, https://
                           r"(\w*[a-z0-9\-])" + # website name - e.g. website.example, example.
@@ -61,18 +62,23 @@ class Scrap():
         else:
           # Set variables
           try:
-            page = requests.get(ui)
+            page = requests.get(ui, headers=headers)
             soup = BeautifulSoup(page.text, 'html.parser') # Convert page to readable format
             clear()
 
-            # Get all links in page
-            linkList = self.getAllLinks(soup, ui)
+            # Check if page is accessible
+            if page.status_code != 200:
+              print(f'Page cannot be reached. Error: {page.status_code}')
 
-            # Scrape links data to HTML files
-            pageDir = 'pages'
-            self.sortData(linkList, ui, pageDir)
-            print('Scraping complete. Program will exit in 10 seconds.')
-            time.sleep(10) # 10 seconds
+            else:
+              # Get all links in page
+              linkList = self.getAllLinks(soup, ui)
+
+              # Scrape links data to HTML files
+              pageDir = 'pages'
+              self.sortData(linkList, ui, pageDir)
+              print('Scraping complete. Program will exit in 10 seconds.')
+              time.sleep(10) # 10 seconds
             break
 
           # Output error if there is one
