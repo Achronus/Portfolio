@@ -10,7 +10,7 @@ Python is a beautiful language that allows for easy readability of code without 
 
 ### Contents
   * [Projects](#projects)
-  * [Mini Scripts](#mini-scripts) - _Coming soon!_
+  * [Mini Scripts](#mini-scripts)
   * [Personal](#personal)
 
 ## Projects
@@ -187,8 +187,7 @@ Python is a beautiful language that allows for easy readability of code without 
   ## Graph Plotter
   _Coming soon!_
 
-## Mini Scripts
-_Coming soon!_
+## [Mini Scripts](https://github.com/Achronus/Portfolio/tree/master/mini)
 Home to one page scripts and custom classes containing a variety of utility functions.
 
 ## Personal
