@@ -17,7 +17,6 @@ Python is a beautiful language that allows for easy readability of code without 
   * [Conversion Exchanger](#conversion-exchanger)
   * [CSV Editor](#csv-editor)
   * [File Searcher](#file-searcher)
-  * [Web Scraper](#web-scraper)
   * [Data Extraction Tool](#data-extraction-tool)
   * [Graph Plotter](#graph-plotter) - _Coming soon!_
 
@@ -110,46 +109,6 @@ Python is a beautiful language that allows for easy readability of code without 
   -----------------------------------------------------------------------------------------------------------------
   Searching complete. See all file locations above.
   =>
-  ```
-
-  ## [Web Scraper](https://github.com/Achronus/Portfolio/tree/master/projects/web_scraper)
-
-  ### What It Does
-  This uses the _urllib_ and _BeautifulSoup_ libraries to crawl a user provided URL. It scans the provided URL for any links that connect to other pages on the website. Collating those URLs, it opens the URLs and scrapes their HTML contents into separate files into a directory on your local machine. This allows you to view the files and extract specific data from them that you require. 
-  
-  In addition, it uses _googles-api-client_ to allow you to input a Google search query. This outputs the top 10 search results as HTML pages and stores them on your local machine ready for data extraction.
-
-  A tool that compliments this web scraper is the ['Data Extraction Tool'](#data-extraction-tool).
-
-  ```
-  -----------------------------------------------------------------------------------------------------------------
-  Input the url you would like to scrape. Format of the url must consist of the following:
-    1. Protocol (http:// or https://)
-    2. Website name
-    3. Domain name (e.g. .com/, .co.uk/, .de/). Domain name MUST end with a /
-  Format example: 'https://websitename.co.uk/' or 'https://subdomain.websitename.com/'
-  -----------------------------------------------------------------------------------------------------------------
-  Alternatively: input a search query to search Google! E.g. 'StackOverflow' or 'I'm not sure what to search'
-  -----------------------------------------------------------------------------------------------------------------
-  => https://acius.co.uk/
-  ```
-
-  Above is an example of the Web Scraper menu, using my website as an example you can see the output below.
-
-  ```
-  Page limit: 20 | Total pages found: 8
-  New file has been created called 'root-page'.
-  New file has been created called 'cookies-policy'.
-  New file has been created called 'projects-conversion-exchanger'.
-  New file has been created called 'projects-csv-editor'.
-  New file has been created called 'projects-data-extraction-tool'.
-  New file has been created called 'projects-file-searcher'.
-  New file has been created called 'projects-graph-plotter'.
-  New file has been created called 'projects-web-scraper'.
-  -----------------------------------------------------------------------------------------------------------------
-  Results for 'https://acius.co.uk/' completed. Please check the 'pages' folder.
-  -----------------------------------------------------------------------------------------------------------------
-  Scraping complete. Program will exit in 10 seconds.
   ```
 
   ## [Data Extraction Tool](https://github.com/Achronus/Portfolio/tree/master/projects/data_extraction_tool)
