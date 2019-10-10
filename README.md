@@ -17,6 +17,7 @@ Python is a beautiful language that allows for easy readability of code without 
   * [Conversion Exchanger](#conversion-exchanger)
   * [CSV Editor](#csv-editor)
   * [File Searcher](#file-searcher)
+  * [Ciphers](#Ciphers)
   * [Data Extraction Tool](#data-extraction-tool)
   * [Graph Plotter](#graph-plotter) - _Coming soon!_
 
@@ -110,6 +111,9 @@ Python is a beautiful language that allows for easy readability of code without 
   Searching complete. See all file locations above.
   =>
   ```
+
+  ## Ciphers
+  _Coming soon!_
 
   ## [Data Extraction Tool](https://github.com/Achronus/Portfolio/tree/master/projects/data_extraction_tool)
   
