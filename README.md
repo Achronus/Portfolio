@@ -17,7 +17,7 @@ Python is a beautiful language that allows for easy readability of code without 
   * [Conversion Exchanger](#conversion-exchanger)
   * [CSV Editor](#csv-editor)
   * [File Searcher](#file-searcher)
-  * [Ciphers](#Ciphers)
+  * [Ciphers](#ciphers)
   * [Data Extraction Tool](#data-extraction-tool)
   * [Graph Plotter](#graph-plotter) - _Coming soon!_
 
@@ -112,8 +112,22 @@ Python is a beautiful language that allows for easy readability of code without 
   =>
   ```
 
-  ## Ciphers
-  _Coming soon!_
+  ## [Ciphers](https://github.com/Achronus/Portfolio/tree/master/projects/ciphers)
+
+  ### What It Does
+  This folder consists of 4 common ciphers: the Caesar cipher, Transposition cipher, Substitution cipher and Affine cipher. Each cipher has their own unique class, with functions for encrypting and decrypting and an example for each one. 
+
+  In addition to this, some of the ciphers have an example of being brute-forced. NOTE: I do not recommend using these ciphers for securing confidential information, these were fun little projects for me to understanding another means of problem solving.
+
+  You can see the cipher specific files below:
+  - [Caesar Cipher](https://github.com/Achronus/Portfolio/blob/master/projects/ciphers/caesar.py)
+    - [Brute-forcing Caesar Cipher](https://github.com/Achronus/Portfolio/blob/master/projects/ciphers/cracking/bruteForceCaesar.py)
+  - [Transposition Cipher](https://github.com/Achronus/Portfolio/blob/master/projects/ciphers/transposition.py)
+    - [Brute-forcing Transposition Cipher](https://github.com/Achronus/Portfolio/blob/master/projects/ciphers/cracking/bruteForceTransposition.py)
+  - [Affine Cipher](https://github.com/Achronus/Portfolio/blob/master/projects/ciphers/affine.py)
+    - [Brute-forcing Affine Cipher](https://github.com/Achronus/Portfolio/blob/master/projects/ciphers/cracking/bruteForceAffine.py)
+  - [Substitution Cipher](https://github.com/Achronus/Portfolio/blob/master/projects/ciphers/substitution.py)
+  
 
   ## [Data Extraction Tool](https://github.com/Achronus/Portfolio/tree/master/projects/data_extraction_tool)
   
