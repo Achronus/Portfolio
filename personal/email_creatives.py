@@ -27,7 +27,7 @@ def readCSV(currentdir):
 
   # Put csv data into list of lists
   with open(csvFile, 'r') as f:
-    reader = csv.reader(f)
+    reader = csv.reader(f, delimiter='|')
     data = list(reader)
   
   # Remove headings
@@ -107,27 +107,28 @@ def main():
 
   # Create copies of HTML files, rename them and replace content
   for item in range(len(data)):
-    for index in range(item, len(data)):
+    index = 0
+    for index in range(item, len(upHtmlList)):
       # Check that file names are the same
-      if data[item][0] == upHtmlList[index]:
+      if data[index][0] == upHtmlList[item]:
         # Update filename
-        fileName = upHtmlList[index] + '-issue' + data[item][1] + '.html'
+        fileName = upHtmlList[item] + '-issue' + data[index][1] + '.html'
 
         # Copy file to new location
-        src, dst = htmldir + upHtmlList[index] + '.html', newdir + fileName
+        src, dst = htmldir + upHtmlList[item] + '.html', newdir + fileName
         copyfile(src, dst)
 
         # create monthFormat variable
-        monthFormat = '/' + year + '/' + month + '/' + data[item][0] + '/issue' + data[item][1] + '/'
+        monthFormat = '/' + year + '/' + month + '/' + data[index][0] + '/issue' + data[index][1] + '/'
         
         # Read HTML files
         newHtmlList = os.listdir(newdir)
-        fileContents = readHTML(newdir, newHtmlList, item)
+        fileContents = readHTML(newdir, newHtmlList, index)
 
         # Replace HTML content
-        replaceHTML(fileContents, dst, data[item][1], data[item][2], 
-                    data[item][3], data[item][4], data[item][5], 
-                    data[item][6], data[item][0], monthFormat)
+        replaceHTML(fileContents, dst, data[index][1], data[index][2], 
+                    data[index][3], data[index][4], data[index][5], 
+                    data[index][6], data[index][0], monthFormat)
         
         # Return file name to console
         print(f'File {fileName} created and updated.')

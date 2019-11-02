@@ -124,7 +124,7 @@ def updatedImgMove(currentDir, fromDir, filePath, folderNames, issueName):
   Parameters: (5) Current directory, from directory, folder file path, folder names list & issue name list.
   """
   # Set directory variable
-  startDir = f'[file_path]\\email-creatives\\[comapany_name]\\{filePath}'
+  startDir = f'[file_path]\\{filePath}'
 
   # Loop through each folder
   for folder in range(len(folderNames)):
@@ -141,9 +141,9 @@ def updatedImgMove(currentDir, fromDir, filePath, folderNames, issueName):
         copy(src, dst)
   
   # Output image copy confirmation to console
-  print('---------------------------------------------------------------------------------------------------------------------------------------------------------------------')
+  print('--------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
   print(f"Images finished copying from '{startDir}' to: '{fromDir}'")
-  print('---------------------------------------------------------------------------------------------------------------------------------------------------------------------')
+  print('--------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
 
 #-----------------------------------------------------------------------
 # Num: 5 | Title: main()
