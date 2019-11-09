@@ -4,10 +4,10 @@
 #-----------------------------------------------------------------------
 # CONTENTS:
 # 1. Extraction()
-#    a. createCSV()
-#    b. getContent()
-#    c. contentLoop()
-#    d. setColumnLength()
+#    a. create_csv()
+#    b. get_content()
+#    c. content_loop()
+#    d. set_column_length()
 #-----------------------------------------------------------------------
 import re, time
 from bs4 import BeautifulSoup
@@ -19,37 +19,37 @@ import pandas as pd
 class Extraction():
   """
   Used to extract data from a directory of HTML files based on users input.\n
-  Functions: (4) createCSV(), getContent(), contentLoop(), setColumnLength()
+  Functions: (4) create_csv(), get_content(), content_loop(), set_column_length()
   """
   #-----------------------------------------------------------------------
-  # Num: 1a | Title: createCSV()
+  # Num: 1a | Title: create_csv()
   #-----------------------------------------------------------------------
-  def createCSV(self, csvName, data, headers):
+  def create_csv(self, csv_name, data, headers):
     """
-    Utility function for getContent(). Uses a pandas dataframe to output the data to a CSV file.\n
+    Utility function for get_content(). Uses a pandas dataframe to output the data to a CSV file.\n
     Parameters: (3) CSV file name, data to add to file, list of headers
     """
     # Create dataframe
     df = pd.DataFrame(data, columns=headers)
 
     # Output to CSV file
-    df.to_csv(csvName, index=False, header=headers)
-    print(f"File '{csvName}' has been created and data has been successfully added.")
+    df.to_csv(csv_name, index=False, header=headers)
+    print(f"File '{csv_name}' has been created and data has been successfully added.")
     print('Program will exit in 10 seconds.')
     time.sleep(10)
 
   #-----------------------------------------------------------------------
-  # Num: 1b | Title: getContent()
+  # Num: 1b | Title: get_content()
   #-----------------------------------------------------------------------
-  def getContent(self, htmlPath, option, csvName):
+  def get_content(self, html_path, option, csv_name):
     """
     Gets content within the selected HTML file based on the users selected option.\n
     Parameters: (3) selected HTML file path, users selected option, csv file name
     """
     # Get the HTML file as an object
-    htmlFile = open(htmlPath)
-    soup = BeautifulSoup(htmlFile, 'html.parser')
-    htmlFile.close()
+    html_file = open(html_path)
+    soup = BeautifulSoup(html_file, 'html.parser')
+    html_file.close()
     
     # Perform different operations based on option selected
     #-------------------------------------------
@@ -57,14 +57,14 @@ class Extraction():
     #-------------------------------------------
     if option == 'Paragraphs':
       headers = ['Paragraphs']
-      output = self.contentLoop(soup, 'p')
+      output = self.content_loop(soup, 'p')
 
     #-------------------------------------------
     # Headings
     #-------------------------------------------
     if option == 'Headings':
       headers = ['Headings']
-      output = self.contentLoop(soup, ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
+      output = self.content_loop(soup, ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
 
     #-------------------------------------------
     # Links
@@ -94,32 +94,32 @@ class Extraction():
       headers = ['Paragraphs', 'Titles']
       
       # Get data
-      para = self.contentLoop(soup, 'p')
-      titles = self.contentLoop(soup, ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
+      para = self.content_loop(soup, 'p')
+      titles = self.content_loop(soup, ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
 
       # Resize data
-      optList = [para, titles]
-      output = self.setColumnLength(optList)
+      opt_list = [para, titles]
+      output = self.set_column_length(opt_list)
     
     #-------------------------------------------
     # All Links
     #-------------------------------------------
     if option == 'All links':
       headers = ['Link Name', 'Link', 'Img Name', 'Url']
-      links, linkNames, imgNames, urls = [], [], [], []
+      links, link_names, img_names, urls = [], [], [], []
       # Loop through links and get the name + href
       for l in soup.find_all('a', href=True):
-        linkNames.append(l.contents[0].strip())
+        link_names.append(l.contents[0].strip())
         links.append(l['href'])
 
       # Loop through images and the alt + src
       for img in soup.find_all('img', alt=True):
-        imgNames.append(img['alt'])
+        img_names.append(img['alt'])
         urls.append(img['src'])
 
       # Resize data
-      optList = [linkNames, links, imgNames, urls]
-      output = self.setColumnLength(optList)
+      opt_list = [link_names, links, img_names, urls]
+      output = self.set_column_length(opt_list)
     
     #-------------------------------------------
     # All Content
@@ -127,72 +127,72 @@ class Extraction():
     if option == 'All content':
       # Set headers
       headers = ['Paragraphs', 'Titles', 'Link Name', 'Link', 'Img Name', 'Url']
-      links, linkNames, imgNames, urls = [], [], [], []
+      links, link_names, img_names, urls = [], [], [], []
 
       # Get data
-      para = self.contentLoop(soup, 'p')
-      titles = self.contentLoop(soup, ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
+      para = self.content_loop(soup, 'p')
+      titles = self.content_loop(soup, ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
 
       # Loop through links and get the name + href
       for l in soup.find_all('a', href=True):
-        linkNames.append(l.contents[0].strip())
+        link_names.append(l.contents[0].strip())
         links.append(l['href'])
 
       # Loop through images and the alt + src
       for img in soup.find_all('img', alt=True):
-        imgNames.append(img['alt'])
+        img_names.append(img['alt'])
         urls.append(img['src'])
 
       # Resize data
-      optList = [para, titles, linkNames, links, imgNames, urls]
-      output = self.setColumnLength(optList)
+      opt_list = [para, titles, link_names, links, img_names, urls]
+      output = self.set_column_length(opt_list)
       
     # Adds selected content to CSV file
-    self.createCSV(csvName, output, headers)
+    self.create_csv(csv_name, output, headers)
 
   #-----------------------------------------------------------------------
-  # Num: 1c | Title: contentLoop()
+  # Num: 1c | Title: content_loop()
   #-----------------------------------------------------------------------
-  def contentLoop(self, soup, tag):
+  def content_loop(self, soup, tag):
     """
-    Utility function for getContent(). Gets all data based on tag provided. Returns a list.\n
+    Utility function for get_content(). Gets all data based on tag provided. Returns a list.\n
     Parameters: (2) soup object of HTML file, tag to search for
     """
-    textList = []
+    text_list = []
     for item in range(len(soup.find_all(tag))):
       text = soup.find_all(tag)[item].contents[0].strip()
-      textList.append(text)
+      text_list.append(text)
 
     # Remove empty list items
-    textList = list(filter(None, textList))
-    return textList
+    text_list = list(filter(None, text_list))
+    return text_list
 
   #-----------------------------------------------------------------------
-  # Num: 1d | Title: setColumnLength()
+  # Num: 1d | Title: set_column_length()
   #-----------------------------------------------------------------------
-  def setColumnLength(self, optList):
+  def set_column_length(self, opt_list):
     """
-    Utility function for getContent(). This adds any empty spaces needed to a list to create the correct column length.\n
+    Utility function for get_content(). This adds any empty spaces needed to a list to create the correct column length.\n
     Parameters: (1) list of option variables
     """
     size, output = [], []
 
     # Find largest column
-    for opt in optList:
+    for opt in opt_list:
       size.append(len(opt))
 
     # set column length
-    colLength = max(size)
+    col_len = max(size)
 
     # Add empty space until column length is correct
-    for option in optList:
-      while len(option) != colLength:
+    for option in opt_list:
+      while len(option) != col_len:
         option.append('')
 
     # Add data to tuple
-    for item in range(colLength):
+    for item in range(col_len):
       row = [] # reset row each loop
-      for opt in optList:
+      for opt in opt_list:
         row.append(opt[item]) # store items in row
       output.append(tuple(row)) # convert row to tuple and add to list
     return output

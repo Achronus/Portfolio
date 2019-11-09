@@ -4,7 +4,7 @@
 #-----------------------------------------------------------------------
 # CONTENTS:
 # 1. gcd()
-# 2. findModInverse()
+# 2. find_mod_inverse()
 #-----------------------------------------------------------------------
 
 #-----------------------------------------------------------------------
@@ -20,9 +20,9 @@ def gcd(a, b):
     return b
 
 #-----------------------------------------------------------------------
-# Num: 2 | Title: findModInverse()
+# Num: 2 | Title: find_mod_inverse()
 #-----------------------------------------------------------------------
-def findModInverse(a, m):
+def find_mod_inverse(a, m):
   """
   Returns the modular inverse of a % m, which is the number x such that a * x % m = 1.\n
   Parameters: (2) 1st num, 2nd num

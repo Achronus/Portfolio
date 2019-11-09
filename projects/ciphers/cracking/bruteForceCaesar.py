@@ -3,14 +3,14 @@
 # File Description: A method of cracking a caesar cipher.
 #-----------------------------------------------------------------------
 # CONTENTS:
-# 1. bfCaesar()
+# 1. bf_caesar()
 # 2. main()
 #-----------------------------------------------------------------------
 
 #-----------------------------------------------------------------------
 # Num: 1 | Title: bfCesar()
 #-----------------------------------------------------------------------
-def bfCaesar(phrase):
+def bf_caesar(phrase):
   """
   Brute force approach to breaking the caesar cipher encryption.\n
   Parameters: (1) phrase to crack
@@ -24,15 +24,15 @@ def bfCaesar(phrase):
     for s in phrase:
       # If symbol is in symbols
       if s in symbols:
-        sIdx = symbols.find(s) # Get symbol index
-        rIdx = sIdx - key # Get result index
+        symbol_idx = symbols.find(s) # Get symbol index
+        result_idx = symbol_idx - key # Get result index
 
         # Reset index if out of range
-        if rIdx < 0:
-          rIdx += len(symbols)
+        if result_idx < 0:
+          result_idx += len(symbols)
         
         # Append decrypted symbols
-        result += symbols[rIdx]
+        result += symbols[result_idx]
 
       else:
         # Append symbol without encrypting/decrypting
@@ -48,7 +48,7 @@ def main():
   Consists of the main functionality of the script.
   """
   phrase = "guv6Jv6Jz!J6rp5r7Jzr66ntrM"
-  bfCaesar(phrase)
+  bf_caesar(phrase)
 
 
 # Run main function

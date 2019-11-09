@@ -4,8 +4,8 @@
 #-----------------------------------------------------------------------
 # CONTENTS:
 # 1. FileManage()
-#    a. checkDirectory()
-#    b. getHTMLFileNames()
+#    a. check_directory()
+#    b. get_html_filenames()
 #-----------------------------------------------------------------------
 import os, time
 
@@ -15,49 +15,49 @@ import os, time
 class FileManage():
   """
   Handles all file management functionality. These are mainly utility functions.\n
-  Functions: (2) checkDirectory(), getHTMLFileNames()
+  Functions: (2) check_directory(), get_html_filenames()
   """
   #-----------------------------------------------------------------------
-  # Num: 1a | Title: checkDirectory()
+  # Num: 1a | Title: check_directory()
   #-----------------------------------------------------------------------
-  def checkDirectory(self):
+  def check_directory(self):
     """
-    Checks that there are files within the relevant directory. If no files, display an error and close program. Returns dataFolder location.
+    Checks that there are files within the relevant directory. If no files, display an error and close program. Returns data_folder location.
     """
-    folderName = 'data'
-    dataFolder = os.getcwd() + '\\' + folderName
+    folder_name = 'data'
+    data_folder = os.getcwd() + '\\' + folder_name
 
     # Create folder if doesn't exist
-    if not os.path.exists(folderName):
-      os.makedirs(folderName)
+    if not os.path.exists(folder_name):
+      os.makedirs(folder_name)
       print('Data directory has been created. Please add the HTML files you want to use for data extraction into the data directory.')
       print('Program will exit in 10 seconds. Re-run once files have been added.')
       time.sleep(10)
       exit()
     else:
       # Check there are files in the directory
-      folderSize = os.listdir(dataFolder)
+      folder_size = os.listdir(data_folder)
 
       # If no files, display error
-      if len(folderSize) == 0:
+      if len(folder_size) == 0:
         print('Data directory exists. Please add the relevant HTML files you want to extract data from into the data directory.')
         print('Program will exit in 10 seconds. Re-run once files have been added.')
         time.sleep(10)
         exit()
       else:
-        return dataFolder
+        return data_folder
 
   #-----------------------------------------------------------------------
-  # Num: 1b | Title: getHTMLFileNames()
+  # Num: 1b | Title: get_html_filenames()
   #-----------------------------------------------------------------------
-  def getHTMLFileNames(self, dataFolder):
+  def get_html_filenames(self, data_folder):
     """
     Checks through the data directory and gets all HTML file names as a list. Returns the list of names.\n
     Parameters: (1) data folder file path
     """
-    fileNames = []
+    filenames = []
     # Look through data directory
-    for _, _, files in os.walk(dataFolder):
+    for _, _, files in os.walk(data_folder):
       for f in files:
-        fileNames.append(f)
-    return fileNames
+        filenames.append(f)
+    return filenames

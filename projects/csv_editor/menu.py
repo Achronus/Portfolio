@@ -4,12 +4,12 @@
 #-----------------------------------------------------------------------
 # CONTENTS:
 # 1. Menu()
-#    a. mainMenu()
-#    b. exitProgram()
-#    c. multiUserInput()
-#    d. singleUserInput()
-#    e. optionList()
-#    f. getRowUserInput()
+#    a. main_menu()
+#    b. exit_program()
+#    c. multi_user_input()
+#    d. single_user_input()
+#    e. option_list()
+#    f. get_row_user_input()
 #-----------------------------------------------------------------------
 import os
 
@@ -19,12 +19,12 @@ import os
 class Menu():
   """
   Used to manage the menu functionality.\n
-  Contains 6 functions: mainMenu(), exitProgram(), multiUserInput(), singleUserInput(), optionList(), getRowUserInput().
+  Contains 6 functions: main_menu(), exit_program(), multi_user_input(), single_user_input(), option_list(), get_row_user_input().
   """
   #-----------------------------------------------------------------------
-  # Num: 1a | Title: mainMenu()
+  # Num: 1a | Title: main_menu()
   #-----------------------------------------------------------------------
-  def mainMenu(self, *args):
+  def main_menu(self, *args):
     """
     Displays a list of commands to utilise the choosen CSV file.
     """
@@ -40,9 +40,9 @@ class Menu():
     print('---------------------------------------------------------------------------------------------------------------------------------------------------')
 
   #-----------------------------------------------------------------------
-  # Num: 1b | Title: exitProgram()
+  # Num: 1b | Title: exit_program()
   #-----------------------------------------------------------------------
-  def exitProgram(self, *args):
+  def exit_program(self, *args):
     """
     Exits the program.
     """
@@ -50,12 +50,12 @@ class Menu():
     exit()
 
   #-----------------------------------------------------------------------
-  # Num: 1c | Title: multiUserInput()
+  # Num: 1c | Title: multi_user_input()
   #-----------------------------------------------------------------------
-  def multiUserInput(self, optionsDict):
+  def multi_user_input(self, options_dict):
     """
     Used to get multiple user inputs.\n
-    Parameters: (1) options dictionary from optionList()
+    Parameters: (1) options dictionary from option_list()
     """
     clear = lambda: os.system('cls')
     # Get users input
@@ -65,13 +65,13 @@ class Menu():
         ui = list(map(int, ui)) # convert to list of ints
 
         # Check through dict and get input option
-        uiList = []
-        for item in range(len(optionsDict)):
+        ui_list = []
+        for item in range(len(options_dict)):
           try:
             # Check that the item is in the list
-            if ui[item] in optionsDict:
+            if ui[item] in options_dict:
               clear()
-              uiList.append(optionsDict.get(ui[item]))
+              ui_list.append(options_dict.get(ui[item]))
             # Not a number within the list
             else:
               print("Number is invalid, please try again.")
@@ -80,19 +80,19 @@ class Menu():
           except IndexError:
             break
 
-        return uiList # Return the user input list
+        return ui_list # Return the user input list
 
       # Return error if not number
       except ValueError:
         print("That isn't a number!")
 
   #-----------------------------------------------------------------------
-  # Num: 1d | Title: singleUserInput()
+  # Num: 1d | Title: single_user_input()
   #-----------------------------------------------------------------------
-  def singleUserInput(self, optionsDict):
+  def single_user_input(self, options_dict):
     """
     Used to get one user input.\n
-    Parameters: (1) options dictionary from optionList()
+    Parameters: (1) options dictionary from option_list()
     """
     clear = lambda: os.system('cls')
     # Get users input
@@ -101,9 +101,9 @@ class Menu():
         ui = input('=> ')
 
         # Check through dict and get input option
-        if int(ui) in optionsDict:
+        if int(ui) in options_dict:
           clear()
-          return optionsDict.get(int(ui)) # returns name
+          return options_dict.get(int(ui)) # returns name
         else:
           print("Number is invalid, please try again.")
 
@@ -112,53 +112,53 @@ class Menu():
         print("That isn't a number!")
 
   #-----------------------------------------------------------------------
-  # Num: 1e | Title: optionList()
+  # Num: 1e | Title: option_list()
   #-----------------------------------------------------------------------
-  def optionList(self, optionList, printOutput):
+  def option_list(self, option_list, print_output):
     """
     Used to get a list of different options per command. Takes in a list and returns a dictionary.\n
     Parameters: (2) options list, print output statement
     """
     # Get list of relevant options and items
-    itemDict = {}
+    item_dict = {}
     print('---------------------------------------------------------------------------------------------------------------------------------------------------')
-    print(printOutput)
-    for idx, item in enumerate(optionList, start=1):
-      itemDict.update({idx : item})
+    print(print_output)
+    for idx, item in enumerate(option_list, start=1):
+      item_dict.update({idx : item})
       print(f"  {idx}. {item}")
     print('---------------------------------------------------------------------------------------------------------------------------------------------------')
-    return itemDict
+    return item_dict
 
   #-----------------------------------------------------------------------
-  # Num: 1f | Title: getRowUserInput()
+  # Num: 1f | Title: get_row_user_input()
   #-----------------------------------------------------------------------
-  def getRowUserInput(self, optionsDict):
+  def get_row_user_input(self, options_dict):
     """
     Used to get multiple row user inputs.\n
-    Parameters: (1) options dictionary from optionList()
+    Parameters: (1) options dictionary from option_list()
     """
     clear = lambda: os.system('cls')
     # Get users input
     while True:
       try:
-        invalidLen = True
-        while invalidLen:
+        inv_len = True
+        while inv_len:
           ui = input('=> ').split(", ")
           if len(ui) > 1:
-            invalidLen = True
+            inv_len = True
             print("You can only select one option!")
           else:
-            invalidLen = False
+            inv_len = False
             ui = list(map(int, ui)) # convert to list of ints
 
         # Check through dict and get input option
-        uiList = []
-        for item in range(len(optionsDict)):
+        ui_list = []
+        for item in range(len(options_dict)):
           try:
             # Check that the item is in the list
-            if ui[item] in optionsDict:
+            if ui[item] in options_dict:
               clear()
-              uiList.append(ui[item] - 1)
+              ui_list.append(ui[item] - 1)
             # Not a number within the list
             else:
               print("Number is invalid, please try again.")
@@ -167,7 +167,7 @@ class Menu():
           except IndexError:
             break
 
-        return uiList # Return the user input list
+        return ui_list # Return the user input list
 
       # Return error if not number
       except ValueError:

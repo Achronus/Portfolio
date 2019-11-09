@@ -4,10 +4,10 @@
 #-----------------------------------------------------------------------
 # CONTENTS:
 # 1. Utility()
-#    a. newColData()
-#    b. fieldLengthCheck()
-#    c. getColNames()
-#    d. getRowsAsList()
+#    a. new_data()
+#    b. field_length_check()
+#    c. get_col_names()
+#    d. get_rows_as_list()
 #-----------------------------------------------------------------------
 import pandas as pd
 from menu import Menu
@@ -18,73 +18,73 @@ from menu import Menu
 class Utility():
   """
   Manages the utility functions for the Editor class.\n
-  Functions: (4) newColData(), fieldLengthCheck(), getColNames(), getRowsAsList()
+  Functions: (4) new_data(), field_length_check(), get_col_names(), get_rows_as_list()
   """
   #-----------------------------------------------------------------------
-  # Num: 1a | Title: newColData()
+  # Num: 1a | Title: new_data()
   #-----------------------------------------------------------------------
-  def newColData(self, newColName, dataset, columnNames):
+  def new_data(self, new_col_name, dataset, column_names):
     """
     Used to get the column data for the addData() function.\n
     Parameters: (3) new column name, dataset, column names 
     """
     # Get new data to add to column
-    print(f"The new column name is '{newColName}'. Input the data to add. Separate by ', ' for multiple items. E.g. '1, 2, 3'")
-    newColData = input('=> ').split(', ')
+    print(f"The new column name is '{new_col_name}'. Input the data to add. Separate by ', ' for multiple items. E.g. '1, 2, 3'")
+    new_data = input('=> ').split(', ')
 
     # Add data to file
-    newSubmission = pd.DataFrame({newColName : newColData}, columns=columnNames)
-    return dataset.append(newSubmission, ignore_index=True, sort=True)
+    new_submission = pd.DataFrame({new_col_name : new_data}, columns=column_names)
+    return dataset.append(new_submission, ignore_index=True, sort=True)
 
   #-----------------------------------------------------------------------
-  # Num: 1b | Title: fieldLengthCheck()
+  # Num: 1b | Title: field_length_check()
   #-----------------------------------------------------------------------
-  def fieldLengthCheck(self, customPrint, compareField, item):
+  def field_length_check(self, custom_print, compare_field, item):
     """
     Used to check that the user inputs length is valid. Used in addData() and updateData().\n
     Parameters: (3) custom print statement, field to compare against, item selected
     """
     # Instructions to user
-    print(customPrint)
-    print(f"Total {item}s in file: {len(compareField)}. Please enter {len(compareField)} item(s).")
+    print(custom_print)
+    print(f"Total {item}s in file: {len(compare_field)}. Please enter {len(compare_field)} item(s).")
 
     # Loop through and check if invalid column size
-    invalidLen = True
-    while invalidLen:
-      newData = input('=> ').split(', ')
-      if len(newData) > len(compareField):
-        print(f"Too many items! There are {len(compareField)} {item}(s). Please enter {len(compareField)} item(s).")
-        invalidLen = True
-      elif len(newData) < len(compareField):
-        print(f"Not enough items! There are {len(compareField)} {item}(s). Please enter {len(compareField)} item(s).")
-        invalidLen = True
+    inv_len = True
+    while inv_len:
+      new_data = input('=> ').split(', ')
+      if len(new_data) > len(compare_field):
+        print(f"Too many items! There are {len(compare_field)} {item}(s). Please enter {len(compare_field)} item(s).")
+        inv_len = True
+      elif len(new_data) < len(compare_field):
+        print(f"Not enough items! There are {len(compare_field)} {item}(s). Please enter {len(compare_field)} item(s).")
+        inv_len = True
       else:
-        invalidLen = False
+        inv_len = False
 
-    return newData
+    return new_data
 
   #-----------------------------------------------------------------------
-  # Num: 1c | Title: getColNames()
+  # Num: 1c | Title: get_col_names()
   #-----------------------------------------------------------------------
-  def getColNames(self, customPrint, columnNames):
+  def get_col_names(self, custom_print, column_names):
     """
     Used to get the column names for multiple choices in the program. Used in addData(), removeData() and updateData().\n
     Parameters: (2) custom print statement, column names
     """
     m = Menu()
-    options = m.optionList(columnNames, customPrint)
-    return m.singleUserInput(options)
+    options = m.option_list(column_names, custom_print)
+    return m.single_user_input(options)
 
   #-----------------------------------------------------------------------
-  # Num: 1d | Title: getRowsAsList()
+  # Num: 1d | Title: get_rows_as_list()
   #-----------------------------------------------------------------------
-  def getRowsAsList(self, dataset):
+  def get_rows_as_list(self, dataset):
     """
     Used to get the csv files rows within a list format.\n
     Parameters: (1) dataset
     """
-    rowList, rowIdx = [], dataset.index.values
-    for row in range(len(rowIdx)):
-      rowList.append(dataset.loc[rowIdx[row], :].values)
-    return rowList
+    row_list, row_idx = [], dataset.index.values
+    for row in range(len(row_idx)):
+      row_list.append(dataset.loc[row_idx[row], :].values)
+    return row_list
     

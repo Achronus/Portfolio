@@ -4,8 +4,8 @@
 #-----------------------------------------------------------------------
 # CONTENTS:
 # 1. Menu()
-#    a. mainMenu()
-#    b. exitProgram()
+#    a. main_menu()
+#    b. exit_program()
 #-----------------------------------------------------------------------
 import os
 
@@ -15,12 +15,12 @@ import os
 class Menu():
   """
   Used to manage the menu functionality.\n
-  Contains 2 functions: mainMenu(), exitProgram().
+  Contains 2 functions: main_menu(), exit_program().
   """
   #-----------------------------------------------------------------------
-  # Num: 1a | Title: mainMenu()
+  # Num: 1a | Title: main_menu()
   #-----------------------------------------------------------------------
-  def mainMenu(self, *args):
+  def main_menu(self, *args):
     """
     Displays a list of commands to utilise the choosen CSV file.
     """
@@ -33,9 +33,9 @@ class Menu():
     print('---------------------------------------------------------------------------------------------------------------------------------------------------')
 
   #-----------------------------------------------------------------------
-  # Num: 1b | Title: exitProgram()
+  # Num: 1b | Title: exit_program()
   #-----------------------------------------------------------------------
-  def exitProgram(self, *args):
+  def exit_program(self, *args):
     """
     Exits the program.
     """

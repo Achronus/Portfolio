@@ -21,41 +21,41 @@ def main():
   clear = lambda: os.system('cls')
 
   # Set command list
-  commandList = ['info', 'display', 'create', 'add', 'remove', 'update', 'exit']
+  command_list = ['info', 'display', 'create', 'add', 'remove', 'update', 'exit']
   commands = [
-    ("info", m.mainMenu),
-    ("display", e.displayData),
-    ("create", e.createFile),
-    ("add", e.addData),
-    ("remove", e.removeData),
-    ("update", e.updateData),
-    ("exit", m.exitProgram)
+    ("info", m.main_menu),
+    ("display", e.display_data),
+    ("create", e.create_file),
+    ("add", e.add_data),
+    ("remove", e.remove_data),
+    ("update", e.update_data),
+    ("exit", m.exit_program)
   ]
 
   # Display menu
   clear()
-  m.mainMenu([])
+  m.main_menu([])
 
   # Get the users input
   while True:
     # Ask for user input, args as follows: 0, 1 = ['command', 'filename']
-    userInput = input("=> ").lower().split(" ")
+    user_input = input("=> ").lower().split(" ")
     clear()
     
     # Error handle if only one argument
-    if len(userInput) < 2:
+    if len(user_input) < 2:
       filename = ''
     else:
-      filename = f'{userInput[1]}.csv'
+      filename = f'{user_input[1]}.csv'
     
     # Loop through each command
     for command in commands:
       # Run function based on command
-      if userInput[0] == command[0]:
+      if user_input[0] == command[0]:
         command[1](filename)
 
     # Error if invalid command
-    if userInput[0] not in commandList:
+    if user_input[0] not in command_list:
       print("Invalid command. Type 'info' for a list of commands => ")
 
 # Run main function

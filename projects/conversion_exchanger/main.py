@@ -16,18 +16,18 @@ def main():
   Consists of the main functionality of the script.
   """
   # Set variables
-  optionList = ['Angle', 'Frequency', 'Length', 'Temperature', 'Volume', 'Weight']
+  option_list = ['Angle', 'Frequency', 'Length', 'Temperature', 'Volume', 'Weight']
   m = Menu()
 
   # Run the menu    
-  conType = m.typeList(optionList) # Conversion type
-  convertFrom, convertTo = m.convertList(conType)
-  num = m.getValue(convertFrom, convertTo)
+  conversion_type = m.type_list(option_list) # Conversion type
+  convert_from, convert_to = m.convert_list(conversion_type)
+  num = m.get_value(convert_from, convert_to)
 
   # Run the calculations
   c = Calculations(num)
-  data = c.readCSV('formulas.csv')
-  c.runConversion(data, convertFrom, convertTo)
+  data = c.read_csv('formulas.csv')
+  c.run_conversion(data, convert_from, convert_to)
 
 # Run main function
 if __name__ == '__main__': main()

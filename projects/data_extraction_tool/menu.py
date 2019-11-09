@@ -4,9 +4,9 @@
 #-----------------------------------------------------------------------
 # CONTENTS:
 # 1. Menu()
-#    a. getFileName()
-#    b. getNumUserInput()
-#    c. displayMenu()
+#    a. get_filename()
+#    b. get_num_user_input()
+#    c. display_menu()
 #-----------------------------------------------------------------------
 import os
 
@@ -16,12 +16,12 @@ import os
 class Menu():
   """
   Handles all menu functionality that the user sees.\n
-  Functions: (3) getFileName(), getNumUserInput(), displayMenu()
+  Functions: (3) get_filename(), get_num_user_input(), display_menu()
   """
   #-----------------------------------------------------------------------
-  # Num: 1a | Title: getFileName()
+  # Num: 1a | Title: get_filename()
   #-----------------------------------------------------------------------
-  def getFileName(self):
+  def get_filename(self):
     """
     Used to receive the users file name input. Checks if the file exists, if it does error is displayed. Otherwise, returns the file name with .csv extension added.
     """
@@ -32,18 +32,18 @@ class Menu():
       if len(ui) == 0:
         print('Cannot be blank!')
       else:
-        csvName = ui + '.csv'
+        csv_name = ui + '.csv'
         
         # If file exists, display error
-        if os.path.exists(csvName):
-          print(f"File '{csvName}' already exists! Please choose a different name.")
+        if os.path.exists(csv_name):
+          print(f"File '{csv_name}' already exists! Please choose a different name.")
         else:
-          return csvName
+          return csv_name
 
   #-----------------------------------------------------------------------
-  # Num: 1b | Title: getNumUserInput()
+  # Num: 1b | Title: get_num_user_input()
   #-----------------------------------------------------------------------
-  def getNumUserInput(self, optionsDict):
+  def get_num_user_input(self, options_dict):
     """
     Used to receive the users index input. Returns the index input.\n
     Parameters: (1) dictionary of menu items
@@ -55,9 +55,9 @@ class Menu():
         ui = input('=> ')
 
         # Check through dict and get input option
-        if int(ui) in optionsDict:
+        if int(ui) in options_dict:
           clear()
-          return optionsDict.get(int(ui))
+          return options_dict.get(int(ui))
         else:
           print("Number is invalid, please try again.")
       
@@ -66,16 +66,16 @@ class Menu():
         print("That isn't a number!")
 
   #-----------------------------------------------------------------------
-  # Num: 1c | Title: displayMenu()
+  # Num: 1c | Title: display_menu()
   #-----------------------------------------------------------------------
-  def displayMenu(self, itemList):
+  def display_menu(self, item_list):
     """
     Displays the menu of instructions to the user. Returns a dictionary of values.\n
     Parameters: (1) item list
     """
-    itemDict = {}
+    item_dict = {}
     # Loop through items and display to user
-    for idx, item in enumerate(itemList, start=1):
-      itemDict.update({idx : item})
+    for idx, item in enumerate(item_list, start=1):
+      item_dict.update({idx : item})
       print(f'  {idx}. {item}')
-    return itemDict
+    return item_dict

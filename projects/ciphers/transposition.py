@@ -6,8 +6,8 @@
 # 1. TranspositionCipher()
 #   a. encrypt()
 #   b. decrypt()
-#   c. randomDataTest()
-#   d. readFile()
+#   c. random_data_test()
+#   d. read_file()
 # 2. main()
 #-----------------------------------------------------------------------
 import math, random, time, os
@@ -18,7 +18,7 @@ import math, random, time, os
 class TranspositionCipher():
   """
   A class dedicated to the Transposition cipher that reorganizes a phrase as a form of encryption.\n
-  Functions: (4) encrypt, decrypt, randomDataTest, readFile
+  Functions: (4) encrypt, decrypt, random_data_test, read_file
   """
 
   #-----------------------------------------------------------------------
@@ -52,10 +52,10 @@ class TranspositionCipher():
     Used to reorganize a phrase based on a key value to decrypt the encrypted version. Consists of 'columns' and 'rows'.\n
     Parameters: (2) phrase to decrypt, value to reorganize letters
     """
-    numCols = int(math.ceil(len(phrase) / float(key)))
-    numRows = key
-    emptyCols = (numCols * numRows) - len(phrase)
-    plaintext = [''] * numCols # Each column in a grid
+    num_cols = int(math.ceil(len(phrase) / float(key)))
+    num_rows = key
+    empty_cols = (num_cols * num_rows) - len(phrase)
+    plaintext = [''] * num_cols # Each column in a grid
     col, row = 0, 0
 
     for c in phrase:
@@ -63,16 +63,16 @@ class TranspositionCipher():
       col += 1 # Point to next column
 
       # If no columns (empty spaces), go back to first col & the next row
-      if (col == numCols) or (col == numCols - 1 and row >= numRows - emptyCols):
+      if (col == num_cols) or (col == num_cols - 1 and row >= num_rows - empty_cols):
         col = 0
         row += 1
 
     return ''.join(plaintext)
 
   #-----------------------------------------------------------------------
-  # Num: 1c | Title: randomDataTest()
+  # Num: 1c | Title: random_data_test()
   #-----------------------------------------------------------------------
-  def randomDataTest(self, seed, testCount):
+  def random_data_test(self, seed, test_count):
     """
     Creates random seeds of data and then checks whether the cipher works correctly.\n
     Parameters: (2) random seed value, amount of tests to run
@@ -80,7 +80,7 @@ class TranspositionCipher():
     random.seed(seed)
 
     # Create tests
-    for i in range(testCount):
+    for i in range(test_count):
       phrase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' * random.randint(4, 20)
 
       # Convert to list
@@ -104,14 +104,14 @@ class TranspositionCipher():
       print("Transposition cipher test passed.")
 
   #-----------------------------------------------------------------------
-  # Num: 1d | Title: readFile()
+  # Num: 1d | Title: read_file()
   #-----------------------------------------------------------------------
-  def readFile(self, filename, key, mode):
+  def read_file(self, filename, key, mode):
     """
     Runs either encryption or decryption on a text file that is provided.\n
     Parameters: (1) txt filename, key value, mode of cryption
     """
-    outFilename = filename + '.output.txt'
+    out_filename = filename + '.output.txt'
     filename += '.txt'
 
     # No file, program terminates
@@ -119,8 +119,8 @@ class TranspositionCipher():
       print(f"The file {filename} does not exist.")
 
     # If output file exists, give the user chance to quit
-    if os.path.exists(outFilename):
-      print(f"This will overwrite the file {outFilename}. (C)ontinue or (Q)uit?")
+    if os.path.exists(out_filename):
+      print(f"This will overwrite the file {out_filename}. (C)ontinue or (Q)uit?")
       response = input('> ')
       if not response.lower().startswith('c'):
         exit()
@@ -133,21 +133,21 @@ class TranspositionCipher():
     print(f"{mode.title()}sing...")
 
     # Calculate time for encryption/decryption
-    startTime = time.time()
+    start_time = time.time()
     if mode == 'encrypt':
       result = self.encrypt(data, key)
     elif mode == 'decrypt':
       result = self.decrypt(data, key)
-    totalTime = round(time.time() - startTime, 2)
-    print(f"{mode.title()}sion time: {totalTime}")
+    total_time = round(time.time() - start_time, 2)
+    print(f"{mode.title()}sion time: {total_time}")
 
     # Write results to output file
-    of = open(outFilename, 'w')
+    of = open(out_filename, 'w')
     of.write(result)
     of.close()
 
     print(f"Done {mode.title()}ing {filename} ({len(data)} characters).")
-    print(f"{mode.title()}ed file is {outFilename}.")
+    print(f"{mode.title()}ed file is {out_filename}.")
 
 #-----------------------------------------------------------------------
 # Num: 2 | Title: main()
@@ -157,7 +157,7 @@ def main():
   Consists of the main functionality of the script.
   """
   phrase = "Common sense is not so common."
-  key, seed, testCount = 8, 42, 20
+  key, seed, test_count = 8, 42, 20
   filename, mode = "test", "encrypt"
   tc = TranspositionCipher()
 
@@ -170,10 +170,10 @@ def main():
   print(plaintext)
 
   # Test the cipher with random examples
-  tc.randomDataTest(seed, testCount)
+  tc.random_data_test(seed, test_count)
 
   # Testing with files
-  tc.readFile(filename, key, mode)
+  tc.read_file(filename, key, mode)
 
 # Run main function
 if __name__ == "__main__": main()

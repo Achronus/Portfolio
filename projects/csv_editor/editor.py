@@ -4,12 +4,12 @@
 #-----------------------------------------------------------------------
 # CONTENTS:
 # 1. Editor()
-#    a. displayData()
-#    b. createFile()
-#    c. selectData()
-#    d. addData()
-#    e. removeData()
-#    f. updateData()
+#    a. display_data()
+#    b. create_file()
+#    c. select_data()
+#    d. add_data()
+#    e. remove_data()
+#    f. update_data()
 #-----------------------------------------------------------------------
 import os, csv
 import numpy as np
@@ -23,12 +23,12 @@ from utility import Utility
 class Editor():
   """
   Manages the editor functionality.\n 
-  Consists of 6 functions: displayData(), createFile(), selectData(), addData(), removeData(), updateData().
+  Consists of 6 functions: display_data(), create_file(), select_data(), add_data(), remove_data(), update_data().
   """
   #-----------------------------------------------------------------------
-  # Num: 1a | Title: displayData()
+  # Num: 1a | Title: display_data()
   #-----------------------------------------------------------------------
-  def displayData(self, filename):
+  def display_data(self, filename):
     """
     Takes a filename as input and outputs its data into the console.\n
     Parameters: (1) Filename.
@@ -44,9 +44,9 @@ class Editor():
       print("This file doesn't exist. You must create it first!")
 
   #-----------------------------------------------------------------------
-  # Num: 1b | Title: createFile()
+  # Num: 1b | Title: create_file()
   #-----------------------------------------------------------------------
-  def createFile(self, filename):
+  def create_file(self, filename):
     """
     Used to create files that do not exist.\n
     Parameters: (1) Filename.
@@ -58,26 +58,26 @@ class Editor():
       print(f"File with the name '{filename}' has been created.")
 
   #-----------------------------------------------------------------------
-  # Num: 1c | Title: selectData()
+  # Num: 1c | Title: select_data()
   #-----------------------------------------------------------------------
-  def selectData(self, filename, optionList):
+  def select_data(self, filename, option_list):
     """
     Used to select the data to add, remove or update from the selected CSV file.\n
     Parameters: (2) file name, option list.
     """
     # set variables
     m = Menu()
-    printOutput = 'What information would you like to select?'
+    print_output = 'What information would you like to select?'
 
     # Get inital options
-    options = m.optionList(optionList, printOutput)
-    choice = m.singleUserInput(options)
+    options = m.option_list(option_list, print_output)
+    choice = m.single_user_input(options)
     return choice
 
   #-----------------------------------------------------------------------
-  # Num: 1d | Title: addData()
+  # Num: 1d | Title: add_data()
   #-----------------------------------------------------------------------
-  def addData(self, filename):
+  def add_data(self, filename):
     """
     Adds data to the file via users input.\n
     Parameters: (1) Filename.
@@ -88,57 +88,57 @@ class Editor():
     df.to_csv(filename + '.bak', index=False) # Create file backup
 
     header = list(df.columns)
-    optionsList = ['New column', 'Existing column', 'New row']
+    options_list = ['New column', 'Existing column', 'New row']
 
     # Select the data
-    choice = self.selectData(filename, optionsList)
+    choice = self.select_data(filename, options_list)
 
     #-------------------------
     # If new column
     #-------------------------
-    if choice == optionsList[0]:
+    if choice == options_list[0]:
       # Get column name
       print(f"You selected '{choice}'. Input the name of the column to add.")
-      newColName = input('=> ')
-      header.append(newColName)
+      new_col_name = input('=> ')
+      header.append(new_col_name)
 
       # Get new data and add to dataset
-      df = u.newColData(newColName, df, header)
+      df = u.new_data(new_col_name, df, header)
 
     #-------------------------
     # If existing column
     #-------------------------
-    if choice == optionsList[1]:
+    if choice == options_list[1]:
       # Get column name
-      colPrint = f"You selected '{choice}'. Input the column index you want to add data to."
-      selectedHeader = u.getColNames(colPrint, header)
+      col_print = f"You selected '{choice}'. Input the column index you want to add data to."
+      selected_header = u.get_col_names(col_print, header)
 
       # Get new data and add to dataset
-      df = u.newColData(selectedHeader, df, header)
+      df = u.new_data(selected_header, df, header)
 
     #-------------------------
     # If new row
     #-------------------------
-    if choice == optionsList[2]:
+    if choice == options_list[2]:
 
       # Get users input
-      optTwoPrint = f"You selected '{choice}'. Input the data to add. Separate by ', ' for next column. E.g. '1, 2, 3'"
-      newRowData = u.fieldLengthCheck(optTwoPrint, header, 'column')
+      opt_two_print = f"You selected '{choice}'. Input the data to add. Separate by ', ' for next column. E.g. '1, 2, 3'"
+      new_row_data = u.field_length_check(opt_two_print, header, 'column')
       
       # Add data to file
-      newRowSubmission = pd.DataFrame([newRowData], columns=header)
-      df = df.append(newRowSubmission, ignore_index=True)
+      new_row_submission = pd.DataFrame([new_row_data], columns=header)
+      df = df.append(new_row_submission, ignore_index=True)
 
     # Add the data to the CSV file
     df.to_csv(filename, index=False)
       
     # Display updated file
-    self.displayData(filename)
+    self.display_data(filename)
 
   #-----------------------------------------------------------------------
-  # Num: 1e | Title: removeData()
+  # Num: 1e | Title: remove_data()
   #-----------------------------------------------------------------------
-  def removeData(self, filename):
+  def remove_data(self, filename):
     """
     Removes data from the file via users input.\n
     Parameters: (1) Filename.
@@ -149,64 +149,64 @@ class Editor():
     df.to_csv(filename + '.bak', index=False) # Create file backup
 
     header = list(df.columns)
-    optionsList = ['Whole column', 'Column data', 'Specific row']
+    options_list = ['Whole column', 'Column data', 'Specific row']
     
     # Select the data
-    choice = self.selectData(filename, optionsList)
+    choice = self.select_data(filename, options_list)
 
     #-------------------------
     # If whole column
     #-------------------------
-    if choice == optionsList[0]:
+    if choice == options_list[0]:
       # Get column name
-      colPrint = f"You selected '{choice}'. Input the column index for the column you want to remove."
-      selectedCol = u.getColNames(colPrint, header)
+      col_print = f"You selected '{choice}'. Input the column index for the column you want to remove."
+      selected_col = u.get_col_names(col_print, header)
 
       # Remove column
-      df = df.drop(columns=selectedCol)
+      df = df.drop(columns=selected_col)
     
     #-------------------------
     # If column data
     #-------------------------
-    if choice == optionsList[1]:
+    if choice == options_list[1]:
       # Get column name
-      colPrint = f"You selected '{choice}'. Input the column index for the column data you want to remove."
-      selectedCol = u.getColNames(colPrint, header)
+      col_print = f"You selected '{choice}'. Input the column index for the column data you want to remove."
+      selected_col = u.get_col_names(col_print, header)
 
       # Get column data
-      colDataPrint = f"You selected the column '{selectedCol}'. Input the indexes for the data to remove. Separate by a ', ' for multiple items. E.g. '1, 2, 3'"
-      colIdx = header.index(selectedCol)
-      colDataOptions = m.optionList(df.loc[:, header[colIdx]].values, colDataPrint)
-      selectedColData = m.multiUserInput(colDataOptions)
+      col_data_print = f"You selected the column '{selected_col}'. Input the indexes for the data to remove. Separate by a ', ' for multiple items. E.g. '1, 2, 3'"
+      col_idx = header.index(selected_col)
+      col_data_options = m.option_list(df.loc[:, header[col_idx]].values, col_data_print)
+      selected_col_data = m.multi_user_input(col_data_options)
 
       # Remove selected data
-      df = df.replace(selectedColData, '')
+      df = df.replace(selected_col_data, '')
 
     #-------------------------
     # If specific row
     #-------------------------
-    if choice == optionsList[2]:
+    if choice == options_list[2]:
       # Get each row in the file as a list
-      rowList = u.getRowsAsList(df)
+      row_list = u.get_rows_as_list(df)
       
       # Get rows
-      rowPrint = f"You selected '{choice}'. Input the indexes for the rows you want to remove. Separate by a ', ' for multiple rows. E.g. '1, 2, 3'"
-      rowOptions = m.optionList(rowList, rowPrint)
-      selectedRows = m.getRowUserInput(rowOptions)
+      row_print = f"You selected '{choice}'. Input the indexes for the rows you want to remove. Separate by a ', ' for multiple rows. E.g. '1, 2, 3'"
+      row_options = m.option_list(row_list, row_print)
+      selected_rows = m.get_row_user_input(row_options)
             
       # Remove selected data
-      df = df.drop(selectedRows)
+      df = df.drop(selected_rows)
 
     # Add the data to the CSV file
     df.to_csv(filename, index=False)
       
     # Display updated file
-    self.displayData(filename)
+    self.display_data(filename)
 
   #-----------------------------------------------------------------------
-  # Num: 1f | Title: updateData()
+  # Num: 1f | Title: update_data()
   #-----------------------------------------------------------------------
-  def updateData(self, filename):
+  def update_data(self, filename):
     """
     Updates data within the file via users input.\n
     Parameters: (1) Filename.
@@ -217,80 +217,80 @@ class Editor():
     df.to_csv(filename + '.bak', index=False) # Create file backup
 
     header = list(df.columns)
-    optionsList = ['Column name', 'Column data', 'Specific row']
+    options_list = ['Column name', 'Column data', 'Specific row']
 
     # Select the data
-    choice = self.selectData(filename, optionsList)
+    choice = self.select_data(filename, options_list)
 
     #-------------------------
     # If column name
     #-------------------------
-    if choice == optionsList[0]:
+    if choice == options_list[0]:
       # Select column names
-      headerPrint = f"You selected '{choice}'. Input the column indexes for the column names you want to update. Separate by a ', ' for multiple items. E.g. '1, 2, 3'"
-      headerOptions = m.optionList(header, headerPrint)
-      selectedHeaders = m.multiUserInput(headerOptions)
+      header_print = f"You selected '{choice}'. Input the column indexes for the column names you want to update. Separate by a ', ' for multiple items. E.g. '1, 2, 3'"
+      header_options = m.option_list(header, header_print)
+      selected_headers = m.multi_user_input(header_options)
 
       # Get new column names 
-      optZeroPrint = f"You selected the column names '{selectedHeaders}'. Input the new names for the columns. Separate by a ', ' for multiple items. E.g. '1, 2, 3'"
-      newColNames = u.fieldLengthCheck(optZeroPrint, selectedHeaders, 'selected column')
+      opt_zero_print = f"You selected the column names '{selected_headers}'. Input the new names for the columns. Separate by a ', ' for multiple items. E.g. '1, 2, 3'"
+      new_col_names = u.field_length_check(opt_zero_print, selected_headers, 'selected column')
       
       # Update data
-      for item in range(len(selectedHeaders)):
-        df = df.rename(columns={selectedHeaders[item] : newColNames[item]})
+      for item in range(len(selected_headers)):
+        df = df.rename(columns={selected_headers[item] : new_col_names[item]})
 
     #-------------------------
     # If column data
     #-------------------------
-    if choice == optionsList[1]:
+    if choice == options_list[1]:
       # Select column name
-      colPrint = f"You selected '{choice}'. Input the column index for the column you want to update."
-      selectedCol = u.getColNames(colPrint, header)
+      col_print = f"You selected '{choice}'. Input the column index for the column you want to update."
+      selected_col = u.get_col_names(col_print, header)
 
       # Select column data
-      selColPrint = f"You selected the column '{selectedCol}'. Input the column indexes for the data to update. Separate by a ', ' for multiple items. E.g. '1, 2, 3'"
-      colIdx = header.index(selectedCol)
-      colDataOptions = m.optionList(df.loc[:, header[colIdx]].values, selColPrint)
-      selectedColData = m.multiUserInput(colDataOptions)
+      sel_col_print = f"You selected the column '{selected_col}'. Input the column indexes for the data to update. Separate by a ', ' for multiple items. E.g. '1, 2, 3'"
+      col_idx = header.index(selected_col)
+      col_data_options = m.option_list(df.loc[:, header[col_idx]].values, sel_col_print)
+      selected_col_data = m.multi_user_input(col_data_options)
 
       # Select new column data names
-      optOnePrint = f"You selected the column data '{selectedColData}'. Input the new names for the column data. Separate by a ', ' for multiple items. E.g. '1, 2, 3'"
-      newColNames = u.fieldLengthCheck(optOnePrint, selectedColData, 'selected column data field')
+      opt_one_print = f"You selected the column data '{selected_col_data}'. Input the new names for the column data. Separate by a ', ' for multiple items. E.g. '1, 2, 3'"
+      new_col_names = u.field_length_check(opt_one_print, selected_col_data, 'selected column data field')
 
       # Update data
-      df.replace(to_replace=selectedColData, value=newColNames, inplace=True)
+      df.replace(to_replace=selected_col_data, value=new_col_names, inplace=True)
 
     #-------------------------
     # If specific row
     #-------------------------
-    if choice == optionsList[2]:
+    if choice == options_list[2]:
       # Get each row in the file as a list
-      rowList = u.getRowsAsList(df)
+      row_list = u.get_rows_as_list(df)
       
       # Select rows
-      rowPrint = f"You selected '{choice}'. Input the index for the row you want to update."
-      rowOptions = m.optionList(rowList, rowPrint)
-      selectedRow = m.getRowUserInput(rowOptions)
-      selectedRowIdx = selectedRow[0]
-      selRowList = rowOptions[selectedRowIdx + 1]
+      row_print = f"You selected '{choice}'. Input the index for the row you want to update."
+      row_options = m.option_list(row_list, row_print)
+      selected_row = m.get_row_user_input(row_options)
+      selected_row_idx = selected_row[0]
+      sel_row_list = row_options[selected_row_idx + 1]
 
       # Select names in row
-      selRowPrint = f"You selected '{selRowList}'. Input the indexes for the fields in the row you want to update. Separate by a ', ' for multiple fields. E.g. '1, 2, 3'"
-      selRowItems = []
-      for item in range(len(selRowList)):
-        selRowItems.append(selRowList[item])
-      selRowOptions = m.optionList(selRowItems, selRowPrint)
-      selFieldNames = m.multiUserInput(selRowOptions)
+      sel_row_print = f"You selected '{sel_row_list}'. Input the indexes for the fields in the row you want to update. Separate by a ', ' for multiple fields. E.g. '1, 2, 3'"
+      sel_row_items = []
+      for item in range(len(sel_row_list)):
+        sel_row_items.append(sel_row_list[item])
+      sel_row_options = m.option_list(sel_row_items, sel_row_print)
+      sel_field_names = m.multi_user_input(sel_row_options)
 
       # Select new names
-      optTwoPrint = f"You selected the row fields '{selFieldNames}'. Input the new names for the fields. Separate by a ', ' for multiple items. E.g. '1, 2, 3'"
-      newRowNames = u.fieldLengthCheck(optTwoPrint, selFieldNames, 'selected row field')
+      opt_two_print = f"You selected the row fields '{sel_field_names}'. Input the new names for the fields. Separate by a ', ' for multiple items. E.g. '1, 2, 3'"
+      new_row_names = u.field_length_check(opt_two_print, sel_field_names, 'selected row field')
 
       # Update data
-      df.replace(to_replace=selFieldNames, value=newRowNames, inplace=True)
+      df.replace(to_replace=sel_field_names, value=new_row_names, inplace=True)
 
     # Add the data to the CSV file
     df.to_csv(filename, index=False)
       
     # Display updated file
-    self.displayData(filename)
+    self.display_data(filename)

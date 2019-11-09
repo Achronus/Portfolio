@@ -4,11 +4,11 @@
 #-----------------------------------------------------------------------
 # CONTENTS:
 # 1. File()
-#    a. findLocalFile()
-#    b. findOtherDriveFile()
-#    c. checkType()
-#    d. getOtherDrives()
-#    e. findFile()
+#    a. find_local_file()
+#    b. find_other_drive_file()
+#    c. check_type()
+#    d. get_other_drives()
+#    e. file_file()
 #-----------------------------------------------------------------------
 import os, re
 
@@ -18,38 +18,38 @@ import os, re
 class Search():
   """
   Handles all functions for the file searcher application.\n
-  Contains 5 functions: findLocalFile(), findOtherDriveFile(), checkType(), getOtherDrives(), findFile().
+  Contains 5 functions: find_local_file(), find_other_drive_file(), check_type(), get_other_drives(), file_file().
   """
   #-----------------------------------------------------------------------
-  # Num: 1a | Title: findLocalFile()
+  # Num: 1a | Title: find_local_file()
   #-----------------------------------------------------------------------
-  def findLocalFile(self, filename):
+  def find_local_file(self, filename):
     """
     Used to find a file or folder on your local disk drive.\n
     Parameters: (1) file or folder name.
     """
     # Find the file
-    localDrive = 'C:\\'
-    self.checkType(filename, localDrive)
+    local_drive = 'C:\\'
+    self.check_type(filename, local_drive)
       
   #-----------------------------------------------------------------------
-  # Num: 1b | Title: findOtherDriveFile()
+  # Num: 1b | Title: find_other_drive_file()
   #-----------------------------------------------------------------------
-  def findOtherDriveFile(self, filename):
+  def find_other_drive_file(self, filename):
     """
     Used to find a file or folder on another drive other than your local disk drive.\n
     Parameters: (1) file or folder name.
     """
     # Get list of other drives
     clear = lambda: os.system('cls')
-    driveList = self.getOtherDrives()
+    drive_list = self.get_other_drives()
 
     # Display list of other drives
-    driveDict = {}
+    drive_dict = {}
     print('----------------------------------------------------------------------')
     print('Input the index of the drive you want to search through.')
-    for idx, item in enumerate(driveList, start=1):
-      driveDict.update({idx : item})
+    for idx, item in enumerate(drive_list, start=1):
+      drive_dict.update({idx : item})
       print(f"  {idx}. {item}")
     print('---------------------------------------------------------------------')
 
@@ -59,14 +59,14 @@ class Search():
         ui = input('=> ')
         
         # Check through dict and get drive option
-        if int(ui) in driveDict:
+        if int(ui) in drive_dict:
           clear()
-          selectedDrive = driveDict.get(int(ui)) # Get drive name
+          selected_drive = drive_dict.get(int(ui)) # Get drive name
         else:
           print("Index out of list, please input a valid index.")
         
         # Search for file/folder
-        self.checkType(filename, selectedDrive)
+        self.check_type(filename, selected_drive)
         break
 
       # Return error if not a number
@@ -74,69 +74,69 @@ class Search():
         print("That isn't a number!")
 
   #-----------------------------------------------------------------------
-  # Num: 1c | Title: checkType()
+  # Num: 1c | Title: check_type()
   #-----------------------------------------------------------------------
-  def checkType(self, filename, driveToSearch):
+  def check_type(self, filename, drive_to_search):
     """
     Used to check if the file name is a file or folder.\n
     Parameters: (2) file name, drive to search through
     """
     # If its a file
     if os.path.isfile(filename):
-      self.findFile(filename, driveToSearch, 'file')
+      self.file_file(filename, drive_to_search, 'file')
     # Else if its a directory
     else:
-      self.findFile(filename, driveToSearch, 'directory')
+      self.file_file(filename, drive_to_search, 'directory')
 
   #-----------------------------------------------------------------------
-  # Num: 1d | Title: getOtherDrives()
+  # Num: 1d | Title: get_other_drives()
   #-----------------------------------------------------------------------
-  def getOtherDrives(self):
+  def get_other_drives(self):
     """
     Used to get the other drive letters that are located on the machine.
     """
     # Get drive letters
-    driveList = 'ABDEFGHIJKLMNOPQRSTUVWXYZ'
+    drive_list = 'ABDEFGHIJKLMNOPQRSTUVWXYZ'
     
     # iterate over drive letters
-    drives = ['%s:\\' % d for d in driveList if os.path.exists('%s:\\' % d)]
+    drives = ['%s:\\' % d for d in drive_list if os.path.exists('%s:\\' % d)]
     return drives
 
   #-----------------------------------------------------------------------
-  # Num: 1e | Title: findFile()
+  # Num: 1e | Title: file_file()
   #-----------------------------------------------------------------------
-  def findFile(self, filename, driveToSearch, itemType):
+  def file_file(self, filename, drive_to_search, item_type):
     """
-    Utility function for findLocalFile() and findOtherDriveFile() to search for the selected file or folder.\n
+    Utility function for find_local_file() and find_other_drive_file() to search for the selected file or folder.\n
     Parameters: (3) file name, drive to search through, item type
     """
     # Set regex
     rex = re.compile(filename)
-    resultList = []
+    result_list = []
 
-    print(f'Searching for {itemType}, please wait...')
+    print(f'Searching for {item_type}, please wait...')
     print('------------------------------------------------------------------------------------------------------------------------')
     # Search through files
-    for (root, dirs, files) in os.walk(driveToSearch):
+    for (root, dirs, files) in os.walk(drive_to_search):
       # Find dir
-      if itemType == 'directory':
+      if item_type == 'directory':
         for d in dirs:
           result = rex.match(d)
           if result:
             print(os.path.join(root, d))
-            resultList.append(d)
+            result_list.append(d)
       
       # Find file
-      if itemType == 'file':
+      if item_type == 'file':
         for f in files:
           result = rex.match(f)
           if result:
             print(os.path.join(root, f))
-            resultList.append(f)
+            result_list.append(f)
     
     # Check that a result has been provided
-    if len(resultList) == 0:
-      print(f'No {itemType}s found with {filename} on {driveToSearch}.')
+    if len(result_list) == 0:
+      print(f'No {item_type}s found with {filename} on {drive_to_search}.')
     else:
       print('------------------------------------------------------------------------------------------------------------------------')
-      print(f"Searching complete. See all {itemType} locations above.")
+      print(f"Searching complete. See all {item_type} locations above.")

@@ -4,11 +4,11 @@
 #-----------------------------------------------------------------------
 # CONTENTS:
 # 1. Menu()
-#   a. typeList()
-#   b. convertList()
-#   c. convertListOutputFormat()
-#   d. getUserInput()
-#   e. getValue()
+#   a. type_list()
+#   b. convert_list()
+#   c. convert_list_output()
+#   d. get_user_input()
+#   e. get_value()
 #-----------------------------------------------------------------------
 import os
 
@@ -19,29 +19,29 @@ class Menu():
   """
   Parent class to all other conversion metrics.\n
   Parameters: (1) Number.\n
-  Functions available (3): result(convertFrom, convertTo, result), typeList(optionList), convertList(conType)
+  Functions available (3): result(convert_from, convert_to, result), type_list(option_list), convert_list(conversion_type)
   """  
   #-----------------------------------------------------------------------
-  # Num: 1a | Title: typeList()
+  # Num: 1a | Title: type_list()
   #-----------------------------------------------------------------------
-  def typeList(self, optionList):
+  def type_list(self, option_list):
     """
     Displays a list of all the conversion type options. Takes an option list as input.\n
     Options: (6) Temperature, frequency, weight, volume, angle, length.
     """
     # Output conversion type options list
-    printOutput = "Select the conversion type (input the index):"
-    optionsDict = self.convertListOutputFormat(optionList, printOutput)
-    conType = self.getUserInput(optionsDict)
-    return conType
+    print_output = "Select the conversion type (input the index):"
+    options_dict = self.convert_list_output(option_list, print_output)
+    conversion_type = self.get_user_input(options_dict)
+    return conversion_type
 
   #-----------------------------------------------------------------------
-  # Num: 1b | Title: convertList()
+  # Num: 1b | Title: convert_list()
   #-----------------------------------------------------------------------
-  def convertList(self, conType):
+  def convert_list(self, conversion_type):
     """
     Displays a list of all the conversion options within the selected converion type for from and to.\n
-    Takes a conversion type as input and uses the utility function 'convertListOutputFormat()'.\n
+    Takes a conversion type as input and uses the utility function 'convert_list_output()'.\n
     Options are broken down into relevant types below:\n
       1. Angle (4) - Degrees, radians, gradians, milligradians.
       2. Frequency (4) - Hertz, kilohertz, megahertz, gigahertz.
@@ -51,61 +51,61 @@ class Menu():
       6. Weight (8) - Kilogram, gram, milligram, ton, microgram, stone, pound, ounce.
     """
     # Set Metrics
-    if conType == 'Angle':
+    if conversion_type == 'Angle':
       metrics = ['Degrees', 'Gradians', 'Milligradians', 'Radians']
 
-    if conType == 'Frequency':
+    if conversion_type == 'Frequency':
       metrics = ['Gigahertz', 'Hertz', 'Kilohertz', 'Megahertz']
 
-    if conType == 'Length':
+    if conversion_type == 'Length':
       metrics = ['Centimetre', 'Foot', 'Inch', 'Kilometre', 'Metre', 'Micrometre', 'Mile', 'Millimetre', 'Nanometre', 'Nautical Mile', 'Yard']
     
-    if conType == 'Volume':
+    if conversion_type == 'Volume':
       metrics = ['Cubic Foot', 'Cubic Inch', 'Cubic Metre', 'Cup', 'Fluid Ounce', 'Gallon', 'Litre', 'Millilitre', 'Pint', 'Tablespoon', 'Teaspoon', 'Quart']
     
-    if conType == 'Temperature':
+    if conversion_type == 'Temperature':
       metrics = ['Celsius', 'Fahrenheit', 'Kelvin']
     
-    if conType == 'Weight':
+    if conversion_type == 'Weight':
       metrics = ['Gram', 'Kilogram', 'Microgram', 'Milligram', 'Ounce', 'Pound', 'Stone', 'Ton']
     
     # Output metric list and get conversion metric
-    printOutput1 = f"You selected the '{conType}' conversion type, what would you like to convert as?"
-    metricDict = self.convertListOutputFormat(metrics, printOutput1)
-    convertFrom = self.getUserInput(metricDict)
+    print_output1 = f"You selected the '{conversion_type}' conversion type, what would you like to convert as?"
+    metric_dict = self.convert_list_output(metrics, print_output1)
+    convert_from = self.get_user_input(metric_dict)
 
     # Remove selected metric
-    if convertFrom in metrics:
-      metrics.remove(convertFrom)
+    if convert_from in metrics:
+      metrics.remove(convert_from)
 
     # Output new metric list and get conversion metric
-    printOutput2 = f"You selected the '{convertFrom}' conversion metric to convert to:"
-    updatedMetricDict = self.convertListOutputFormat(metrics, printOutput2)
-    convertTo = self.getUserInput(updatedMetricDict)
-    return convertFrom, convertTo 
+    print_output2 = f"You selected the '{convert_from}' conversion metric to convert to:"
+    updated_metric_dict = self.convert_list_output(metrics, print_output2)
+    convert_to = self.get_user_input(updated_metric_dict)
+    return convert_from, convert_to 
   
   #-----------------------------------------------------------------------
-  # Num: 1c | Title: convertListOutputFormat()
+  # Num: 1c | Title: convert_list_output()
   #-----------------------------------------------------------------------
-  def convertListOutputFormat(self, optionList, printOutput):
+  def convert_list_output(self, option_list, print_output):
     """
-    Utility function for convertList. Takes in a list and returns a dictionary.\n
+    Utility function for convert_list. Takes in a list and returns a dictionary.\n
     Parameters: (2) options list, print output statement
     """
     # Get list of relevant options and items
-    itemDict = {}
+    item_dict = {}
     print('---------------------------------------------------------------------------------')
-    print(printOutput)
-    for idx, item in enumerate(optionList, start=1):
-      itemDict.update({idx : item})
+    print(print_output)
+    for idx, item in enumerate(option_list, start=1):
+      item_dict.update({idx : item})
       print(f"  {idx}. {item}")
     print('---------------------------------------------------------------------------------')
-    return itemDict
+    return item_dict
 
   #-----------------------------------------------------------------------
-  # Num: 1d | Title: getUserInput()
+  # Num: 1d | Title: get_user_input()
   #-----------------------------------------------------------------------
-  def getUserInput(self, optionsDict):
+  def get_user_input(self, options_dict):
     """
     Utility function used to get the users input.
     """
@@ -116,9 +116,9 @@ class Menu():
         ui = input('=> ')
 
         # Check through dict and get input option
-        if int(ui) in optionsDict:
+        if int(ui) in options_dict:
           clear()
-          return optionsDict.get(int(ui)) # returns a type or metric name
+          return options_dict.get(int(ui)) # returns a type or metric name
         else:
           print("Number is invalid, please try again.")
       
@@ -127,14 +127,14 @@ class Menu():
         print("That isn't a number!")
 
   #-----------------------------------------------------------------------
-  # Num: 1e | Title: getValue()
+  # Num: 1e | Title: get_value()
   #-----------------------------------------------------------------------
-  def getValue(self, convertFrom, convertTo):
+  def get_value(self, convert_from, convert_to):
     """
     Used to get the value for converting to a different metric.
     """
     # Get users input
-    print(f"Input a number to convert from '{convertFrom}' to '{convertTo}':")
+    print(f"Input a number to convert from '{convert_from}' to '{convert_to}':")
     while True:
       try:
         value = int(input('=> '))

@@ -3,7 +3,7 @@
 # File Description: A method of cracking a transposition cipher.
 #-----------------------------------------------------------------------
 # CONTENTS:
-# 1. bfTransposition()
+# 1. bf_transposition()
 # 2. main()
 #-----------------------------------------------------------------------
 import sys, os
@@ -11,9 +11,9 @@ import detectEnglish as de
 import transposition as tp
 
 #-----------------------------------------------------------------------
-# Num: 1 | Title: bfTransposition()
+# Num: 1 | Title: bf_transposition()
 #-----------------------------------------------------------------------
-def bfTransposition(phrase):
+def bf_transposition(phrase):
   """
   Runs through all instances of a transposition key until it finds the correct one and outputs it.\n
   Parameters: (1) phrase/data to crack
@@ -29,7 +29,7 @@ def bfTransposition(phrase):
     decText = tc.decrypt(phrase, key)
 
     # If the text is English
-    if detect.isEnglish(decText):
+    if detect.is_english(decText):
       print("\nPossible encryption cracked:")
       print(f"Key {key}: {decText[:100]}\n")
       print("Enter D if done, anything else to continue cracking:")
@@ -47,7 +47,7 @@ def main():
   Consists of the main functionality of the script.
   """
   message = "Cenoonommstmme oo snnio. s s c"
-  phrase = bfTransposition(message)
+  phrase = bf_transposition(message)
 
   if phrase == None:
     print("Failed to crack encryption.")

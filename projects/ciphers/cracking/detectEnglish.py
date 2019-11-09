@@ -4,10 +4,10 @@
 #-----------------------------------------------------------------------
 # CONTENTS:
 # 1. DetectEnglishText() 
-#   a. loadDictionary()
-#   b. getEnglishCount()
-#   c. removeNonLetters()
-#   d. isEnglish()
+#   a. load_dictionary()
+#   b. get_english_count()
+#   c. remove_non_letters()
+#   d. is_english()
 #-----------------------------------------------------------------------
 
 #-----------------------------------------------------------------------
@@ -16,85 +16,85 @@
 class DetectEnglishText():
 	"""
 	A class used to detect English words.\n
-	Functions: (4) loadDictionary, getEnglishCount, removeNonLetters, isEnglish 
+	Functions: (4) load_dictionary, get_english_count, remove_non_letters, is_english 
 	"""
 	letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-	allLetters = letters + letters.lower() + ' \t\n' # Including spaces
+	all_letters = letters + letters.lower() + ' \t\n' # Including spaces
 
 	#-----------------------------------------------------------------------
-	# Num: 1a | Title: loadDictionary()
+	# Num: 1a | Title: load_dictionary()
 	#-----------------------------------------------------------------------
-	def loadDictionary(self):
+	def load_dictionary(self):
 		"""
 		Opens the dictionary text file and stores all of the words within it into an English words dictonary. Returns the words dictionary.
 		"""
 		# Open file
 		f = open('dictionary.txt')
-		englishWords = {}
+		english_words = {}
 
 		# Loop through each word in file
 		for word in f.read().split('\n'):
-				englishWords[word] = None
+				english_words[word] = None
 		f.close()
 
-		return englishWords
+		return english_words
 
 	#-----------------------------------------------------------------------
-	# Num: 1b | Title: getEnglishCount()
+	# Num: 1b | Title: get_english_count()
 	#-----------------------------------------------------------------------
-	def getEnglishCount(self, message):
+	def get_english_count(self, message):
 		"""
 		Gets the word count of a message provided.\n
 		Parameters: (1) message to check
 		"""
 		# Set variables
 		message = message.upper()
-		message = self.removeNonLetters(message) # Remove punctuation
-		possibleWords = message.split() # Split words by spaces into list
-		words = self.loadDictionary()
+		message = self.remove_non_letters(message) # Remove punctuation
+		possible_words = message.split() # Split words by spaces into list
+		words = self.load_dictionary()
 
 		# Check if there are english words
-		if possibleWords == []:
+		if possible_words == []:
 				return 0 # no words, so return 0
 
 		count = 0
 		# If there are words, add one to count
-		for word in possibleWords:
+		for word in possible_words:
 				if word in words:
 						count += 1
 
-		return float(count) / len(possibleWords)
+		return float(count) / len(possible_words)
 
 	#-----------------------------------------------------------------------
-	# Num: 1c | Title: removeNonLetters()
+	# Num: 1c | Title: remove_non_letters()
 	#-----------------------------------------------------------------------
-	def removeNonLetters(self, message):
+	def remove_non_letters(self, message):
 		"""
-		Utility function for the getEnglishCount function, used to remove all punctuation (other than spaces).\n
+		Utility function for the get_english_count function, used to remove all punctuation (other than spaces).\n
 		Parameters: (1) message to check
 		"""
-		lettersOnly = []
+		letters_only = []
 		# Loop through each letter
 		for symbol in message:
-			if symbol in self.allLetters:
-				lettersOnly.append(symbol)
+			if symbol in self.all_letters:
+				letters_only.append(symbol)
 
-		return ''.join(lettersOnly)
+		return ''.join(letters_only)
 
 	#-----------------------------------------------------------------------
-	# Num: 1d | Title: isEnglish()
+	# Num: 1d | Title: is_english()
 	#-----------------------------------------------------------------------
-	def isEnglish(self, message, wordPercentage=20, letterPercentage=85):
+	def is_english(self, message, word_percent=20, letter_percent=85):
 		"""
 		Checks if a message contains English words. Requires a minimum of 20% of the words in the dictionary being being valid and 85% of all characters in the message must be letters or spaces (not punctuation or numbers).\n
 		Parameters: (3) message to check, minimum word count that is English, letter percentage
 		"""
 		# Count the words
-		wordsMatch = self.getEnglishCount(message) * 100 >= wordPercentage
-		numLetters = len(self.removeNonLetters(message))
+		words_match = self.get_english_count(message) * 100 >= word_percent
+		num_letters = len(self.remove_non_letters(message))
 
 		# Determine letters
-		messageLettersPercentage = float(numLetters) / len(message) * 100
-		lettersMatch = messageLettersPercentage >= letterPercentage
+		message_letters_percent = float(num_letters) / len(message) * 100
+		letters_match = message_letters_percent >= letter_percent
 
-		return wordsMatch and lettersMatch
+		return words_match and letters_match
