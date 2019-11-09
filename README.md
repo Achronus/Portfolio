@@ -9,11 +9,23 @@ Within this document I will go into detail on the projects that I have created. 
 Python is a beautiful language that allows for easy readability of code without the need for brackets. Also, it has the ability to do anything you need! Ranging from web development, to data science, to data mining or even automating small menial and tedious tasks - overall, it's a great language to have in your toolkit!
 
 ### Contents
+  * [Data Visualisation](#data-visualisation) - _In Development!_
   * [Projects](#projects)
   * [Mini Scripts](#mini-scripts)
   * [Personal](#personal)
 
+## Data Visualisation
+This folder is home to all of my data visualisation projects. This focuses on different data sets displayed in a visual way! The project list is as follows:
+
+  * [Terror Attacks Heatmap](#terror-attacks-heatmap) - _In Development!_
+
+  ## Terror Attacks Heatmap
+  Using the Global Terrorism Database (GTD) from Kaggle, that can be found [here](https://www.kaggle.com/START-UMD/gtd). This data set contains over 180,000 Terrorist Attacks within a time period of: 1970 - 2017, excluding 1993. Using the dataset, I have created a worldwide heatmap to identify the main areas of attacks. 
+
+
 ## Projects
+This folder is home to custom projects that I have created. These are primarily console run applications, where you can type in a few console commands to receive a specific output. These projects can be run within the relevant folder using the command `python3 main.py`. You **MUST** have a minimum of Python 3.7 installed to be able to use the programs. The project list is as follows:
+
   * [Conversion Exchanger](#conversion-exchanger)
   * [CSV Editor](#csv-editor)
   * [File Searcher](#file-searcher)
@@ -21,12 +33,7 @@ Python is a beautiful language that allows for easy readability of code without 
   * [Data Extraction Tool](#data-extraction-tool)
   * [Graph Plotter](#graph-plotter) - _Coming soon!_
 
-  ### Description
-  This area is dedicated to all the large projects I have completed. These projects can be run within the relevant folder using the command `python3 main.py`. You **MUST** have a minimum of Python 3.7 installed to be able to use the programs.
-
   ## [Conversion Exchanger](https://github.com/Achronus/Portfolio/tree/master/projects/conversion_exchanger)
-  
-  ### What It Does
   This is designed to convert core metrics from one to another. Inputting the index of your choice allows you to select the conversion type and then go through the metric options relevant to that type. It reads from a CSV of formulas to get the correct conversion, based on the users input. 
   
   In total the program has 6 conversion types that consist of 42 different metrics. That's a total of 328 conversions! These metrics include:
@@ -63,8 +70,6 @@ Python is a beautiful language that allows for easy readability of code without 
   ```
 
   ## [CSV Editor](https://github.com/Achronus/Portfolio/tree/master/projects/csv_editor)
-
-  ### What It Does
   This project is a console based application that allows you to create new CSV files that you can add data to, remove data from or update existing data inside of it. This program uses the _pandas_ library to allow editing the CSV data as a dataframe that then updates the file name of the users choice.
 
   Below is an example of what the main menu looks like:
@@ -84,8 +89,6 @@ Python is a beautiful language that allows for easy readability of code without 
   ```
 
   ## [File Searcher](https://github.com/Achronus/Portfolio/tree/master/projects/file_searcher)
-
-  ### What It Does
   This project is used to locate a file or directory in minutes. Simply input one of two commands `local [filename/folder name]` or `other [filename/folder name]` and the program will search the disk drive of your choice. This also works with USB sticks and external hard drives connected to your machine.
 
   ```
@@ -113,8 +116,6 @@ Python is a beautiful language that allows for easy readability of code without 
   ```
 
   ## [Ciphers](https://github.com/Achronus/Portfolio/tree/master/projects/ciphers)
-
-  ### What It Does
   This folder consists of 4 common ciphers: the Caesar cipher, Transposition cipher, Substitution cipher and Affine cipher. Each cipher has their own unique class, with functions for encrypting and decrypting and an example for each one. 
 
   In addition to this, some of the ciphers have an example of being brute-forced. NOTE: I do not recommend using these ciphers for securing confidential information, these were fun little projects for me to understanding another means of problem solving.
@@ -130,8 +131,6 @@ Python is a beautiful language that allows for easy readability of code without 
   
 
   ## [Data Extraction Tool](https://github.com/Achronus/Portfolio/tree/master/projects/data_extraction_tool)
-  
-  ### What It Does
   The Data Extraction Tool uses the _BeautifulSoup_ and _pandas_ libraries to extract all the content you require from a local HTML file. You can select to extract: paragraphs, headings, links, image links, just links, just paragraphs and headings or all options in one!
 
   Firstly, input the name of the CSV file you want to create.
