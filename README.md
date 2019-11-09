@@ -15,8 +15,9 @@ Python is a beautiful language that allows for easy readability of code without 
   * [Personal](#personal)
 
 ## Data Visualisation
-This folder is home to all of my data visualisation projects. This focuses on different data sets displayed in a visual way! The project list is as follows:
+This folder is home to all of my data visualisation projects. This focuses on different data sets displayed in a visual way! 
 
+The project list is as follows:
   * [Terror Attacks Heatmap](#terror-attacks-heatmap) - _In Development!_
 
   ## Terror Attacks Heatmap
@@ -24,8 +25,9 @@ This folder is home to all of my data visualisation projects. This focuses on di
 
 
 ## Projects
-This folder is home to custom projects that I have created. These are primarily console run applications, where you can type in a few console commands to receive a specific output. These projects can be run within the relevant folder using the command `python3 main.py`. You **MUST** have a minimum of Python 3.7 installed to be able to use the programs. The project list is as follows:
+This folder is home to custom projects that I have created. These are primarily console run applications, where you can type in a few console commands to receive a specific output. These projects can be run within the relevant folder using the command `python3 main.py`. You **MUST** have a minimum of Python 3.7 installed to be able to use the programs. 
 
+The project list is as follows:
   * [Conversion Exchanger](#conversion-exchanger)
   * [CSV Editor](#csv-editor)
   * [File Searcher](#file-searcher)
