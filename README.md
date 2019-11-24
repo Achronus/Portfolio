@@ -9,20 +9,9 @@ Within this document I will go into detail on the projects that I have created. 
 Python is a beautiful language that allows for easy readability of code without the need for brackets. Also, it has the ability to do anything you need! Ranging from web development, to data science, to data mining or even automating small menial and tedious tasks - overall, it's a great language to have in your toolkit!
 
 ### Contents
-  * [Data Visualisation](#data-visualisation) - _In Development!_
   * [Projects](#projects)
   * [Mini Scripts](#mini-scripts)
   * [Personal](#personal)
-
-## Data Visualisation
-This folder is home to all of my data visualisation projects. This focuses on different data sets displayed in a visual way! 
-
-The project list is as follows:
-  * [Terror Attacks Heatmap](#terror-attacks-heatmap) - _In Development!_
-
-  ## Terror Attacks Heatmap
-  Using the Global Terrorism Database (GTD) from Kaggle, that can be found [here](https://www.kaggle.com/START-UMD/gtd). This data set contains over 180,000 Terrorist Attacks within a time period of: 1970 - 2017, excluding 1993. Using the dataset, I have created a worldwide heatmap to identify the main areas of attacks. 
-
 
 ## Projects
 This folder is home to custom projects that I have created. These are primarily console run applications, where you can type in a few console commands to receive a specific output. These projects can be run within the relevant folder using the command `python3 main.py`. You **MUST** have a minimum of Python 3.7 installed to be able to use the programs. 
