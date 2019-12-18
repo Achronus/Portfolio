@@ -2,14 +2,6 @@
 # File Title: Search Class
 # File Description: Handles the functions for the file searcher. 
 #-----------------------------------------------------------------------
-# CONTENTS:
-# 1. File()
-#    a. find_local_file()
-#    b. find_other_drive_file()
-#    c. check_type()
-#    d. get_other_drives()
-#    e. file_file()
-#-----------------------------------------------------------------------
 import os, re
 
 #-----------------------------------------------------------------------
@@ -18,7 +10,7 @@ import os, re
 class Search():
   """
   Handles all functions for the file searcher application.\n
-  Contains 5 functions: find_local_file(), find_other_drive_file(), check_type(), get_other_drives(), file_file().
+  Contains 5 functions: find_local_file(), find_other_drive_file(), check_type(), get_other_drives(), find_file().
   """
   #-----------------------------------------------------------------------
   # Num: 1a | Title: find_local_file()
@@ -83,10 +75,10 @@ class Search():
     """
     # If its a file
     if os.path.isfile(filename):
-      self.file_file(filename, drive_to_search, 'file')
+      self.find_file(filename, drive_to_search, 'file')
     # Else if its a directory
     else:
-      self.file_file(filename, drive_to_search, 'directory')
+      self.find_file(filename, drive_to_search, 'directory')
 
   #-----------------------------------------------------------------------
   # Num: 1d | Title: get_other_drives()
@@ -103,9 +95,9 @@ class Search():
     return drives
 
   #-----------------------------------------------------------------------
-  # Num: 1e | Title: file_file()
+  # Num: 1e | Title: find_file()
   #-----------------------------------------------------------------------
-  def file_file(self, filename, drive_to_search, item_type):
+  def find_file(self, filename, drive_to_search, item_type):
     """
     Utility function for find_local_file() and find_other_drive_file() to search for the selected file or folder.\n
     Parameters: (3) file name, drive to search through, item type

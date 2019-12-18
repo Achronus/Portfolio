@@ -2,13 +2,6 @@
 # File Title: Utility Class
 # File Description: Contains utility functions for the Editor class.
 #-----------------------------------------------------------------------
-# CONTENTS:
-# 1. Utility()
-#    a. new_data()
-#    b. field_length_check()
-#    c. get_col_names()
-#    d. get_rows_as_list()
-#-----------------------------------------------------------------------
 import pandas as pd
 from menu import Menu
 

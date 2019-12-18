@@ -2,15 +2,6 @@
 # File Title: Substitution Cipher
 # File Description: A cipher that is very difficult to brute force attack.
 #-----------------------------------------------------------------------
-# CONTENTS:
-# 1. SubstitutionCipher()
-#   a. key_is_valid()
-#   b. encrypt()
-#   c. decrypt()
-#   d. translate_message()
-#   e. get_random_key()
-# 2. main()
-#-----------------------------------------------------------------------
 import random, sys
 
 #-----------------------------------------------------------------------
@@ -22,7 +13,6 @@ class SubstitutionCipher():
   Functions: (5) key_is_valid, encrypt, decrypt, translate_message, get_random_key
   """
   letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
   #-----------------------------------------------------------------------
   # Num: 1a | Title: key_is_valid()
   #-----------------------------------------------------------------------

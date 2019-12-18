@@ -2,12 +2,6 @@
 # File Title: Menu Class
 # File Description: Handles the menu functionality.
 #-----------------------------------------------------------------------
-# CONTENTS:
-# 1. Menu()
-#    a. get_filename()
-#    b. get_num_user_input()
-#    c. display_menu()
-#-----------------------------------------------------------------------
 import os
 
 #-----------------------------------------------------------------------

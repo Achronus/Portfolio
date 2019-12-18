@@ -2,11 +2,6 @@
 # File Title: FileManage Class
 # File Description: Handles the file management functionality.
 #-----------------------------------------------------------------------
-# CONTENTS:
-# 1. FileManage()
-#    a. check_directory()
-#    b. get_html_filenames()
-#-----------------------------------------------------------------------
 import os, time
 
 #-----------------------------------------------------------------------

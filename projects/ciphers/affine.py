@@ -2,15 +2,6 @@
 # File Title: Affine Cipher
 # File Description: A combination of the multiplication and Caesar ciphers.
 #-----------------------------------------------------------------------
-# CONTENTS:
-# 1. AffineCiper()
-#   a. encrypt()
-#   b. decrypt()
-#   c. get_key_parts()
-#   d. check_keys()
-#   e. get_random_key()
-# 2. main()
-#-----------------------------------------------------------------------
 import cryptomath, random, sys
 
 #-----------------------------------------------------------------------

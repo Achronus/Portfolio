@@ -2,14 +2,6 @@
 # File Title: Columnar Transposition Cipher
 # File Description: A cipher that reorganizes a phrase as a form of encryption.
 #-----------------------------------------------------------------------
-# CONTENTS:
-# 1. TranspositionCipher()
-#   a. encrypt()
-#   b. decrypt()
-#   c. random_data_test()
-#   d. read_file()
-# 2. main()
-#-----------------------------------------------------------------------
 import math, random, time, os
 
 #-----------------------------------------------------------------------
@@ -20,7 +12,6 @@ class TranspositionCipher():
   A class dedicated to the Transposition cipher that reorganizes a phrase as a form of encryption.\n
   Functions: (4) encrypt, decrypt, random_data_test, read_file
   """
-
   #-----------------------------------------------------------------------
   # Num: 1a | Title: encrypt()
   #-----------------------------------------------------------------------

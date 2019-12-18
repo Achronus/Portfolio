@@ -2,14 +2,6 @@
 # File Title: Menu Class
 # File Description: Contains all functionality related to the menu.
 #-----------------------------------------------------------------------
-# CONTENTS:
-# 1. Menu()
-#   a. type_list()
-#   b. convert_list()
-#   c. convert_list_output()
-#   d. get_user_input()
-#   e. get_value()
-#-----------------------------------------------------------------------
 import os
 
 #-----------------------------------------------------------------------

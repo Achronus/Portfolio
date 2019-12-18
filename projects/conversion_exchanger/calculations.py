@@ -2,11 +2,6 @@
 # File Title: Calculations Class
 # File Description: Used to run all conversion calculations. 
 #-----------------------------------------------------------------------
-# CONTENTS:
-# 1. Calculations()
-#    a. read_csv()
-#    b. run_conversion()
-#-----------------------------------------------------------------------
 import csv, time, math
 
 #-----------------------------------------------------------------------

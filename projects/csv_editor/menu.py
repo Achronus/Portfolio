@@ -2,15 +2,6 @@
 # File Title: Menu Class
 # File Description: Class commited to the menu functionality.
 #-----------------------------------------------------------------------
-# CONTENTS:
-# 1. Menu()
-#    a. main_menu()
-#    b. exit_program()
-#    c. multi_user_input()
-#    d. single_user_input()
-#    e. option_list()
-#    f. get_row_user_input()
-#-----------------------------------------------------------------------
 import os
 
 #-----------------------------------------------------------------------

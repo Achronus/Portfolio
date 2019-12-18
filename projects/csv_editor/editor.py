@@ -2,15 +2,6 @@
 # File Title: Editor Class
 # File Description: Used to add or remove data to and from a CSV file.
 #-----------------------------------------------------------------------
-# CONTENTS:
-# 1. Editor()
-#    a. display_data()
-#    b. create_file()
-#    c. select_data()
-#    d. add_data()
-#    e. remove_data()
-#    f. update_data()
-#-----------------------------------------------------------------------
 import os, csv
 import numpy as np
 import pandas as pd

@@ -2,9 +2,6 @@
 # File Title: Main function
 # File Description: Used to run the program. 
 #-----------------------------------------------------------------------
-# CONTENTS:
-# 1. main()
-#-----------------------------------------------------------------------
 from menu import Menu
 from calculations import Calculations
 

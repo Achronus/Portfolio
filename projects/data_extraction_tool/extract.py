@@ -2,13 +2,6 @@
 # File Title: Extraction Class
 # File Description: Extracts data from a directory of HTML files.
 #-----------------------------------------------------------------------
-# CONTENTS:
-# 1. Extraction()
-#    a. create_csv()
-#    b. get_content()
-#    c. content_loop()
-#    d. set_column_length()
-#-----------------------------------------------------------------------
 import re, time
 from bs4 import BeautifulSoup
 import pandas as pd
