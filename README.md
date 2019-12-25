@@ -22,7 +22,7 @@ The project list is as follows:
   * [File Searcher](#file-searcher)
   * [Ciphers](#ciphers)
   * [Data Extraction Tool](#data-extraction-tool)
-  * [Graph Plotter](#graph-plotter) - _Coming soon!_
+  * [Shape Coordinate System](#shape-coordinate-system) - _Coming soon!_
 
   ## [Conversion Exchanger](https://github.com/Achronus/Portfolio/tree/master/projects/conversion_exchanger)
   This is designed to convert core metrics from one to another. Inputting the index of your choice allows you to select the conversion type and then go through the metric options relevant to that type. It reads from a CSV of formulas to get the correct conversion, based on the users input. 
@@ -151,8 +151,10 @@ The project list is as follows:
   =>
   ```
 
-  ## Graph Plotter
+  ## Shape Coordinate System
   _Coming soon!_
+
+  This project involves creation of a two-dimensional virtual coordinate system, allowing you to store basic geometric shapes coordinate positions. 
 
 ## [Mini Scripts](https://github.com/Achronus/Portfolio/tree/master/mini)
 Home to one page scripts and custom classes containing a variety of utility functions.
