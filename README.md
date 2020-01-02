@@ -22,7 +22,7 @@ The project list is as follows:
   * [File Searcher](#file-searcher)
   * [Ciphers](#ciphers)
   * [Data Extraction Tool](#data-extraction-tool)
-  * [Shape Coordinate System](#shape-coordinate-system) - _In Development!_
+  * [Shape Coordinate System](#shape-coordinate-system)
 
   ## [Conversion Exchanger](https://github.com/Achronus/Portfolio/tree/master/projects/conversion_exchanger)
   This is designed to convert core metrics from one to another. Inputting the index of your choice allows you to select the conversion type and then go through the metric options relevant to that type. It reads from a CSV of formulas to get the correct conversion, based on the users input. 
@@ -151,10 +151,62 @@ The project list is as follows:
   =>
   ```
 
-  ## Shape Coordinate System
-  _In Development!_
-
+  ## [Shape Coordinate System](https://github.com/Achronus/Portfolio/tree/master/projects/shape_coordinate_system)
   This project involves creation of a two-dimensional virtual coordinate system, allowing you to store basic geometric shapes coordinate positions. 
+
+  Firstly, you will be brought to a main menu screen like the below:
+  ```
+  -------------------------------------------------------------------------------------------------------
+  Main command menu
+  -------------------------------------------------------------------------------------------------------
+  - add - Create a new shape
+  - shift - Move or scale an existing shape
+  - menu - Displays the list of user commands
+  - display - Displays a list of shapes created
+  - exit - Exits the program
+  -------------------------------------------------------------------------------------------------------
+  Enter the command:
+  ```
+
+  Upon inputting the 'add' command, you will be brought to a new menu. Here you can select which shape/s to add. 
+
+  ```
+  -------------------------------------------------------------------------------------------------------
+  Input the command for the shape you would like to create
+  -------------------------------------------------------------------------------------------------------
+  - rectangle [x_coordinate] [y_coordinate] [height] [width] - Creates a rectangle
+  - square [x_coordinate] [y_coordinate] [edge_length] - Creates a square
+  - circle [x_coordinate] [y_coordinate] [radius] - Creates a circle
+  -------------------------------------------------------------------------------------------------------
+  Enter the command:
+  ```
+
+  Adding a shape is similar to the below.
+
+  ```
+  Enter the command: rectangle 10 10 4 3
+  Rectangle[h=4,w=3]
+  Points[(10, 10), (13, 10), (13, 14), (10, 14)]
+  Area=12.00 Perimeter=14.00
+
+  Input the command 'menu' for the list of commands.
+  ```
+
+  From here you can now go back to the main menu, input the 'shift' command and manipulate a shape with either move or scale. The shift menu looks like the following:
+  ```
+  -------------------------------------------------------------------------------------------------------
+  Input the command to change a shape
+  -------------------------------------------------------------------------------------------------------
+  - move [shape_index] [x_coordinate] [y_coordinate] - Moves a created shape
+  - scale [shape_index] [x_scale_amount] [y_scale_amount] - Scales a created shape
+  -------------------------------------------------------------------------------------------------------
+  ------------------------------
+  Shape Number: 1
+  ------------------------------
+  Rectangle[h=4,w=3]
+  Points[(10, 10), (13, 10), (13, 14), (10, 14)]
+  Area=12.00 Perimeter=14.00
+  ```
 
 ## [Mini Scripts](https://github.com/Achronus/Portfolio/tree/master/mini)
 Home to one page scripts and custom classes containing a variety of utility functions.
