@@ -14,19 +14,19 @@ import os, csv
 from shutil import copyfile
 
 #-----------------------------------------------------------------------
-# Num: 1 | Title: readCSV() 
+# Num: 1 | Title: read_csv() 
 #-----------------------------------------------------------------------
-def readCSV(currentdir):
+def read_csv(currentdir):
   """
   Used to read the csv file 'text.csv' to get the data.\n
   Parameters: (1) Current directory.\n
   CSV Order: (7) Company, issue, link, heading 1, paragraph 1, heading 2 & paragraph 2.
   """
   # Get csv file
-  csvFile = currentdir + '\\text.csv'
+  csv_file = currentdir + '\\text.csv'
 
   # Put csv data into list of lists
-  with open(csvFile, 'r') as f:
+  with open(csv_file, 'r') as f:
     reader = csv.reader(f, delimiter='|')
     data = list(reader)
   
@@ -35,22 +35,22 @@ def readCSV(currentdir):
   return data
 
 #-----------------------------------------------------------------------
-# Num: 2 | Title: readHTML()
+# Num: 2 | Title: read_html()
 #-----------------------------------------------------------------------
-def readHTML(directory, htmlList, index):
+def read_html(directory, html_list, index):
   """
   Used to read the HTML email creatives.\n
   Parameters: (3) Directory, html list & index value.
   """
   # Read and output copied file
-  filepath = directory + htmlList[index]
+  filepath = directory + html_list[index]
   f = open(filepath, 'r')
   return f.read()
 
 #-----------------------------------------------------------------------
-# Num: 3 | Title: replaceHTML()
+# Num: 3 | Title: replace_html()
 #-----------------------------------------------------------------------
-def replaceHTML(htmlFile, destination, issueNum, link, headOne, paraOne, 
+def replace_html(html_file, destination, issueNum, link, headOne, paraOne, 
                 headTwo, paraTwo, issueName, monthFormat):
   """
   Used to replace the HTML within each email creative.\n
@@ -67,7 +67,7 @@ def replaceHTML(htmlFile, destination, issueNum, link, headOne, paraOne,
 
   # Replace HTML elements
   with open(destination, 'w') as f:
-    f.write(htmlFile.replace('<td class="issue issue-number"></td>', issueReplace)
+    f.write(html_file.replace('<td class="issue issue-number"></td>', issueReplace)
             .replace(' class="issue-link" href="">', linkReplace)
             .replace('<h1 class="heading-1">', headOneReplace)
             .replace('<h1 class="heading-2">', headTwoReplace)
@@ -93,46 +93,42 @@ def main():
   htmldir = currentdir + '\\templates\\'
   newdir = currentdir + '\\updated\\'
 
-  # Get file names inside template folder
-  htmlList = os.listdir(htmldir)
-
-  # Remove .html from file names
-  upHtmlList = []
-  for i in range(len(htmlList)):
-    upHtmlList.append(htmlList[i].replace('.html', ''))
-  upHtmlList.remove('imgs')
-
   # Read CSV file
-  data = readCSV(currentdir)
+  data = read_csv(currentdir)
 
+  # Get file names from CSV file
+  html_list = []
+  for item in data:
+    html_list.append(item[0])
+ 
   # Create copies of HTML files, rename them and replace content
-  for item in range(len(data)):
-    index = 0
-    for index in range(item, len(upHtmlList)):
-      # Check that file names are the same
-      if data[index][0] == upHtmlList[item]:
-        # Update filename
-        fileName = upHtmlList[item] + '-issue' + data[index][1] + '.html'
+  count = 0
+  for item, html_item in zip(data, html_list):
+    # Check that file names are the same
+    if item[0] == html_item:
+      # Update filename
+      filename = html_item + '-issue' + item[1] + '.html'
 
-        # Copy file to new location
-        src, dst = htmldir + upHtmlList[item] + '.html', newdir + fileName
-        copyfile(src, dst)
+      # Copy file to new location
+      src, dst = htmldir + html_item + '.html', newdir + filename
+      copyfile(src, dst)
 
-        # create monthFormat variable
-        monthFormat = '/' + year + '/' + month + '/' + data[index][0] + '/issue' + data[index][1] + '/'
-        
-        # Read HTML files
-        newHtmlList = os.listdir(newdir)
-        fileContents = readHTML(newdir, newHtmlList, index)
+      # create monthFormat variable
+      month_format = '/' + year + '/' + month + '/' + item[0] + '/issue' + item[1] + '/'
+      
+      # Read HTML files
+      new_html_list = os.listdir(newdir)
+      file_contents = read_html(newdir, new_html_list, count)
+      count += 1
 
-        # Replace HTML content
-        replaceHTML(fileContents, dst, data[index][1], data[index][2], 
-                    data[index][3], data[index][4], data[index][5], 
-                    data[index][6], data[index][0], monthFormat)
-        
-        # Return file name to console
-        print(f'File {fileName} created and updated.')
-    
+      # Replace HTML content
+      replace_html(file_contents, dst, item[1], item[2], 
+                  item[3], item[4], item[5],
+                item[6], item[0], month_format)
+  
+      # Return file name to console
+      print(f'File {filename} created and updated.')
+
   # Output completion message to console
   print('----------------------------------------------------------------------')
   print("Files finished copying and updating, please check 'updated' folder.")
