@@ -2,19 +2,14 @@
 # File Title: Search Class
 # File Description: Handles the functions for the file searcher. 
 #-----------------------------------------------------------------------
-import os, re
+import os
+import re
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: Search()
-#-----------------------------------------------------------------------
 class Search():
   """
   Handles all functions for the file searcher application.\n
   Contains 5 functions: find_local_file(), find_other_drive_file(), check_type(), get_other_drives(), find_file().
   """
-  #-----------------------------------------------------------------------
-  # Num: 1a | Title: find_local_file()
-  #-----------------------------------------------------------------------
   def find_local_file(self, filename):
     """
     Used to find a file or folder on your local disk drive.\n
@@ -24,9 +19,6 @@ class Search():
     local_drive = 'C:\\'
     self.check_type(filename, local_drive)
       
-  #-----------------------------------------------------------------------
-  # Num: 1b | Title: find_other_drive_file()
-  #-----------------------------------------------------------------------
   def find_other_drive_file(self, filename):
     """
     Used to find a file or folder on another drive other than your local disk drive.\n
@@ -65,9 +57,6 @@ class Search():
       except ValueError:
         print("That isn't a number!")
 
-  #-----------------------------------------------------------------------
-  # Num: 1c | Title: check_type()
-  #-----------------------------------------------------------------------
   def check_type(self, filename, drive_to_search):
     """
     Used to check if the file name is a file or folder.\n
@@ -80,9 +69,6 @@ class Search():
     else:
       self.find_file(filename, drive_to_search, 'directory')
 
-  #-----------------------------------------------------------------------
-  # Num: 1d | Title: get_other_drives()
-  #-----------------------------------------------------------------------
   def get_other_drives(self):
     """
     Used to get the other drive letters that are located on the machine.
@@ -94,9 +80,6 @@ class Search():
     drives = ['%s:\\' % d for d in drive_list if os.path.exists('%s:\\' % d)]
     return drives
 
-  #-----------------------------------------------------------------------
-  # Num: 1e | Title: find_file()
-  #-----------------------------------------------------------------------
   def find_file(self, filename, drive_to_search, item_type):
     """
     Utility function for find_local_file() and find_other_drive_file() to search for the selected file or folder.\n

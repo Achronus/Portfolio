@@ -3,12 +3,9 @@
 # File Description: Used to run the program. 
 #-----------------------------------------------------------------------
 import os
-from menu import Menu
-from finder import Search
+from .menu import Menu
+from .finder import Search
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: main()
-#-----------------------------------------------------------------------
 def main():
   """
   Consists of the main functionality of the script.
