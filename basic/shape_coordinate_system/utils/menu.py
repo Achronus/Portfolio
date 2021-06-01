@@ -3,14 +3,10 @@
 # File Description: Handles all menu functionality.
 #-----------------------------------------------------------------------
 import os
-from circle import Circle
-from rectangle import Rectangle
-from square import Square
-from movable import Movable
+from shapes.circle import Circle
+from shapes.rectangle import Rectangle
+from shapes.square import Square
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: Menu()
-#-----------------------------------------------------------------------
 class Menu():
   """
   Used to handle all menu functionality and user input controls.\n
@@ -19,9 +15,6 @@ class Menu():
   _shapes = {}
   _idx = 1 # shape index
 
-  #-----------------------------------------------------------------------
-  # Num: a | Title: main_menu()
-  #-----------------------------------------------------------------------
   def main_menu(self):
     """
     Displays the programs main menu and command list.
@@ -36,9 +29,6 @@ class Menu():
     print(" - exit - Exits the program")
     print("-------------------------------------------------------------------------------------------------------")
 
-  #-----------------------------------------------------------------------
-  # Num: b | Title: add_menu()
-  #-----------------------------------------------------------------------
   def add_menu(self):
     """
     Displays the add menu command list.
@@ -51,9 +41,6 @@ class Menu():
     print(" - circle [x_coordinate] [y_coordinate] [radius] - Creates a circle")
     print("-------------------------------------------------------------------------------------------------------")
 
-  #-----------------------------------------------------------------------
-  # Num: c | Title: shift_menu()
-  #-----------------------------------------------------------------------
   def shift_menu(self):
     """
     Displays the shift menu command list.
@@ -65,9 +52,6 @@ class Menu():
     print(" - scale [shape_index] [x_scale_amount] [y_scale_amount] - Scales a created shape")
     print("-------------------------------------------------------------------------------------------------------")
 
-  #-----------------------------------------------------------------------
-  # Num: d | Title: get_command()
-  #-----------------------------------------------------------------------
   def get_command(self, *args):
     """
     Gets the user input and performs checks to action the required command.\n
@@ -85,9 +69,6 @@ class Menu():
     else:
       self.run_command(input_list)
 
-  #-----------------------------------------------------------------------
-  # Num: e | Title: run_command()
-  #-----------------------------------------------------------------------
   def run_command(self, input_list):
     """
     Checks the arguments of the input list are within the command list and run the associated command.\n
@@ -108,9 +89,7 @@ class Menu():
     if input_list[0] not in command_list:
       print("First argument is invalid, check correct spelling provided!")
 
-    #---------------------------
     # Create Rectangle
-    #---------------------------
     elif input_list[0] == "rectangle" and len(input_list) == 5:
 
       # Set Rectangle object, store shape and return output
@@ -124,9 +103,7 @@ class Menu():
       print()
       print("Input the command 'menu' for the list of commands.")
 
-    #---------------------------
     # Create Square
-    #---------------------------
     elif input_list[0] == "square" and len(input_list) == 4:
       
       # Set Square object, store shape and return output
@@ -140,9 +117,7 @@ class Menu():
       print()
       print("Input the command 'menu' for the list of commands.")
 
-    #---------------------------
     # Create Circle
-    #---------------------------
     elif input_list[0] == "circle" and len(input_list) == 4:
       
       # Set Circle object, store shape and return output
@@ -156,9 +131,7 @@ class Menu():
       print()
       print("Input the command 'menu' for the list of commands.")
 
-    #---------------------------
     # Move or scale a shape
-    #---------------------------
     elif (input_list[0] == "move" or input_list[0] == "scale") and len(input_list) == 4:
 
       # Check shape parameter is correct
@@ -183,16 +156,12 @@ class Menu():
         print()
         print("Input the command 'menu' for the list of commands.")
 
-    #---------------------------
     # Display add menu
-    #---------------------------
     elif input_list[0] == "add":
       clear_console()
       self.add_menu()
-    
-    #-------------------------------
+
     # Display shift menu or shapes
-    #-------------------------------
     elif input_list[0] == "shift" or input_list[0] == "display":
       
       # Check shape size
@@ -217,16 +186,12 @@ class Menu():
         if input_list[0] == "display":
           print("Input the command 'menu' for the list of commands.")
 
-    #---------------------------
     # Display menu
-    #---------------------------
     elif input_list[0] == "menu":
       clear_console()
       self.main_menu()
 
-    #---------------------------
     # Exit the program
-    #---------------------------
     elif input_list[0] == "exit":
       self.exit_program()
     
@@ -237,9 +202,6 @@ class Menu():
     # Create extra space
     print()
 
-  #-----------------------------------------------------------------------
-  # Num: f | Title: exit_program()
-  #-----------------------------------------------------------------------
   def exit_program(self):
     """
     Exits the program.

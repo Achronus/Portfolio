@@ -3,19 +3,13 @@
 # File Description: Abstract class for the shape class. 
 #-----------------------------------------------------------------------
 from abc import ABC, abstractmethod
-from point import Point
+from utils.point import Point
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: Shape()
-#-----------------------------------------------------------------------
 class Shape(ABC):
   """
   Abstract class for all child shapes. Contains a constructor and four functions.\n
   Functions: (4) calculate_area(), calculate_perimeter(), calculate_points(), display_stats()
   """
-  #-----------------------------------------------------------------------
-  # Num: a | Title: __init__()
-  #-----------------------------------------------------------------------
   def __init__(self, x=0, y=0, left_top=(0, 0), area=0, perimeter=0, points=[]):
     """
     Initalizes all shape variables.\n
@@ -33,9 +27,6 @@ class Shape(ABC):
     self._perimeter = perimeter
     self._points = list(points)
 
-  #-----------------------------------------------------------------------
-  # Num: b | Title: _calculate_area()
-  #-----------------------------------------------------------------------
   @abstractmethod
   def _calculate_area(self):
     """
@@ -43,9 +34,6 @@ class Shape(ABC):
     """
     pass
 
-  #-----------------------------------------------------------------------
-  # Num: c | Title: _calculate_perimeter()
-  #-----------------------------------------------------------------------
   @abstractmethod
   def _calculate_perimeter(self):
     """
@@ -53,9 +41,6 @@ class Shape(ABC):
     """
     pass
 
-  #-----------------------------------------------------------------------
-  # Num: d | Title: _calculate_points()
-  #-----------------------------------------------------------------------
   @abstractmethod
   def _calculate_points(self):
     """
@@ -63,9 +48,6 @@ class Shape(ABC):
     """
     pass
 
-  #-----------------------------------------------------------------------
-  # Num: e | Title: display_stats()
-  #-----------------------------------------------------------------------
   @abstractmethod
   def display_stats(self):
     """

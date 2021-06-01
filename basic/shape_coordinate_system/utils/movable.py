@@ -4,17 +4,11 @@
 #-----------------------------------------------------------------------
 from abc import ABC, abstractmethod
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: Movable()
-#-----------------------------------------------------------------------
 class Movable(ABC):
   """
   An abstract class used for the shape class, enables move and scale functionalty for child shape classes.\n
   Functions: (2) move(new_x, new_y), scale(scale_x, scale_y)
   """
-  #-----------------------------------------------------------------------
-  # Num: a | Title: move()
-  #-----------------------------------------------------------------------
   @abstractmethod
   def move(self, new_x, new_y):
     """
@@ -23,9 +17,6 @@ class Movable(ABC):
     """
     pass
 
-  #-----------------------------------------------------------------------
-  # Num: b | Title: scale()
-  #-----------------------------------------------------------------------
   @abstractmethod
   def scale(self, scale_x, scale_y):
     """
