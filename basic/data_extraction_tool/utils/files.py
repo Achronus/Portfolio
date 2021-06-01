@@ -2,22 +2,18 @@
 # File Title: FileManage Class
 # File Description: Handles the file management functionality.
 #-----------------------------------------------------------------------
-import os, time
+import os
+import time
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: FileManage()
-#-----------------------------------------------------------------------
 class FileManage():
   """
   Handles all file management functionality. These are mainly utility functions.\n
   Functions: (2) check_directory(), get_html_filenames()
   """
-  #-----------------------------------------------------------------------
-  # Num: 1a | Title: check_directory()
-  #-----------------------------------------------------------------------
   def check_directory(self):
     """
-    Checks that there are files within the relevant directory. If no files, display an error and close program. Returns data_folder location.
+    Checks that there are files within the relevant directory. If no files, 
+    display an error and close program. Returns data_folder location.
     """
     folder_name = 'data'
     data_folder = os.getcwd() + '\\' + folder_name
@@ -42,12 +38,10 @@ class FileManage():
       else:
         return data_folder
 
-  #-----------------------------------------------------------------------
-  # Num: 1b | Title: get_html_filenames()
-  #-----------------------------------------------------------------------
   def get_html_filenames(self, data_folder):
     """
-    Checks through the data directory and gets all HTML file names as a list. Returns the list of names.\n
+    Checks through the data directory and gets all HTML file names as a list. 
+    Returns the list of names.\n
     Parameters: (1) data folder file path
     """
     filenames = []

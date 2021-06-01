@@ -3,13 +3,10 @@
 # File Description: Used to run the program.
 #-----------------------------------------------------------------------
 import os
-from menu import Menu
-from extract import Extraction
-from files import FileManage
+from .utils.menu import Menu
+from .utils.extract import Extraction
+from .utils.files import FileManage
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: main()
-#-----------------------------------------------------------------------
 def main():
   """
   Consists of the main functionality of the script.
