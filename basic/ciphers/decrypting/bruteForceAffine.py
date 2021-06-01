@@ -3,8 +3,8 @@
 # File Description: Brute forcing the affine cipher.
 #-----------------------------------------------------------------------
 from basic.ciphers.affine import AffineCipher
-from basic.ciphers.cryptomath import gcd
-from .detectEnglish import DetectEnglishText
+from basic.ciphers.utils.cryptomath import gcd
+from basic.ciphers.utils.detectEnglish import DetectEnglishText
 
 def bf_affine(phrase):
   """

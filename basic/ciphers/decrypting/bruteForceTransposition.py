@@ -2,8 +2,8 @@
 # File Title: Brute Forcing Transposition Cipher
 # File Description: A method of cracking a transposition cipher.
 #-----------------------------------------------------------------------
-from .detectEnglish import DetectEnglishText
-from basic.ciphers.transposition import TranspositionCipher
+from basic.ciphers.utils.detectEnglish import DetectEnglishText
+from basic.ciphers.encrypting.transposition import TranspositionCipher
 
 def bf_transposition(phrase):
   """

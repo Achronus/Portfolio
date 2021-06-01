@@ -1,8 +1,8 @@
-#-----------------------------------------------------------------------
+#---------------------------------------------------------------------------
 # File Title: Affine Cipher
 # File Description: A combination of the multiplication and Caesar ciphers.
-#-----------------------------------------------------------------------
-from .cryptomath import gcd, find_mod_inverse
+#---------------------------------------------------------------------------
+from basic.ciphers.utils.cryptomath import gcd, find_mod_inverse
 import random 
 import sys
 
