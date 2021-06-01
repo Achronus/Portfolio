@@ -3,19 +3,13 @@
 # File Description: Contains utility functions for the Editor class.
 #-----------------------------------------------------------------------
 import pandas as pd
-from menu import Menu
+from .menu import Menu
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: Utility()
-#-----------------------------------------------------------------------
 class Utility():
   """
   Manages the utility functions for the Editor class.\n
   Functions: (4) new_data(), field_length_check(), get_col_names(), get_rows_as_list()
   """
-  #-----------------------------------------------------------------------
-  # Num: 1a | Title: new_data()
-  #-----------------------------------------------------------------------
   def new_data(self, new_col_name, dataset, column_names):
     """
     Used to get the column data for the addData() function.\n
@@ -29,9 +23,6 @@ class Utility():
     new_submission = pd.DataFrame({new_col_name : new_data}, columns=column_names)
     return dataset.append(new_submission, ignore_index=True, sort=True)
 
-  #-----------------------------------------------------------------------
-  # Num: 1b | Title: field_length_check()
-  #-----------------------------------------------------------------------
   def field_length_check(self, custom_print, compare_field, item):
     """
     Used to check that the user inputs length is valid. Used in addData() and updateData().\n
@@ -56,9 +47,6 @@ class Utility():
 
     return new_data
 
-  #-----------------------------------------------------------------------
-  # Num: 1c | Title: get_col_names()
-  #-----------------------------------------------------------------------
   def get_col_names(self, custom_print, column_names):
     """
     Used to get the column names for multiple choices in the program. Used in addData(), removeData() and updateData().\n
@@ -68,9 +56,6 @@ class Utility():
     options = m.option_list(column_names, custom_print)
     return m.single_user_input(options)
 
-  #-----------------------------------------------------------------------
-  # Num: 1d | Title: get_rows_as_list()
-  #-----------------------------------------------------------------------
   def get_rows_as_list(self, dataset):
     """
     Used to get the csv files rows within a list format.\n

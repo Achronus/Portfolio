@@ -4,18 +4,12 @@
 #-----------------------------------------------------------------------
 import os
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: Menu()
-#-----------------------------------------------------------------------
 class Menu():
   """
   Used to manage the menu functionality.\n
   Contains 6 functions: main_menu(), exit_program(), multi_user_input(), single_user_input(), option_list(), get_row_user_input().
   """
-  #-----------------------------------------------------------------------
-  # Num: 1a | Title: main_menu()
-  #-----------------------------------------------------------------------
-  def main_menu(self, *args):
+  def main_menu(self):
     """
     Displays a list of commands to utilise the choosen CSV file.
     """
@@ -30,19 +24,13 @@ class Menu():
     print("- exit - exits the program")
     print('---------------------------------------------------------------------------------------------------------------------------------------------------')
 
-  #-----------------------------------------------------------------------
-  # Num: 1b | Title: exit_program()
-  #-----------------------------------------------------------------------
-  def exit_program(self, *args):
+  def exit_program(self):
     """
     Exits the program.
     """
     print("Program exited.")
     exit()
 
-  #-----------------------------------------------------------------------
-  # Num: 1c | Title: multi_user_input()
-  #-----------------------------------------------------------------------
   def multi_user_input(self, options_dict):
     """
     Used to get multiple user inputs.\n
@@ -77,9 +65,6 @@ class Menu():
       except ValueError:
         print("That isn't a number!")
 
-  #-----------------------------------------------------------------------
-  # Num: 1d | Title: single_user_input()
-  #-----------------------------------------------------------------------
   def single_user_input(self, options_dict):
     """
     Used to get one user input.\n
@@ -102,9 +87,6 @@ class Menu():
       except ValueError:
         print("That isn't a number!")
 
-  #-----------------------------------------------------------------------
-  # Num: 1e | Title: option_list()
-  #-----------------------------------------------------------------------
   def option_list(self, option_list, print_output):
     """
     Used to get a list of different options per command. Takes in a list and returns a dictionary.\n
@@ -120,9 +102,6 @@ class Menu():
     print('---------------------------------------------------------------------------------------------------------------------------------------------------')
     return item_dict
 
-  #-----------------------------------------------------------------------
-  # Num: 1f | Title: get_row_user_input()
-  #-----------------------------------------------------------------------
   def get_row_user_input(self, options_dict):
     """
     Used to get multiple row user inputs.\n

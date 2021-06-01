@@ -2,14 +2,10 @@
 # File Title: Main function
 # File Description: Used to run the program. 
 #-----------------------------------------------------------------------
-from menu import Menu
-from editor import Editor
-import pandas as pd
+from .menu import Menu
+from .editor import Editor
 import os
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: main()
-#-----------------------------------------------------------------------
 def main():
   """
   Consists of the main functionality of the script.

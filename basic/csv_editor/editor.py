@@ -2,23 +2,16 @@
 # File Title: Editor Class
 # File Description: Used to add or remove data to and from a CSV file.
 #-----------------------------------------------------------------------
-import os, csv
-import numpy as np
+import os
 import pandas as pd
-from menu import Menu
-from utility import Utility
+from .menu import Menu
+from .utility import Utility
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: Editor()
-#-----------------------------------------------------------------------
 class Editor():
   """
   Manages the editor functionality.\n 
   Consists of 6 functions: display_data(), create_file(), select_data(), add_data(), remove_data(), update_data().
   """
-  #-----------------------------------------------------------------------
-  # Num: 1a | Title: display_data()
-  #-----------------------------------------------------------------------
   def display_data(self, filename):
     """
     Takes a filename as input and outputs its data into the console.\n
@@ -34,9 +27,6 @@ class Editor():
     except FileNotFoundError:
       print("This file doesn't exist. You must create it first!")
 
-  #-----------------------------------------------------------------------
-  # Num: 1b | Title: create_file()
-  #-----------------------------------------------------------------------
   def create_file(self, filename):
     """
     Used to create files that do not exist.\n
@@ -48,13 +38,10 @@ class Editor():
       open(filename, 'w')
       print(f"File with the name '{filename}' has been created.")
 
-  #-----------------------------------------------------------------------
-  # Num: 1c | Title: select_data()
-  #-----------------------------------------------------------------------
-  def select_data(self, filename, option_list):
+  def select_data(self, option_list):
     """
     Used to select the data to add, remove or update from the selected CSV file.\n
-    Parameters: (2) file name, option list.
+    Parameters: (1) option list.
     """
     # set variables
     m = Menu()
@@ -65,9 +52,6 @@ class Editor():
     choice = m.single_user_input(options)
     return choice
 
-  #-----------------------------------------------------------------------
-  # Num: 1d | Title: add_data()
-  #-----------------------------------------------------------------------
   def add_data(self, filename):
     """
     Adds data to the file via users input.\n
@@ -126,9 +110,6 @@ class Editor():
     # Display updated file
     self.display_data(filename)
 
-  #-----------------------------------------------------------------------
-  # Num: 1e | Title: remove_data()
-  #-----------------------------------------------------------------------
   def remove_data(self, filename):
     """
     Removes data from the file via users input.\n
@@ -194,9 +175,6 @@ class Editor():
     # Display updated file
     self.display_data(filename)
 
-  #-----------------------------------------------------------------------
-  # Num: 1f | Title: update_data()
-  #-----------------------------------------------------------------------
   def update_data(self, filename):
     """
     Updates data within the file via users input.\n
