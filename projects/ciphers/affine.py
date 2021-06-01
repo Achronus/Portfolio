@@ -2,25 +2,24 @@
 # File Title: Affine Cipher
 # File Description: A combination of the multiplication and Caesar ciphers.
 #-----------------------------------------------------------------------
-import cryptomath, random, sys
+from .cryptomath import gcd, find_mod_inverse
+import random 
+import sys
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: AffineCipher()
-#-----------------------------------------------------------------------
 class AffineCipher():
   """
-  A class dedicated to the Affine ciper which is a combination of the multiplication and Caesar ciphers, used to encrypt and decrypt data.\n
+  A class dedicated to the Affine ciper which is a combination of the multiplication 
+  and Caesar ciphers, used to encrypt and decrypt data.\n
   Functions: (5) encrypt, decrypt, get_key_parts, check_keys, get_random_key 
   """
-  symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?."
-  symbol_length = len(symbols)
+  def __init__(self):
+    self.symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?."
+    self.symbol_length = len(self.symbols)
 
-  #-----------------------------------------------------------------------
-  # Num: 1a | Title: encrypt()
-  #-----------------------------------------------------------------------
   def encrypt(self, phrase, key):
     """
-    A cipher that combines the multiplication and Caesar ciphers, resulting in a stronger and more reliable encryption method.\n
+    A cipher that combines the multiplication and Caesar ciphers, resulting in a stronger 
+    and more reliable encryption method.\n
     Parameters: (2) phrase to encrypt, key to encrypt by
     """
     key_a, key_b = self.get_key_parts(key)
@@ -36,9 +35,6 @@ class AffineCipher():
         ciphertext += symbol # append symbol without encrypting
     return ciphertext
 
-  #-----------------------------------------------------------------------
-  # Num: 1b | Title: decrypt()
-  #-----------------------------------------------------------------------
   def decrypt(self, phrase, key):
     """
     Decryption method of affine cipher.\n
@@ -47,7 +43,7 @@ class AffineCipher():
     key_a, key_b = self.get_key_parts(key)
     self.check_keys(key_a, key_b, "decrypt")
     plaintext = ""
-    mod_inverse_key_a = cryptomath.find_mod_inverse(key_a, self.symbol_length)
+    mod_inverse_key_a = find_mod_inverse(key_a, self.symbol_length)
 
     for symbol in phrase:
       if symbol in self.symbols:
@@ -58,9 +54,6 @@ class AffineCipher():
         plaintext += symbol # append symbol without decrypting
     return plaintext
 
-  #-----------------------------------------------------------------------
-  # Num: 1c | Title: get_key_parts()
-  #-----------------------------------------------------------------------
   def get_key_parts(self, key):
     """
     Returns keys A and B after getting integer division and modulus.
@@ -70,9 +63,6 @@ class AffineCipher():
     key_b = key % self.symbol_length
     return key_a, key_b
 
-  #-----------------------------------------------------------------------
-  # Num: 1d | Title: check_keys()
-  #-----------------------------------------------------------------------
   def check_keys(self, key_a, key_b, mode):
     """
     Used to check the key lengths based on encryption mode.\n
@@ -84,12 +74,9 @@ class AffineCipher():
       sys.exit("Cipher is weak as key B is 0. Choose a different key.")
     if key_a < 0 or key_b < 0 or key_b > self.symbol_length - 1:
       sys.exit(f"Key A must be greater than 0 and Key B must be between 0 and {self.symbol_length - 1}")
-    if cryptomath.gcd(key_a, self.symbol_length) == 1:
+    if gcd(key_a, self.symbol_length) == 1:
       sys.exit(f"Key A ({key_a}) and the symbol set size ({self.symbol_length}) are not relatively prime. Choose a different key.")
 
-  #-----------------------------------------------------------------------
-  # Num: 1e | Title: get_random_key()
-  #-----------------------------------------------------------------------
   def get_random_key(self):
     """
     Generates a random key.
@@ -98,12 +85,9 @@ class AffineCipher():
       key_a = random.randint(2, self.symbol_length)
       key_b = random.randint(2, self.symbol_length)
 
-      if cryptomath.gcd(key_a, self.symbol_length) == 1:
+      if gcd(key_a, self.symbol_length) == 1:
         return key_a * self.symbol_length + key_b
 
-#-----------------------------------------------------------------------
-# Num: 2 | Title: main()
-#-----------------------------------------------------------------------
 def main():
   """
   Consists of the main functionality of the script.

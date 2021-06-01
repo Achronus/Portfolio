@@ -2,20 +2,18 @@
 # File Title: Substitution Cipher
 # File Description: A cipher that is very difficult to brute force attack.
 #-----------------------------------------------------------------------
-import random, sys
+import random
+import sys
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: SubstitutionCipher()
-#-----------------------------------------------------------------------
 class SubstitutionCipher():
   """
-  A class dedicated to the Substitution cipher, this cipher is very difficult to crack using brute force. This is a more reliable method for encryption.\n
+  A class dedicated to the Substitution cipher, this cipher is very difficult to 
+  crack using brute force. This is a more reliable method for encryption.\n
   Functions: (5) key_is_valid, encrypt, decrypt, translate_message, get_random_key
   """
-  letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  #-----------------------------------------------------------------------
-  # Num: 1a | Title: key_is_valid()
-  #-----------------------------------------------------------------------
+  def __init__(self):
+    self.letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
   def key_is_valid(self, key):
     """
     Checks if the key is valid.\n
@@ -28,9 +26,6 @@ class SubstitutionCipher():
 
     return key_list == letters_list
 
-  #-----------------------------------------------------------------------
-  # Num: 1b | Title: encrypt()
-  #-----------------------------------------------------------------------
   def encrypt(self, key, message):
     """
     Used to encrypt a message using the substitution cipher.\n
@@ -38,9 +33,6 @@ class SubstitutionCipher():
     """
     return self.translate_message(key, message, "encrypt")
 
-  #-----------------------------------------------------------------------
-  # Num: 1c | Title: decrypt()
-  #-----------------------------------------------------------------------
   def decrypt(self, key, message):
     """
     Used to decrypt a message using the substitution cipher.\n
@@ -48,9 +40,6 @@ class SubstitutionCipher():
     """
     return self.translate_message(key, message, "decrypt")
 
-  #-----------------------------------------------------------------------
-  # Num: 1d | Title: translate_message()
-  #-----------------------------------------------------------------------
   def translate_message(self, key, message, mode):
     """
     Utility function to encrypt or decrypt a given message.\n
@@ -78,9 +67,6 @@ class SubstitutionCipher():
     
     return translated
 
-  #-----------------------------------------------------------------------
-  # Num: 1e | Title: get_random_key()
-  #-----------------------------------------------------------------------
   def get_random_key(self):
     """
     Generate a random key.
@@ -89,9 +75,6 @@ class SubstitutionCipher():
     random.shuffle(key)
     return ''.join(key)
 
-#-----------------------------------------------------------------------
-# Num: 2 | Title: main()
-#-----------------------------------------------------------------------
 def main():
   """
   Consists of the main functionality of the script.

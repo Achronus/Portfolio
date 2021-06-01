@@ -1,20 +1,17 @@
-#-----------------------------------------------------------------------
+#---------------------------------------------------------------------------------
 # File Title: Columnar Transposition Cipher
 # File Description: A cipher that reorganizes a phrase as a form of encryption.
-#-----------------------------------------------------------------------
-import math, random, time, os
+#---------------------------------------------------------------------------------
+import math
+import random
+import time
+import os
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: TranspositionCipher()
-#-----------------------------------------------------------------------
 class TranspositionCipher():
   """
   A class dedicated to the Transposition cipher that reorganizes a phrase as a form of encryption.\n
   Functions: (4) encrypt, decrypt, random_data_test, read_file
   """
-  #-----------------------------------------------------------------------
-  # Num: 1a | Title: encrypt()
-  #-----------------------------------------------------------------------
   def encrypt(self, phrase, key):
     """
     Used to reorganize a phrase based on a key value as a form of encryption. Splits the phrase into columns based on the key.\n
@@ -35,9 +32,6 @@ class TranspositionCipher():
     # Convert ciphertext list into a single string and return
     return ''.join(ciphertext)
 
-  #-----------------------------------------------------------------------
-  # Num: 1b | Title: decrypt()
-  #-----------------------------------------------------------------------
   def decrypt(self, phrase, key):
     """
     Used to reorganize a phrase based on a key value to decrypt the encrypted version. Consists of 'columns' and 'rows'.\n
@@ -60,9 +54,6 @@ class TranspositionCipher():
 
     return ''.join(plaintext)
 
-  #-----------------------------------------------------------------------
-  # Num: 1c | Title: random_data_test()
-  #-----------------------------------------------------------------------
   def random_data_test(self, seed, test_count):
     """
     Creates random seeds of data and then checks whether the cipher works correctly.\n
@@ -94,9 +85,6 @@ class TranspositionCipher():
       
       print("Transposition cipher test passed.")
 
-  #-----------------------------------------------------------------------
-  # Num: 1d | Title: read_file()
-  #-----------------------------------------------------------------------
   def read_file(self, filename, key, mode):
     """
     Runs either encryption or decryption on a text file that is provided.\n
@@ -140,9 +128,6 @@ class TranspositionCipher():
     print(f"Done {mode.title()}ing {filename} ({len(data)} characters).")
     print(f"{mode.title()}ed file is {out_filename}.")
 
-#-----------------------------------------------------------------------
-# Num: 2 | Title: main()
-#-----------------------------------------------------------------------
 def main():
   """
   Consists of the main functionality of the script.

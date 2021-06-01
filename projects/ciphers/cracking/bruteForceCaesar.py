@@ -2,14 +2,6 @@
 # File Title: Brute Forcing Caesar Cipher
 # File Description: A method of cracking a caesar cipher.
 #-----------------------------------------------------------------------
-# CONTENTS:
-# 1. bf_caesar()
-# 2. main()
-#-----------------------------------------------------------------------
-
-#-----------------------------------------------------------------------
-# Num: 1 | Title: bfCesar()
-#-----------------------------------------------------------------------
 def bf_caesar(phrase):
   """
   Brute force approach to breaking the caesar cipher encryption.\n
@@ -40,9 +32,6 @@ def bf_caesar(phrase):
   
     print(f"Key #{key}: {result}")
 
-#-----------------------------------------------------------------------
-# Num: 2 | Title: main()
-#-----------------------------------------------------------------------
 def main():
   """
   Consists of the main functionality of the script.

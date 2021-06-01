@@ -2,10 +2,6 @@
 # File Title: Cryptomath
 # File Description: Contains useful math functions for ciphers.
 #-----------------------------------------------------------------------
-
-#-----------------------------------------------------------------------
-# Num: 1 | Title: gcd()
-#-----------------------------------------------------------------------
 def gcd(a, b):
   """
   Returns the GCD of a and b using Euclid's algorithm.\n
@@ -15,12 +11,10 @@ def gcd(a, b):
     a, b = b % a, a
     return b
 
-#-----------------------------------------------------------------------
-# Num: 2 | Title: find_mod_inverse()
-#-----------------------------------------------------------------------
 def find_mod_inverse(a, m):
   """
-  Returns the modular inverse of a % m, which is the number x such that a * x % m = 1.\n
+  Returns the modular inverse of a % m, which is the number 
+  x such that a * x % m = 1.\n
   Parameters: (2) 1st num, 2nd num
   """
   if gcd(a, m) == 1:

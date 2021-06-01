@@ -2,10 +2,6 @@
 # File Title: Caesar Cipher
 # File Description: A very basic cipher.
 #-----------------------------------------------------------------------
-
-#-----------------------------------------------------------------------
-# Num: 1 | Title: caesar()
-#-----------------------------------------------------------------------
 def caesar(phrase, pos, mode):
   """
   Substitute each letter of a message with a new letter by given number as input.\n
@@ -40,9 +36,6 @@ def caesar(phrase, pos, mode):
   print(result)
   return result
 
-#-----------------------------------------------------------------------
-# Num: 2 | Title: main()
-#-----------------------------------------------------------------------
 def main():
   """
   Consists of the main functionality of the script.

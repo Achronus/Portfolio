@@ -2,23 +2,16 @@
 # File Title: Brute Forcing Transposition Cipher
 # File Description: A method of cracking a transposition cipher.
 #-----------------------------------------------------------------------
-# CONTENTS:
-# 1. bf_transposition()
-# 2. main()
-#-----------------------------------------------------------------------
-import sys, os
-import detectEnglish as de
-import transposition as tp
+from .detectEnglish import DetectEnglishText
+from basic.ciphers.transposition import TranspositionCipher
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: bf_transposition()
-#-----------------------------------------------------------------------
 def bf_transposition(phrase):
   """
-  Runs through all instances of a transposition key until it finds the correct one and outputs it.\n
+  Runs through all instances of a transposition key until it 
+  finds the correct one and outputs it.\n
   Parameters: (1) phrase/data to crack
   """
-  detect, tc = de.DetectEnglishText(), tp.TranspositionCipher()
+  detect, tc = DetectEnglishText(), TranspositionCipher()
   print("Cracking...")
 
   # Loop through each key
@@ -39,9 +32,6 @@ def bf_transposition(phrase):
       if response.strip().upper().startswith("D"):
         return decText
 
-#-----------------------------------------------------------------------
-# Num: 2 | Title: main()
-#-----------------------------------------------------------------------
 def main():
   """
   Consists of the main functionality of the script.

@@ -2,16 +2,10 @@
 # File Title: Brute Forcing Affine Cipher
 # File Description: Brute forcing the affine cipher.
 #-----------------------------------------------------------------------
-# CONTENTS:
-# 1. bf_affine()
-# 2. main()
-#-----------------------------------------------------------------------
-import affine, cryptomath
-import detectEnglish as de
+from basic.ciphers.affine import AffineCipher
+from basic.ciphers.cryptomath import gcd
+from .detectEnglish import DetectEnglishText
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: bf_affine()
-#-----------------------------------------------------------------------
 def bf_affine(phrase):
   """
   A function used to brute-force crack the Affine cipher.\n
@@ -19,13 +13,13 @@ def bf_affine(phrase):
   """
   symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?."
   SILENT_MODE = True
-  detect, ac = de.DetectEnglishText(), affine.AffineCipher()
+  de, ac = DetectEnglishText(), AffineCipher()
 
   # Loop through each key
   for key in range(len(symbols) ** 2):
     key_a = ac.getKeyParts(key)[0]
 
-    if cryptomath.gcd(key_a, len(symbols)) == 1:
+    if gcd(key_a, len(symbols)) == 1:
       continue
 
     decoded_text = ac.decrypt(phrase, key)
@@ -34,7 +28,7 @@ def bf_affine(phrase):
       print(f"Tried key #{key}... ({decoded_text[:40]})")
 
     # Check text is in English
-    if detect.is_english(decoded_text):
+    if de.is_english(decoded_text):
       print(f"Possible encryption cracked:")
       print(f"Key: #{key} | Decrypted message: {decoded_text[:200]}\n")
       print("Enter D for done, or just press Enter to continue cracking:")
@@ -44,9 +38,6 @@ def bf_affine(phrase):
         return decoded_text
   return None
 
-#-----------------------------------------------------------------------
-# Num: 2 | Title: main()
-#-----------------------------------------------------------------------
 def main():
   """
   Consists of the main functionality of the script.
