@@ -9,7 +9,7 @@ class Menu():
   Used to manage the menu functionality.\n
   Contains 6 functions: main_menu(), exit_program(), multi_user_input(), single_user_input(), option_list(), get_row_user_input().
   """
-  def main_menu(self):
+  def main_menu(self, *args):
     """
     Displays a list of commands to utilise the choosen CSV file.
     """
@@ -24,7 +24,7 @@ class Menu():
     print("- exit - exits the program")
     print('---------------------------------------------------------------------------------------------------------------------------------------------------')
 
-  def exit_program(self):
+  def exit_program(self, *args):
     """
     Exits the program.
     """
