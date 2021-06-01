@@ -2,12 +2,9 @@
 # File Title: Main function
 # File Description: Used to run the program. 
 #-----------------------------------------------------------------------
-from menu import Menu
-from calculations import Calculations
+from .menu import Menu
+from .calculations import Calculations
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: main()
-#-----------------------------------------------------------------------
 def main():
   """
   Consists of the main functionality of the script.

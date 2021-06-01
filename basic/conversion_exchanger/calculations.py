@@ -2,21 +2,16 @@
 # File Title: Calculations Class
 # File Description: Used to run all conversion calculations. 
 #-----------------------------------------------------------------------
-import csv, time, math
+import csv
+import time
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: Calculations()
-#-----------------------------------------------------------------------
 class Calculations():
   """
   Used to run all 6 conversion type metric calculations. Takes in a number as input.
   """
   def __init__(self, num):
     self.num = num
-  
-  #-----------------------------------------------------------------------
-  # Num: 1a | Title: read_csv()
-  #-----------------------------------------------------------------------
+
   def read_csv(self, filename):
     """
     Reads the formula CSV file, gets the formula needed and outputs it. Takes a filename as input.
@@ -27,9 +22,6 @@ class Calculations():
       data = list(reader)
       return data
 
-  #-----------------------------------------------------------------------
-  # Num: 1b | Title: run_conversion()
-  #-----------------------------------------------------------------------
   def run_conversion(self, data, convert_from, convert_to):
     """
     Reads the data from the CSV and gets the formula related to the users input.\n

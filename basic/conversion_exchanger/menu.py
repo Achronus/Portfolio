@@ -4,18 +4,12 @@
 #-----------------------------------------------------------------------
 import os
 
-#-----------------------------------------------------------------------
-# Num: 1 | Title: Menu()
-#-----------------------------------------------------------------------
 class Menu():
   """
   Parent class to all other conversion metrics.\n
   Parameters: (1) Number.\n
   Functions available (3): result(convert_from, convert_to, result), type_list(option_list), convert_list(conversion_type)
   """  
-  #-----------------------------------------------------------------------
-  # Num: 1a | Title: type_list()
-  #-----------------------------------------------------------------------
   def type_list(self, option_list):
     """
     Displays a list of all the conversion type options. Takes an option list as input.\n
@@ -27,9 +21,6 @@ class Menu():
     conversion_type = self.get_user_input(options_dict)
     return conversion_type
 
-  #-----------------------------------------------------------------------
-  # Num: 1b | Title: convert_list()
-  #-----------------------------------------------------------------------
   def convert_list(self, conversion_type):
     """
     Displays a list of all the conversion options within the selected converion type for from and to.\n
@@ -75,10 +66,7 @@ class Menu():
     updated_metric_dict = self.convert_list_output(metrics, print_output2)
     convert_to = self.get_user_input(updated_metric_dict)
     return convert_from, convert_to 
-  
-  #-----------------------------------------------------------------------
-  # Num: 1c | Title: convert_list_output()
-  #-----------------------------------------------------------------------
+
   def convert_list_output(self, option_list, print_output):
     """
     Utility function for convert_list. Takes in a list and returns a dictionary.\n
@@ -94,9 +82,6 @@ class Menu():
     print('---------------------------------------------------------------------------------')
     return item_dict
 
-  #-----------------------------------------------------------------------
-  # Num: 1d | Title: get_user_input()
-  #-----------------------------------------------------------------------
   def get_user_input(self, options_dict):
     """
     Utility function used to get the users input.
@@ -118,9 +103,6 @@ class Menu():
       except ValueError:
         print("That isn't a number!")
 
-  #-----------------------------------------------------------------------
-  # Num: 1e | Title: get_value()
-  #-----------------------------------------------------------------------
   def get_value(self, convert_from, convert_to):
     """
     Used to get the value for converting to a different metric.
