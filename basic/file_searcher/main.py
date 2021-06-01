@@ -3,8 +3,8 @@
 # File Description: Used to run the program. 
 #-----------------------------------------------------------------------
 import os
-from .menu import Menu
-from .finder import Search
+from menu import Menu
+from finder import Search
 
 def main():
   """

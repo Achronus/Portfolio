@@ -2,8 +2,8 @@
 # File Title: Main function
 # File Description: Used to run the program. 
 #-----------------------------------------------------------------------
-from .utils.menu import Menu
-from .utils.editor import Editor
+from utils.menu import Menu
+from utils.editor import Editor
 import os
 
 def main():

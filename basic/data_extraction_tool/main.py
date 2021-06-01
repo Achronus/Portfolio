@@ -3,9 +3,9 @@
 # File Description: Used to run the program.
 #-----------------------------------------------------------------------
 import os
-from .utils.menu import Menu
-from .utils.extract import Extraction
-from .utils.files import FileManage
+from utils.menu import Menu
+from utils.extract import Extraction
+from utils.files import FileManage
 
 def main():
   """
