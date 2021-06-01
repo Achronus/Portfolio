@@ -4,6 +4,7 @@
 #-----------------------------------------------------------------------
 import csv
 import time
+import math
 
 class Calculations():
   """
@@ -35,7 +36,7 @@ class Calculations():
     # Display the conversion results
     result = eval(formula)
     print(f"{self.num} {convert_from} -> {result:g} {convert_to}")
-    print('Program will exit in 10 seconds.')
-    time.sleep(10) # 10 seconds
+    print('Program will exit in 3 seconds.')
+    time.sleep(3) # 10 seconds
     
 

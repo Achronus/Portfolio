@@ -93,9 +93,9 @@ class Menu():
         ui = input('=> ')
 
         # Check through dict and get input option
-        if int(ui) in options_dict:
+        if float(ui) in options_dict:
           clear()
-          return options_dict.get(int(ui)) # returns a type or metric name
+          return options_dict.get(float(ui)) # returns a type or metric name
         else:
           print("Number is invalid, please try again.")
       
@@ -111,7 +111,7 @@ class Menu():
     print(f"Input a number to convert from '{convert_from}' to '{convert_to}':")
     while True:
       try:
-        value = int(input('=> '))
+        value = float(input('=> '))
         return value
       
       # Return error if not number

@@ -2,8 +2,8 @@
 # File Title: Main function
 # File Description: Used to run the program. 
 #-----------------------------------------------------------------------
-from .menu import Menu
-from .calculations import Calculations
+from utils.menu import Menu
+from utils.calculations import Calculations
 
 def main():
   """
@@ -20,7 +20,7 @@ def main():
 
   # Run the calculations
   c = Calculations(num)
-  data = c.read_csv('formulas.csv')
+  data = c.read_csv('utils/formulas.csv')
   c.run_conversion(data, convert_from, convert_to)
 
 # Run main function
