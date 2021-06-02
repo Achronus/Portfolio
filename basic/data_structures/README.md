@@ -17,3 +17,7 @@ The data structures within this folder are as follows:
 - Undirected Graph
   - [List](https://github.com/Achronus/Portfolio/blob/master/basic/data_structures/ud_graph_list.py)
   - [Matrix](https://github.com/Achronus/Portfolio/blob/master/basic/data_structures/ud_graph_matrix.py)
+
+## References
+
+- [Data Structures and Algorithms in Python - CodDevX](https://www.youtube.com/watch?v=kQDxmjfkIKY)
