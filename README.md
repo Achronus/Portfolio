@@ -25,5 +25,4 @@ The project list is as follows:
 - [Data Extraction Tool](https://github.com/Achronus/Portfolio/tree/master/basic/data_extraction_tool)
 - [Data Structures](https://github.com/Achronus/Portfolio/tree/master/basic/data_structures)
 - [File Searcher](https://github.com/Achronus/Portfolio/tree/master/basic/file_searcher)
-- [Code Refactor: Discord Bot](https://github.com/Achronus/Portfolio/tree/master/basic/refactor_discord_bot)
 - [Shape Coordinate System](https://github.com/Achronus/Portfolio/tree/master/basic/shape_coordinate_system)
