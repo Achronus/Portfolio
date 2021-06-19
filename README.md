@@ -6,10 +6,6 @@ Welcome! This repository is a collection of all the Python projects that I have 
 
 Each project folder has its own readme document detailing the project created.
 
-## Why Python?
-
-Python is a beautiful language that allows for easy readability of code without the need for brackets. Also, it has the ability to do anything you need! Ranging from web development, to data science, to data mining or even automating small menial and tedious tasks - overall, it's a great language to have in your toolkit!
-
 ## Types of Projects
 
 - [Basic Projects](#basic-projects)
@@ -29,4 +25,5 @@ The project list is as follows:
 - [Data Extraction Tool](https://github.com/Achronus/Portfolio/tree/master/basic/data_extraction_tool)
 - [Data Structures](https://github.com/Achronus/Portfolio/tree/master/basic/data_structures)
 - [File Searcher](https://github.com/Achronus/Portfolio/tree/master/basic/file_searcher)
+- [Code Refactor: Discord Bot](https://github.com/Achronus/Portfolio/tree/master/basic/refactor_discord_bot)
 - [Shape Coordinate System](https://github.com/Achronus/Portfolio/tree/master/basic/shape_coordinate_system)
