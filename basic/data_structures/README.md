@@ -1,6 +1,6 @@
 # Data Structures
 
-The data structures within this folder are popular Python variants of common C#/C++ data structures. They use inheritance where possible to avoid duplication of similar code, where the parent classes are located within the `parent` folder. Each data structures has a core set functionality including: removing an item, adding an item, the size of the structure, finding/checking an item, and viewing the items within the structure.
+The data structures within this folder are popular Python variants of common C#/C++ data structures. They use inheritance where possible to avoid duplication of similar code, where the parent classes are located within the `parent` folder. Each data structure has a core set functionality including: removing an item, adding an item, the size of the structure, finding/checking an item, and viewing the items within the structure.
 
 The data structures within this folder are as follows:
 
