@@ -1,5 +1,15 @@
 # Portfolio Projects
 
+## Table of Contents
+
+- [Portfolio Projects](#portfolio-projects)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+  - [Types of Projects](#types-of-projects)
+    - [Basic Projects](#basic-projects)
+    - [Advanced Projects](#advanced-projects)
+    - [Reinforcement Learning Projects](#reinforcement-learning-projects)
+
 ## Description
 
 Welcome! This repository is a collection of all the Python projects that I have completed. Whether the file is part of a larger project or a simple one page script, it will be located here! Here people can view and utilize pieces of code from my projects that they may find useful.
@@ -8,16 +18,11 @@ Each project folder has its own readme document detailing the project created.
 
 ## Types of Projects
 
-- [Basic Projects](#basic-projects)
-- [Reinforcement Learning](#reinforcement-learning) - _Coming soon!_
+All projects created can be run within their respective folders using the command `python main.py`, where a minimum of Python 3.7 is required to run the projects.
 
 ### Basic Projects
 
-The `basic` folder is home to basic custom projects that I have created. These are primarily console run applications, where you can type in a few console commands to receive a specific output. These projects can be run within the relevant folder using the command `python3 main.py`.
-
-You **MUST** have a minimum of Python 3.7 installed to be able to use the programs.
-
-The project list is as follows:
+The `basic` folder is home to basic custom projects that I have created. These are primarily console run applications, where you can type in a few console commands to receive a specific output. The project list is as follows:
 
 - [Ciphers](https://github.com/Achronus/Portfolio/tree/master/basic/ciphers)
 - [Conversion Exchanger](https://github.com/Achronus/Portfolio/tree/master/basic/conversion_exchanger)
@@ -26,3 +31,15 @@ The project list is as follows:
 - [Data Structures](https://github.com/Achronus/Portfolio/tree/master/basic/data_structures)
 - [File Searcher](https://github.com/Achronus/Portfolio/tree/master/basic/file_searcher)
 - [Shape Coordinate System](https://github.com/Achronus/Portfolio/tree/master/basic/shape_coordinate_system)
+
+### Advanced Projects
+
+The `advanced` folder focuses on advanced projects that involve a higher degree of complexity, when compared to the basic projects. The projects within this section are listed below:
+
+- [Wild Edible Plant Classifier](https://github.com/Achronus/wep-classifier)
+
+### Reinforcement Learning Projects
+
+The `rl` folder is home to custom Reinforcement Learning (RL) projects that I have created. The projects vary in complexity and core the core concepts of different parts of RL. The projects within this folder are as follows:
+
+- [Dynamic Programming: FrozenLake](https://github.com/Achronus/Portfolio/tree/master/rl/dynamic_programming)
