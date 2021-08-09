@@ -1,20 +1,8 @@
 # Portfolio Projects
 
-## Table of Contents
-
-- [Portfolio Projects](#portfolio-projects)
-  - [Table of Contents](#table-of-contents)
-  - [Description](#description)
-  - [Types of Projects](#types-of-projects)
-    - [Basic Projects](#basic-projects)
-    - [Advanced Projects](#advanced-projects)
-    - [Reinforcement Learning Projects](#reinforcement-learning-projects)
-
 ## Description
 
-Welcome! This repository is a collection of all the Python projects that I have completed. Whether the file is part of a larger project or a simple one page script, it will be located here! Here people can view and utilize pieces of code from my projects that they may find useful.
-
-Each project folder has its own readme document detailing the project created.
+Welcome! This repository is one of two locations containing a collection of all the Python projects that I have completed. It focuses on the code for each project, while the second location ([my website](https://acius.co.uk/portfolio/)) provides the details for their purpose and how they work.
 
 ## Types of Projects
 
@@ -34,7 +22,7 @@ The `basic` folder is home to basic custom projects that I have created. These a
 
 ### Advanced Projects
 
-The `advanced` folder focuses on advanced projects that involve a higher degree of complexity, when compared to the basic projects. The projects within this section are listed below:
+The projects within this section focus on more advanced projects that involve a higher degree of complexity when compared to other project types. Some projects are stored in the `advanced` folder, and others are in their separate repository. The projects within this section are listed below:
 
 - [Wild Edible Plant Classifier](https://github.com/Achronus/wep-classifier)
 
