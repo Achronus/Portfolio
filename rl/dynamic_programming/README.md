@@ -13,3 +13,33 @@ Policy Iteration uses a sequence of policy evaluation and improvement steps that
 - [Policy Iteration](https://github.com/Achronus/Portfolio/tree/master/rl/dynamic_programming/policy_iteration)
 - [Truncated Policy Iteration](https://github.com/Achronus/Portfolio/tree/master/rl/dynamic_programming/truncated_policy_iteration)
 - [Value Iteration](https://github.com/Achronus/Portfolio/tree/master/rl/dynamic_programming/value_iteration)
+
+Each implementation achieves an optimal policy and optimal state-value function, outlined below:
+
+```Python
+# Optimal Policy (LEFT = 0, DOWN = 1, RIGHT = 2, UP = 3):
+[[1.   0.   0.   0.  ] 
+[0.   0.   0.   1.  ]  
+[0.   0.   0.   1.  ]  
+[0.   0.   0.   1.  ]  
+[1.   0.   0.   0.  ]  
+[0.25 0.25 0.25 0.25]  
+[0.5  0.   0.5  0.  ]  
+[0.25 0.25 0.25 0.25]  
+[0.   0.   0.   1.  ]  
+[0.   1.   0.   0.  ]  
+[1.   0.   0.   0.  ]  
+[0.25 0.25 0.25 0.25]  
+[0.25 0.25 0.25 0.25]  
+[0.   0.   1.   0.  ]  
+[0.   1.   0.   0.  ]  
+[0.25 0.25 0.25 0.25]] 
+```
+
+```Python
+# Optimal State-Value Function:
+[0.82352924 0.82352918 0.82352915 0.82352913 
+ 0.82352926 0.         0.52941165 0.         
+ 0.82352928 0.82352932 0.7647058  0.
+ 0.         0.88235288 0.94117644 0.        ]
+```
