@@ -1,0 +1,42 @@
+<!-- NOTES
+============================================================================== -->
+<section id="all-notes">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-xl-4 add-note align-self-center text-center">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNoteModal">
+          <i class="fas fa-plus"></i>
+        </button>
+      </div><!-- .add-note -->
+      {% for note in user.notes %}
+        <div class="col-md-6 col-xl-4">
+          <div class="note-container">
+            <div class="note note-{{ loop.index }}">
+              <div class="content">
+                <div class="head">
+                  <div class="row">
+                    <div class="col-10 title">
+                      <h2>{{ note.title }}</h2>
+                    </div><!-- .title -->
+                    <div class="col-2 remove-cta text-end">
+                      <button type="button" class="btn remove-cta" onClick="deleteNote({{ note.id }});">
+                        <i class="fas fa-times"></i>
+                      </button>
+                    </div><!-- .remove-cta -->
+                  </div><!-- .row -->
+                </div><!-- .head -->
+                <div class="col-12 description">
+                  <p>{{ note.text }}</p>
+                </div><!-- .description -->
+                <div class="col-auto date">
+                  <p><i class="far fa-calendar-alt"></i>Created on: {{ note.date_posted.strftime("%d %B %Y at %I:%M %p") }}</p>
+              </div><!-- .date -->
+              </div><!-- .content -->
+            </div><!-- .note-[num] -->
+          </div><!-- .note-container -->
+        </div><!-- .col -->
+      {% endfor %}
+
+    </div><!-- .row -->
+  </div><!-- .container -->
+</section><!-- #all-notes -->

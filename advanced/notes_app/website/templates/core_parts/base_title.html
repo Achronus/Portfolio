@@ -1,0 +1,22 @@
+{% extends "core_parts/base.html" %}
+
+{% block page_title %}Title Base Template{% endblock %}
+
+{% block body_content %}
+<!-- TITLE
+============================================================================== -->
+<section id="title">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 text-center">
+        <h2>{% block title %}Title Template{% endblock %}</h2>
+      </div><!-- .col -->
+    </div><!-- .row -->
+  </div><!-- .container -->
+</section><!-- #title -->
+
+{% block additional_content %}
+Additional Content
+{% endblock %}
+
+{% endblock %}

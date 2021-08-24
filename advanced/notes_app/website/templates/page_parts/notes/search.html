@@ -1,0 +1,19 @@
+<!-- SEARCH
+============================================================================== -->
+<section id="search-bar">
+  <div class="container">
+    <div class="row">
+      <form method="POST" class="row g-3">
+        <div class="col-11 float-label">
+          <label id="searchLabel" for="searchBox">Search</label>
+          <input type="text" name="query" id="searchBox" class="form-control" data-placeholder="for a note title">
+        </div><!-- .col -->
+        <div class="col-1 search-btn">
+          <a type="button" class="btn btn-primary" href="/?query={{ query }}">
+            <i class="fas fa-search"></i>
+          </a>
+        </div><!-- .col -->
+      </form>
+    </div><!-- .row -->
+  </div><!-- .container -->
+</section><!-- #search-bar -->

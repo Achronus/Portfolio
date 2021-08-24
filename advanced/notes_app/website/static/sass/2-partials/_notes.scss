@@ -1,0 +1,94 @@
+// NOTE STYLES
+$note-count: 100;
+
+#notes-page {
+  @include remMarginTop(60px);
+  @include remMarginBot(60px);
+}
+
+#all-notes {
+  @include remPadBot(60px);
+  .add-note {
+    @include remMarginBot(20px);
+    button {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: none;
+      background-color: $footer-bg;
+      transition: $base-transition;
+      @include remFont(50px);
+      &:hover {
+        background-color: $dark-bg;
+        transition: $base-transition;
+      }
+    }
+  }
+  @for $i from 1 through $note-count {
+    .col-md-6 {
+      &:nth-child(#{$i}) {
+        .note-container {
+          @include randomBgColour(255);
+        }
+      }
+    }
+  }
+  .note-container {
+    border-radius: 12px;
+    transition: $base-transition;
+    @include remPadAll(20px);
+    @include remMarginBot(20px);
+    .note {
+      .head {
+        .title, .remove-cta {
+          h2, button {
+            font-family: $dm-sans;
+            color: $main-text;
+            @include remFont(26px);
+          }
+        }
+      }
+      .remove-cta {
+        button {
+          padding: 0;
+          &:hover {
+            color: $danger;
+          }
+        }
+      }
+      .description {
+        @include remMarginTop(10px);
+        @include remMarginBot(10px);
+        p {
+          font-family: $rubik;
+          color: $main-text;
+          @include remFont(16px);
+        }
+      }
+      .date {
+        p {
+          font-family: $rubik;
+          color: $main-text;
+          svg {
+            @include remMarginRight(5px);
+          }
+        }
+      }
+    }
+    &:hover {
+      transform: translateY(-10px);
+      transition: $base-transition;
+    }
+  }
+}
+
+#notes-page {
+  #messages {
+    margin-bottom: 0;
+    @include remMarginTop(30px);
+    @include remMarginBot(30px);
+    #alert {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+// INTRO STYLES
+#intro {
+  @include remMarginTop(30px);
+  @include remPad(40px, 0px);
+  .title {
+    font-family: $dm-sans;
+    h2 {
+      font-weight: bold;
+      color: $main-text;
+      text-transform: capitalize;
+      @include remFont(40px);
+      div {
+        &.blue-underline {
+          display: inline-block;
+          position: relative;
+          z-index: 3;
+        }
+        &:after {
+          content: '';
+          width: 100%;
+          background: $main-bg;
+          height: 8px;
+          position: absolute;
+          bottom: 7px;
+          left: 0px;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}

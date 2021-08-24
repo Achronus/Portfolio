@@ -1,0 +1,26 @@
+{% extends "core_parts/base.html" %}
+
+{% block page_title %}404 Error{% endblock %}
+
+{% block body_content %}
+<!-- ERROR MESSAGE
+============================================================================== -->
+<section id="error">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="content">
+          <h1>404</h1>
+          <h2>Page not found</h2>
+          <p>The page you are looking for was moved, removed, renamed or never existed.</p>
+        </div><!-- .content -->
+        <div class="cta">
+          <a href="/" class="btn btn-primary">
+            <span class="name">Go Home</span><i class="fas fa-angle-right"></i>
+          </a>
+        </div><!-- .cta -->
+      </div><!-- .col -->
+    </div><!-- .row -->
+  </div> <!-- .container-fluid -->
+</section><!-- section -->
+{% endblock %}

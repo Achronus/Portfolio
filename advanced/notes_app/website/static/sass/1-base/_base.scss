@@ -1,0 +1,118 @@
+// BASE STYLES
+p {
+  font-family: $rubik;
+  font-weight: 300;
+  color: $main-text;
+}
+
+h2 {
+  font-family: $dm-sans;
+}
+
+#primary {
+  &:not(.reduced-height) {
+    min-height: 72vh;
+  }
+  &.reduced-height {
+    min-height: 67vh;
+  }
+}
+
+#title {
+  .row {
+    height: 25vh;
+    h2 {
+      font-weight: bold;
+      @include remFont(42px);
+    }
+  }
+}
+
+.social-icons {
+  text-align: center;
+  a {
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    @include remPadAll(0px);
+    @include remMargin(0px, 10px);
+    svg {
+      @include remMargin(10px, 10px);
+      @include remFont(26px);
+      &.fa-linkedin {
+        color: #0976b4;
+      }
+      &.fa-github {
+        color: #454545;
+      }
+    }
+    &:hover {
+      background-color: $main-text;
+      svg {
+        &.fa-linkedin {
+          color: #fff;
+        }
+        &.fa-github {
+          color: #fff;
+        }
+      }
+    }
+  }
+  &.icon-border {
+    a {
+      @include boxShadow(0px, 0px, 10px, rgba(25, 146, 216, 0.3));
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    color: $highlight;
+  }
+}
+
+ul, ol {
+  margin-left: 0;
+}
+
+#back-to-top {
+  .top-link {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: inline-flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3em 3em 0;
+    border-radius: 50%;
+    padding: .25em;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    background-color: $main-bg;
+    transition: $base-transition;
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    &.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+    &:hover {
+      background-color: $main-text;
+      transition: $base-transition;
+    }
+    svg {
+      @include remFont(24px);
+    }
+  }
+}

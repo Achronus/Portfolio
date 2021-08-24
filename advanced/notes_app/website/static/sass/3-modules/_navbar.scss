@@ -1,0 +1,85 @@
+// NAVBAR STYLES
+#nav-content {
+  background-color: #fff;
+  padding-bottom: 0;
+  border-bottom: 1px solid $light-bg;
+  @include remPad(15px, 0px);
+  #site-navigation {
+    @include remPad(20px, 0px);
+    transition: $base-transition;
+    &.navbar-light {
+      .custom-logo {
+        width: 100%;
+        transition: $base-transition;
+      }
+      .nav-item {
+        @include remMargin(0px, 15px);
+        .nav-link {
+          font-weight: 500;
+          font-family: $dm-sans;
+          color: $main-text;
+          transition: $base-transition;
+          border-radius: 2px;
+          @include remFont(20px);
+          @include remPad(10px, 15px);
+          &.login {
+            &:hover {
+              color: $highlight;
+            }
+          }
+          &.sign-up {
+            color: #fff;
+            background-color: $footer-bg;
+            &:hover {
+              background-color: $dark-bg;
+            }
+          }
+        }
+      }
+      &.sticky-nav {
+        background-color: #fff;
+        height: 12vh;
+        z-index: 170;
+        @include remPadTop(20px);
+        margin: 0 auto;
+        border-bottom: 1px solid $light-bg;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        animation: slide-down 0.7s;
+        transition: $base-transition;
+        .custom-logo {
+          width: 80%;
+          transition: $base-transition;
+        }
+        .nav-item {
+          .nav-link {
+            @include remFont(18px);
+            transition: $base-transition;
+          }
+        }
+      }
+    }
+  }
+}
+
+.toggler-bg {
+  background-color: #fff;
+}
+
+@keyframes slide-down {
+  0% {
+      transform: translateY(-10%);
+  } 
+  100% {
+      transform: translateY(0);
+  } 
+}
+
+#mainNavBar {
+  @include remMarginTop(15px);
+  @include remMarginBot(10px);
+}

@@ -1,0 +1,34 @@
+// FLOAT LABEL STYLES
+.float-label {
+  position: relative;
+  &.active {
+    label {
+      transform: translateY(4px) scale(0.75);
+      transition: $base-transition;
+    }
+  }
+  label {
+    color: $footer-bg;
+    font-family: $rubik;
+    font-weight: 500;
+    position: absolute;
+    z-index: 2;
+    @include remMarginLeft(20px);
+    @include remFont(20px);
+    transform-origin: top left;
+    transform: translateY(16px) scale(1);
+    transition: $base-transition;
+  }
+  input {
+    border: 0;
+    background-color: #f0f5f5;
+    position: absolute;
+    border-radius: 5px;
+    line-height: 30px;
+    @include remFont(16px);
+    @include remPadTop(18px);
+    @include remPadBot(10px);
+    @include remPadLeft(20px);
+    @include remPadRight(60px);
+  }
+}

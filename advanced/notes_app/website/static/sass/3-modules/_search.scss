@@ -1,0 +1,104 @@
+// SEARCH STYLES
+#search-bar {
+  min-height: 205px;
+  // @include remPadTop(0px);
+  @include remPadBot(20px);
+  .search-btn {
+    a {
+      position: absolute;
+      border-radius: 50%;
+      height: 60px;
+      width: 60px;
+      color: #fff;
+      background-color: $footer-bg;
+      border: none;
+      transform: translate(-40px, 0px);
+      transition: $base-transition;
+      @include remFont(30px);
+      svg {
+        @include remMarginTop(8px);
+      }
+      &:hover {
+        background-color: $dark-bg;
+        transition: $base-transition;
+      }
+    }
+  }
+}
+
+#history {
+  @include remMarginTop(60px);
+  .tag {
+    font-family: $rubik;
+    font-weight: 300;
+    transition: $base-transition;
+    @include remMarginTop(15px);
+    @include remFont(14px);
+    .tag-bg {
+      background-color: #4f7e9b;
+      border-radius: 20px;
+      transition: $base-transition;
+      @include remPad(3px, 11px);
+      a, .close-btn {
+        color: #fff;
+        transition: $base-transition;
+      }
+      a {
+        text-decoration: none;
+      }
+      .close-btn {
+        background: none;
+        border: none;
+        @include remFont(16px);
+      }
+      &:hover {
+        background-color: #1e1e1e;
+        transition: $base-transition;
+      }
+    }
+  }
+}
+
+.float-label {
+  position: relative;
+  &.active {
+    label {
+      transform: translateY(4px) scale(0.75);
+      transition: $base-transition;
+    }
+  }
+  label {
+    color: $footer-bg;
+    font-family: $rubik;
+    font-weight: 500;
+    position: absolute;
+    z-index: 2;
+    @include remMarginLeft(20px);
+    @include remFont(20px);
+    transform-origin: top left;
+    transform: translateY(16px) scale(1);
+    transition: $base-transition;
+  }
+  input {
+    border: 0;
+    background-color: #f0f5f5;
+    position: absolute;
+    border-radius: 5px;
+    line-height: 30px;
+    @include remFont(16px);
+    @include remPadTop(18px);
+    @include remPadBot(10px);
+    @include remPadLeft(20px);
+    @include remPadRight(60px);
+  }
+}
+
+#search-page {
+  #messages {
+    margin-bottom: 0;
+    @include remMarginTop(30px);
+    #alert {
+      margin-bottom: 0;
+    }
+  }
+}

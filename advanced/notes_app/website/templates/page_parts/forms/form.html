@@ -1,0 +1,15 @@
+<!-- FORM
+============================================================================== -->
+<section id="form">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-lg-6 offset-lg-3">
+        {% if login_form %}
+          {% include "page_parts/forms/login_form.html" %}
+        {% else %}
+          {% include "page_parts/forms/signup_form.html" %}
+        {% endif %}
+      </div><!-- col -->
+    </div><!-- row -->
+  </div><!-- container -->
+</section><!-- #form -->

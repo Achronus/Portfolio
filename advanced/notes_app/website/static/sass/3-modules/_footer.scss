@@ -1,0 +1,45 @@
+// FOOTER STYLES
+#footer{
+  @include remPadBot(30px);
+  @include remPadTop(40px);
+  background-color: $footer-bg;
+  .footer-text {
+    @include remFont(14px);
+    font-family: $nunito;
+    font-weight: normal;
+    p {
+      margin: 0;
+      color: #fff;
+    }
+  }
+}
+
+// BACK TO TOP BUTTON
+#return-to-top{
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  right: 0;
+  bottom: 125px;
+  padding: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-left-radius: 5px;
+  color: white;
+  background: rgba(0,0,0,.4);
+  @include remFont(30px);
+  text-align: center;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  svg{
+    color: white;
+    margin: 0;
+    position: relative;
+    top: -12px;
+    @include remFont(20px);
+  }
+}

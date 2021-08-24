@@ -1,0 +1,22 @@
+// 404 PAGE
+#error {
+  @include remPadTop(60px);
+  .content {
+    font-family: $rubik;
+    h1 {
+      font-weight: bold;
+      @include remFont(200px);
+    }
+    h2 {
+      font-weight: 500;
+      @include remFont(40px);
+      @include remMarginBot(40px);
+    }
+    p {
+      font-weight: 300;
+      @include remFont(18px);
+      @include remMarginTop(20px);
+      @include remMarginBot(20px);
+    }
+  }
+}

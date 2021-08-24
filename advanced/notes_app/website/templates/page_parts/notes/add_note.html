@@ -1,0 +1,38 @@
+<!-- ADD NOTE MODAL
+============================================================================== -->
+<div class="modal fade" id="addNoteModal" tabindex="-1" aria-labelledby="addNoteModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header align-self-end">
+        <button type="button" class="btn cancel-btn" data-bs-dismiss="modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div><!-- .modal-header -->
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 text-center">
+              <h2>Create a Note</h2>
+            </div><!-- .col -->
+          </div><!-- .row -->
+          <div class="row">
+            <form id="note-form" method="POST" class="row g-3">
+              <div class="col-12">
+                <label for="titleBox" class="form-label">Title</label>
+                <input type="text" name="title" class="form-control" id="titleBox" placeholder="For your note">
+              </div>
+              <div class="col-12">
+                <label for="textBox" class="form-label">Content</label>
+                <textarea class="form-control" name="note" id="textBox" placeholder="Detailing your note"></textarea>
+              </div>
+            </form>
+          </div><!-- .row -->
+        </div><!-- .container-fluid -->
+      </div><!-- .modal-body -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="submit" form="note-form" class="btn btn-primary">Create</button>
+      </div><!-- .modal-footer -->
+    </div><!-- .modal-content -->
+  </div><!-- .modal-dialog -->
+</div><!-- #addNoteModal -->

@@ -1,0 +1,47 @@
+// FORM STYLES
+#form {
+  @include remMarginBot(105px);
+  form {
+    background-color: #f9f9f9;
+    border: 1px solid #f9f9f9;
+    border-radius: 10px;
+    @include remPadBot(40px);
+    @include remPadTop(20px);
+    @include remMarginBot(10px);
+    label {
+      font-weight: 500;
+      font-family: $rubik;
+    }
+    button {
+      color: #fff;
+      font-family: $rubik;
+      background-color: $footer-bg;
+      border: 1px solid $footer-bg;
+      width: 100%;
+      border-radius: 25px;
+      @include remFont(20px);
+      @include remPad(10px, 0px);
+      @include remMarginTop(20px);
+      &:hover {
+        color: #fff;
+        background-color: $dark-bg;
+        border-color: $dark-bg;
+      }
+    }
+  }
+}
+
+#messages {
+  @include remMarginBot(30px);
+  #alert {
+    display: table;
+    .message, .close-btn {
+      display: table-cell;
+    }
+    .message {
+      p {
+        @include remMarginBot(5px);
+      }
+    }
+  }
+}
