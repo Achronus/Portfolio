@@ -25,6 +25,7 @@ The `basic` folder is home to basic custom projects that I have created. These a
 The projects within this section focus on more advanced projects that involve a higher degree of complexity when compared to other project types. Some projects are stored in the `advanced` folder, and others are in their separate repository. The projects within this section are listed below:
 
 - [Wild Edible Plant Classifier](https://github.com/Achronus/wep-classifier)
+- [Notes App](https://github.com/Achronus/Portfolio/tree/master/advanced/notes_app)
 
 ### Reinforcement Learning Projects
 
