@@ -19,11 +19,7 @@
         <div class="navbar-wrapper">
           <nav id="site-navigation" class="main-navigation navbar navbar-expand-lg navbar-light">
             <div class="container">
-              {% if user.is_authenticated %}
-                <a class="custom-logo-link text-center" href="/notes">
-              {% else %}
-                <a class="custom-logo-link text-center" href="/">
-              {% endif %}
+              <a class="custom-logo-link text-center" href="/">
                 <img class="custom-logo" src="{{ url_for('static', filename='img/notes-logo.png') }}" alt="Notes App logo">
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavBar" aria-controls="mainNavBar" aria-expanded="false" aria-label="Toggle navigation">

@@ -12,7 +12,7 @@ login_handler = LoginHandler()
 def login():
   """Handles the login pages functionality."""
   if not isinstance(current_user, AnonymousUserMixin):
-    return redirect(url_for('views.notes'))
+    return redirect(url_for('views.home'))
 
   if request.method == "POST":
     data = request.form.to_dict()
@@ -20,7 +20,7 @@ def login():
 
     if valid_form:
       login_handler.sign_in_user(data)
-      return redirect(url_for('views.notes'))
+      return redirect(url_for('views.home'))
 
   return render_template('login.html', login_form=True, user=current_user)
 
@@ -35,7 +35,7 @@ def logout():
 def sign_up():
   """Handles the sign up pages functionality."""
   if not isinstance(current_user, AnonymousUserMixin):
-    return redirect(url_for('views.notes'))
+    return redirect(url_for('views.home'))
   
   if request.method == "POST":
     data = request.form.to_dict()
