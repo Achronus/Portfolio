@@ -31,3 +31,4 @@ The projects within this section focus on more advanced projects that involve a 
 The `rl` folder is home to custom Reinforcement Learning (RL) projects that I have created. The projects vary in complexity and core the core concepts of different parts of RL. The projects within this folder are as follows:
 
 - [Dynamic Programming: FrozenLake](https://github.com/Achronus/Portfolio/tree/master/rl/dynamic_programming)
+- [Monte-Carlo Learning](https://github.com/Achronus/Portfolio/tree/master/rl/monte_carlo)
