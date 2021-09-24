@@ -41,7 +41,7 @@ from plotting.plotter import Plotter
 NUM_EPISODES = 500000
 GAMMA = 1.0
 
-ENV: gym.Env = gym.make('Blackjack-v0')
+ENV: gym.Env = gym.make('Blackjack-v1')
 POLICY = LimitedPolicy()
 EPISODE_TYPE = GenerateLimitedEpisodes(env=ENV, policy=POLICY)
 MC = MCPrediction(env=ENV, episode_type=EPISODE_TYPE, gamma=GAMMA)

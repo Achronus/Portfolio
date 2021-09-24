@@ -71,7 +71,7 @@ class MCPrediction:
     G = np.array([self.gamma**r for r in range(len(R)+1)]) # Apply discounted return to rewards
     return S, A, R, G
 
-  def __update_dicts(self, state: int, actions: list, rewards: list, idx: int, G: list) -> None:
+  def __update_dicts(self, state: tuple, actions: tuple, rewards: tuple, idx: int, G: np.ndarray) -> None:
     """Private helper function used to update the dictionary values."""
     # return_sum - (([hand_total], [dealer_hand], [usable_ace]), 
     #               ([usable_ace_reward_total], [no_usable_ace_reward_total]))
