@@ -12,7 +12,6 @@ All projects created can be run within their respective folders using the comman
 
 The `basic` folder is home to basic custom projects that I have created. These are primarily console run applications, where you can type in a few console commands to receive a specific output. The project list is as follows:
 
-- [Ciphers](https://github.com/Achronus/Portfolio/tree/master/basic/ciphers)
 - [Conversion Exchanger](https://github.com/Achronus/Portfolio/tree/master/basic/conversion_exchanger)
 - [CSV Editor](https://github.com/Achronus/Portfolio/tree/master/basic/csv_editor)
 - [Data Extraction Tool](https://github.com/Achronus/Portfolio/tree/master/basic/data_extraction_tool)
