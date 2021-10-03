@@ -2,11 +2,11 @@
 
 ## Description
 
-Welcome! This repository is one of two locations containing a collection of all the Python projects that I have completed. It focuses on the code for each project, while the second location ([my website](https://acius.co.uk/portfolio/)) provides the details for their purpose and how they work.
+Welcome! This repository is one of two locations containing a collection of selected projects that I have completed. It focuses on the code for each project, while the second location ([my website](https://acius.co.uk/portfolio/)) provides the details for their purpose and how they work.
 
 ## Types of Projects
 
-All projects created can be run within their respective folders using the command `python main.py`, where a minimum of Python 3.7 is required to run the projects.
+All projects created can be run within their respective folders using the command `python main.py`, using a minimum of Python 3.8 to run the projects.
 
 ### Basic Projects
 
