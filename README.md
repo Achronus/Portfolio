@@ -12,23 +12,23 @@ All projects created can be run within their respective folders using the comman
 
 The `basic` folder is home to basic custom projects that I have created. These are primarily console run applications, where you can type in a few console commands to receive a specific output. The project list is as follows:
 
-- [Conversion Exchanger](https://github.com/Achronus/Portfolio/tree/master/basic/conversion_exchanger)
-- [CSV Editor](https://github.com/Achronus/Portfolio/tree/master/basic/csv_editor)
-- [Data Extraction Tool](https://github.com/Achronus/Portfolio/tree/master/basic/data_extraction_tool)
-- [Data Structures](https://github.com/Achronus/Portfolio/tree/master/basic/data_structures)
-- [File Searcher](https://github.com/Achronus/Portfolio/tree/master/basic/file_searcher)
-- [Shape Coordinate System](https://github.com/Achronus/Portfolio/tree/master/basic/shape_coordinate_system)
+- [Conversion Exchanger](/basic/conversion_exchanger)
+- [CSV Editor](/basic/csv_editor)
+- [Data Extraction Tool](/basic/data_extraction_tool)
+- [Data Structures](/basic/data_structures)
+- [File Searcher](/basic/file_searcher)
+- [Shape Coordinate System](/basic/shape_coordinate_system)
 
 ### Advanced Projects
 
 The projects within this section focus on more advanced projects that involve a higher degree of complexity when compared to other project types. Some projects are stored in the `advanced` folder, and others are in their separate repository. The projects within this section are listed below:
 
-- [Wild Edible Plant Classifier](https://github.com/Achronus/wep-classifier)
+- [Wild Edible Plant Classifier](/Achronus/wep-classifier)
 - [Regression Analysis](/advanced/regression_analysis)
 
 ### Reinforcement Learning Projects
 
 The `rl` folder is home to custom Reinforcement Learning (RL) projects that I have created. The projects vary in complexity and core the core concepts of different parts of RL. The projects within this folder are as follows:
 
-- [Dynamic Programming: FrozenLake](https://github.com/Achronus/Portfolio/tree/master/rl/dynamic_programming)
-- [Monte-Carlo Learning](https://github.com/Achronus/Portfolio/tree/master/rl/monte_carlo)
+- [Dynamic Programming: FrozenLake](/rl/dynamic_programming)
+- [Monte-Carlo Learning](/rl/monte_carlo)
