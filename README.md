@@ -21,7 +21,7 @@ The `basic` folder is home to basic custom projects that I have created. These a
 
 ### Advanced Projects
 
-The projects within this section focus on a combination of techniques that create a product or application. The majority of these projects have their own repositories but some may be stored in the `advanced` folder. The projects are detailed below:
+The projects within this section focus on a combination of techniques that create a product or application. These projects have unique repositories associated with them. A list of them are detailed below:
 
 - [Wild Edible Plant Classifier](https://github.com/Achronus/wep-classifier)
 
