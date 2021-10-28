@@ -21,10 +21,15 @@ The `basic` folder is home to basic custom projects that I have created. These a
 
 ### Advanced Projects
 
-The projects within this section focus on more advanced projects that involve a higher degree of complexity when compared to other project types. Some projects are stored in the `advanced` folder, and others are in their separate repository. The projects within this section are listed below:
+The projects within this section focus on a combination of techniques that create a product or application. The majority of these projects have their own repositories but some may be stored in the `advanced` folder. The projects are detailed below:
 
 - [Wild Edible Plant Classifier](https://github.com/Achronus/wep-classifier)
-- [Regression Analysis](/advanced/regression_analysis)
+
+### Machine Learning Projects
+
+The `ml` folder is home to custom Machine Learning (ML) projects that I have created. The projects cover a variety of techniques and models that are fundamental to the subject. The projects are listed below:
+
+- [Regression Analysis](/ml/regression_analysis)
 
 ### Reinforcement Learning Projects
 
