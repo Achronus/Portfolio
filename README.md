@@ -8,17 +8,6 @@ Welcome! This repository is one of two locations containing a collection of sele
 
 All projects created can be run within their respective folders using the command `python main.py`, using a minimum of Python 3.8 to run the projects.
 
-### Basic Projects
-
-The `basic` folder is home to basic custom projects that I have created. These are primarily console run applications, where you can type in a few console commands to receive a specific output. The project list is as follows:
-
-- [Conversion Exchanger](/basic/conversion_exchanger)
-- [CSV Editor](/basic/csv_editor)
-- [Data Extraction Tool](/basic/data_extraction_tool)
-- [Data Structures](/basic/data_structures)
-- [File Searcher](/basic/file_searcher)
-- [Shape Coordinate System](/basic/shape_coordinate_system)
-
 ### Advanced Projects
 
 The projects within this section focus on a combination of techniques that create a product or application. These projects have unique repositories associated with them. A list of them are detailed below:
@@ -37,3 +26,14 @@ The `rl` folder is home to custom Reinforcement Learning (RL) projects that I ha
 
 - [Dynamic Programming: FrozenLake](/rl/dynamic_programming)
 - [Monte-Carlo Learning](/rl/monte_carlo)
+
+### Basic Projects
+
+The `basic` folder is home to basic custom projects that I have created. These are primarily console run applications, where you can type in a few console commands to receive a specific output. The project list is as follows:
+
+- [Conversion Exchanger](/basic/conversion_exchanger)
+- [CSV Editor](/basic/csv_editor)
+- [Data Extraction Tool](/basic/data_extraction_tool)
+- [Data Structures](/basic/data_structures)
+- [File Searcher](/basic/file_searcher)
+- [Shape Coordinate System](/basic/shape_coordinate_system)
