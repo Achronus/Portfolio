@@ -2,7 +2,7 @@
 
 ## Description
 
-Welcome! This repository is one of two locations containing a collection of selected projects that I have completed. It focuses on the code for each project, while the second location ([my website](https://acius.co.uk/portfolio/)) provides the details for their purpose and how they work.
+Welcome! This repository is one of two locations containing a collection of selected projects that I have created. It focuses on the code for each project, while the second location ([my website](https://acius.co.uk/portfolio/)) provides the details for their purpose and how they work.
 
 ## Types of Projects
 
