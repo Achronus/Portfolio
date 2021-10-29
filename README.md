@@ -19,6 +19,7 @@ The projects within this section focus on a combination of techniques that creat
 The `ml` folder is home to custom Machine Learning (ML) projects that I have created. The projects cover a variety of techniques and models that are fundamental to the subject. The projects are listed below:
 
 - [Regression Analysis](/ml/regression_analysis)
+- [Polynomial Regression](/ml/polynomial_regression)
 
 ### Reinforcement Learning Projects
 
