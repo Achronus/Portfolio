@@ -35,3 +35,5 @@ You selected the 'Temperature' conversion type, what would you like to convert a
 ---------------------------------------------------------------------------------
 =>
 ```
+
+For more details on the project, please refer to the website project page: [Conversion Exchanger](https://acius.co.uk/projects/conversion-exchanger/).

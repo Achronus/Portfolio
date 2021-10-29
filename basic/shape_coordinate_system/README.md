@@ -57,3 +57,5 @@ Rectangle[h=4,w=3]
 Points[(10, 10), (13, 10), (13, 14), (10, 14)]
 Area=12.00 Perimeter=14.00
 ```
+
+For more details on the project, please refer to the website project page: [Shape Coordinate System](https://acius.co.uk/projects/shape-coordinate-system/).

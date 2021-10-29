@@ -31,3 +31,5 @@ Select the index of the tag type you want to extract data from.
   7. All content
 =>
 ```
+
+For more details on the project, please refer to the website project page: [Data Extraction Tool](https://acius.co.uk/projects/data-extraction-tool/).

@@ -25,3 +25,5 @@ C:\Users\[name]\Documents\GitHub\Portfolio\projects\file_searcher\menu.py
 Searching complete. See all file locations above.
 =>
 ```
+
+For more details on the project, please refer to the website project page: [File Searcher](https://acius.co.uk/projects/file-searcher/).

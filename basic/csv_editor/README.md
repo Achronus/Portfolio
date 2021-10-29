@@ -17,3 +17,5 @@ Please choose an option:
 -----------------------------------------------------------------------------------------------------------------
 =>
 ```
+
+For more details on the project, please refer to the website project page: [CSV Editor](https://acius.co.uk/projects/csv-editor/).
