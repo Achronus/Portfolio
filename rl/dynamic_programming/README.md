@@ -43,3 +43,5 @@ Each implementation achieves an optimal policy and optimal state-value function,
  0.82352 0.82352 0.76470 0.
  0.      0.88235 0.94117 0.     ]
 ```
+
+For more details on the project, please refer to the website project page: [Dynamic Programming](https://acius.co.uk/projects/dynamic-programming/).

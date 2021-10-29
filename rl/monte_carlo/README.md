@@ -33,3 +33,5 @@ The player makes decisions based on (total of 200 states):
 - Their current sum when between 12 - 21
 - The dealer's one showing card (ace - 10)
 - Whether the dealer has a usable ace
+
+For more details on the project, please refer to the website project page: [Monte-Carlo Learning](https://acius.co.uk/projects/monte-carlo-learning/).
