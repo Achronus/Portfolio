@@ -20,6 +20,7 @@ The `ml` folder is home to custom Machine Learning (ML) projects that I have cre
 
 - [Regression Analysis](/ml/regression_analysis)
 - [Polynomial Regression](/ml/polynomial_regression)
+- [K-Means Clustering](/ml/k_means_clustering)
 
 ### Reinforcement Learning Projects
 
