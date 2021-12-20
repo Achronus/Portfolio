@@ -13,6 +13,7 @@ All projects created can be run within their respective folders using the comman
 The projects within this section focus on a combination of techniques that create a product or application. These projects have unique repositories associated with them. A list of them are detailed below:
 
 - [Wild Edible Plant Classifier](https://github.com/Achronus/wep-classifier)
+- [Planetary Mining Rovers](https://github.com/Achronus/planetary-mining-rovers)
 
 ### Machine Learning Projects
 
