@@ -14,7 +14,6 @@ The projects within this section focus on a combination of techniques that creat
 
 - [Wild Edible Plant Classifier](https://github.com/Achronus/wep-classifier)
 - [Planetary Mining Rovers](https://github.com/Achronus/planetary-mining-rovers)
-- [Data Graphing Tool](https://github.com/Achronus/data-graphing-tool) - _In development!_
 
 ### Machine Learning Projects
 
